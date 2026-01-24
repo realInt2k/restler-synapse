@@ -2,7 +2,7 @@
   "Requests": [
     {
       "id": {
-        "endpoint": "/api/blog/posts",
+        "endpoint": "/_matrix/client/v1/room_summary/{roomIdOrAlias}",
         "method": "Get"
       },
       "method": "Get",
@@ -17,7 +17,7 @@
         {
           "Constant": [
             "String",
-            "api"
+            "_matrix"
           ]
         },
         {
@@ -29,7 +29,7 @@
         {
           "Constant": [
             "String",
-            "blog"
+            "client"
           ]
         },
         {
@@ -41,7 +41,204 @@
         {
           "Constant": [
             "String",
-            "posts"
+            "v1"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "room_summary"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Fuzzable": {
+            "primitiveType": "Object",
+            "defaultValue": "{ \"fuzz\": false }",
+            "exampleValue": "#monkeys:matrix.org"
+          }
+        }
+      ],
+      "queryParameters": [
+        [
+          "Schema",
+          {
+            "ParameterList": [
+              {
+                "name": "via",
+                "payload": {
+                  "InternalNode": [
+                    {
+                      "name": "",
+                      "propertyType": "Array",
+                      "isRequired": false,
+                      "isReadOnly": false
+                    },
+                    [
+                      {
+                        "LeafNode": {
+                          "name": "",
+                          "payload": {
+                            "Fuzzable": {
+                              "primitiveType": "String",
+                              "defaultValue": "fuzzstring",
+                              "exampleValue": "matrix.org"
+                            }
+                          },
+                          "isRequired": false,
+                          "isReadOnly": false
+                        }
+                      },
+                      {
+                        "LeafNode": {
+                          "name": "",
+                          "payload": {
+                            "Fuzzable": {
+                              "primitiveType": "String",
+                              "defaultValue": "fuzzstring",
+                              "exampleValue": "elsewhere.ca"
+                            }
+                          },
+                          "isRequired": false,
+                          "isReadOnly": false
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      ],
+      "bodyParameters": [
+        [
+          "Schema",
+          {
+            "ParameterList": []
+          }
+        ]
+      ],
+      "headerParameters": [
+        [
+          "Schema",
+          {
+            "ParameterList": []
+          }
+        ],
+        [
+          "DictionaryCustomPayload",
+          {
+            "ParameterList": []
+          }
+        ]
+      ],
+      "token": "Refreshable",
+      "headers": [
+        [
+          "Accept",
+          "application/json"
+        ],
+        [
+          "Host",
+          "localhost:8008"
+        ]
+      ],
+      "httpVersion": "1.1",
+      "requestMetadata": {
+        "isLongRunningOperation": false
+      }
+    },
+    {
+      "id": {
+        "endpoint": "/_matrix/client/v1/rooms/{roomId}/hierarchy",
+        "method": "Get"
+      },
+      "method": "Get",
+      "basePath": "",
+      "path": [
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "_matrix"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "client"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "v1"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "rooms"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Fuzzable": {
+            "primitiveType": "String",
+            "defaultValue": "fuzzstring",
+            "exampleValue": "!space:example.org"
+          }
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "hierarchy"
           ]
         }
       ],
@@ -51,14 +248,15 @@
           {
             "ParameterList": [
               {
-                "name": "page",
+                "name": "suggested_only",
                 "payload": {
                   "LeafNode": {
                     "name": "",
                     "payload": {
                       "Fuzzable": {
-                        "primitiveType": "Int",
-                        "defaultValue": "1"
+                        "primitiveType": "Bool",
+                        "defaultValue": "true",
+                        "exampleValue": "true"
                       }
                     },
                     "isRequired": false,
@@ -67,14 +265,49 @@
                 }
               },
               {
-                "name": "per_page",
+                "name": "limit",
                 "payload": {
                   "LeafNode": {
                     "name": "",
                     "payload": {
                       "Fuzzable": {
                         "primitiveType": "Int",
-                        "defaultValue": "1"
+                        "defaultValue": "1",
+                        "exampleValue": "20"
+                      }
+                    },
+                    "isRequired": false,
+                    "isReadOnly": false
+                  }
+                }
+              },
+              {
+                "name": "max_depth",
+                "payload": {
+                  "LeafNode": {
+                    "name": "",
+                    "payload": {
+                      "Fuzzable": {
+                        "primitiveType": "Int",
+                        "defaultValue": "1",
+                        "exampleValue": "5"
+                      }
+                    },
+                    "isRequired": false,
+                    "isReadOnly": false
+                  }
+                }
+              },
+              {
+                "name": "from",
+                "payload": {
+                  "LeafNode": {
+                    "name": "",
+                    "payload": {
+                      "Fuzzable": {
+                        "primitiveType": "String",
+                        "defaultValue": "fuzzstring",
+                        "exampleValue": "next_batch_token"
                       }
                     },
                     "isRequired": false,
@@ -116,7 +349,7 @@
         ],
         [
           "Host",
-          "localhost:8888"
+          "localhost:8008"
         ]
       ],
       "httpVersion": "1.1",
@@ -126,7 +359,1094 @@
     },
     {
       "id": {
-        "endpoint": "/api/blog/posts",
+        "endpoint": "/_matrix/client/v1/rooms/{roomId}/relations/{eventId}",
+        "method": "Get"
+      },
+      "method": "Get",
+      "basePath": "",
+      "path": [
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "_matrix"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "client"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "v1"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "rooms"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Fuzzable": {
+            "primitiveType": "String",
+            "defaultValue": "fuzzstring",
+            "exampleValue": "!636q39766251:matrix.org"
+          }
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "relations"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Fuzzable": {
+            "primitiveType": "String",
+            "defaultValue": "fuzzstring",
+            "exampleValue": "$asfDuShaf7Gafaw"
+          }
+        }
+      ],
+      "queryParameters": [
+        [
+          "Schema",
+          {
+            "ParameterList": [
+              {
+                "name": "from",
+                "payload": {
+                  "LeafNode": {
+                    "name": "",
+                    "payload": {
+                      "Fuzzable": {
+                        "primitiveType": "String",
+                        "defaultValue": "fuzzstring",
+                        "exampleValue": "page2_token"
+                      }
+                    },
+                    "isRequired": false,
+                    "isReadOnly": false
+                  }
+                }
+              },
+              {
+                "name": "to",
+                "payload": {
+                  "LeafNode": {
+                    "name": "",
+                    "payload": {
+                      "Fuzzable": {
+                        "primitiveType": "String",
+                        "defaultValue": "fuzzstring",
+                        "exampleValue": "page3_token"
+                      }
+                    },
+                    "isRequired": false,
+                    "isReadOnly": false
+                  }
+                }
+              },
+              {
+                "name": "limit",
+                "payload": {
+                  "LeafNode": {
+                    "name": "",
+                    "payload": {
+                      "Fuzzable": {
+                        "primitiveType": "Int",
+                        "defaultValue": "1",
+                        "exampleValue": "20"
+                      }
+                    },
+                    "isRequired": false,
+                    "isReadOnly": false
+                  }
+                }
+              },
+              {
+                "name": "dir",
+                "payload": {
+                  "LeafNode": {
+                    "name": "",
+                    "payload": {
+                      "Fuzzable": {
+                        "primitiveType": {
+                          "Enum": [
+                            "dir",
+                            "String",
+                            [
+                              "b",
+                              "f"
+                            ],
+                            null
+                          ]
+                        },
+                        "defaultValue": "b"
+                      }
+                    },
+                    "isRequired": false,
+                    "isReadOnly": false
+                  }
+                }
+              },
+              {
+                "name": "recurse",
+                "payload": {
+                  "LeafNode": {
+                    "name": "",
+                    "payload": {
+                      "Fuzzable": {
+                        "primitiveType": "Bool",
+                        "defaultValue": "true"
+                      }
+                    },
+                    "isRequired": false,
+                    "isReadOnly": false
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      ],
+      "bodyParameters": [
+        [
+          "Schema",
+          {
+            "ParameterList": []
+          }
+        ]
+      ],
+      "headerParameters": [
+        [
+          "Schema",
+          {
+            "ParameterList": []
+          }
+        ],
+        [
+          "DictionaryCustomPayload",
+          {
+            "ParameterList": []
+          }
+        ]
+      ],
+      "token": "Refreshable",
+      "headers": [
+        [
+          "Accept",
+          "application/json"
+        ],
+        [
+          "Host",
+          "localhost:8008"
+        ]
+      ],
+      "httpVersion": "1.1",
+      "requestMetadata": {
+        "isLongRunningOperation": false
+      }
+    },
+    {
+      "id": {
+        "endpoint": "/_matrix/client/v1/rooms/{roomId}/relations/{eventId}/{relType}",
+        "method": "Get"
+      },
+      "method": "Get",
+      "basePath": "",
+      "path": [
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "_matrix"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "client"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "v1"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "rooms"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Fuzzable": {
+            "primitiveType": "String",
+            "defaultValue": "fuzzstring",
+            "exampleValue": "!636q39766251:matrix.org"
+          }
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "relations"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Fuzzable": {
+            "primitiveType": "String",
+            "defaultValue": "fuzzstring",
+            "exampleValue": "$asfDuShaf7Gafaw"
+          }
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Fuzzable": {
+            "primitiveType": "String",
+            "defaultValue": "fuzzstring",
+            "exampleValue": "org.example.my_relation"
+          }
+        }
+      ],
+      "queryParameters": [
+        [
+          "Schema",
+          {
+            "ParameterList": [
+              {
+                "name": "from",
+                "payload": {
+                  "LeafNode": {
+                    "name": "",
+                    "payload": {
+                      "Fuzzable": {
+                        "primitiveType": "String",
+                        "defaultValue": "fuzzstring",
+                        "exampleValue": "page2_token"
+                      }
+                    },
+                    "isRequired": false,
+                    "isReadOnly": false
+                  }
+                }
+              },
+              {
+                "name": "to",
+                "payload": {
+                  "LeafNode": {
+                    "name": "",
+                    "payload": {
+                      "Fuzzable": {
+                        "primitiveType": "String",
+                        "defaultValue": "fuzzstring",
+                        "exampleValue": "page3_token"
+                      }
+                    },
+                    "isRequired": false,
+                    "isReadOnly": false
+                  }
+                }
+              },
+              {
+                "name": "limit",
+                "payload": {
+                  "LeafNode": {
+                    "name": "",
+                    "payload": {
+                      "Fuzzable": {
+                        "primitiveType": "Int",
+                        "defaultValue": "1",
+                        "exampleValue": "20"
+                      }
+                    },
+                    "isRequired": false,
+                    "isReadOnly": false
+                  }
+                }
+              },
+              {
+                "name": "dir",
+                "payload": {
+                  "LeafNode": {
+                    "name": "",
+                    "payload": {
+                      "Fuzzable": {
+                        "primitiveType": {
+                          "Enum": [
+                            "dir",
+                            "String",
+                            [
+                              "b",
+                              "f"
+                            ],
+                            null
+                          ]
+                        },
+                        "defaultValue": "b"
+                      }
+                    },
+                    "isRequired": false,
+                    "isReadOnly": false
+                  }
+                }
+              },
+              {
+                "name": "recurse",
+                "payload": {
+                  "LeafNode": {
+                    "name": "",
+                    "payload": {
+                      "Fuzzable": {
+                        "primitiveType": "Bool",
+                        "defaultValue": "true"
+                      }
+                    },
+                    "isRequired": false,
+                    "isReadOnly": false
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      ],
+      "bodyParameters": [
+        [
+          "Schema",
+          {
+            "ParameterList": []
+          }
+        ]
+      ],
+      "headerParameters": [
+        [
+          "Schema",
+          {
+            "ParameterList": []
+          }
+        ],
+        [
+          "DictionaryCustomPayload",
+          {
+            "ParameterList": []
+          }
+        ]
+      ],
+      "token": "Refreshable",
+      "headers": [
+        [
+          "Accept",
+          "application/json"
+        ],
+        [
+          "Host",
+          "localhost:8008"
+        ]
+      ],
+      "httpVersion": "1.1",
+      "requestMetadata": {
+        "isLongRunningOperation": false
+      }
+    },
+    {
+      "id": {
+        "endpoint": "/_matrix/client/v1/rooms/{roomId}/relations/{eventId}/{relType}/{eventType}",
+        "method": "Get"
+      },
+      "method": "Get",
+      "basePath": "",
+      "path": [
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "_matrix"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "client"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "v1"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "rooms"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Fuzzable": {
+            "primitiveType": "String",
+            "defaultValue": "fuzzstring",
+            "exampleValue": "!636q39766251:matrix.org"
+          }
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "relations"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Fuzzable": {
+            "primitiveType": "String",
+            "defaultValue": "fuzzstring",
+            "exampleValue": "$asfDuShaf7Gafaw"
+          }
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Fuzzable": {
+            "primitiveType": "String",
+            "defaultValue": "fuzzstring",
+            "exampleValue": "org.example.my_relation"
+          }
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Fuzzable": {
+            "primitiveType": "String",
+            "defaultValue": "fuzzstring",
+            "exampleValue": "m.room.message"
+          }
+        }
+      ],
+      "queryParameters": [
+        [
+          "Schema",
+          {
+            "ParameterList": [
+              {
+                "name": "from",
+                "payload": {
+                  "LeafNode": {
+                    "name": "",
+                    "payload": {
+                      "Fuzzable": {
+                        "primitiveType": "String",
+                        "defaultValue": "fuzzstring",
+                        "exampleValue": "page2_token"
+                      }
+                    },
+                    "isRequired": false,
+                    "isReadOnly": false
+                  }
+                }
+              },
+              {
+                "name": "to",
+                "payload": {
+                  "LeafNode": {
+                    "name": "",
+                    "payload": {
+                      "Fuzzable": {
+                        "primitiveType": "String",
+                        "defaultValue": "fuzzstring",
+                        "exampleValue": "page3_token"
+                      }
+                    },
+                    "isRequired": false,
+                    "isReadOnly": false
+                  }
+                }
+              },
+              {
+                "name": "limit",
+                "payload": {
+                  "LeafNode": {
+                    "name": "",
+                    "payload": {
+                      "Fuzzable": {
+                        "primitiveType": "Int",
+                        "defaultValue": "1",
+                        "exampleValue": "20"
+                      }
+                    },
+                    "isRequired": false,
+                    "isReadOnly": false
+                  }
+                }
+              },
+              {
+                "name": "dir",
+                "payload": {
+                  "LeafNode": {
+                    "name": "",
+                    "payload": {
+                      "Fuzzable": {
+                        "primitiveType": {
+                          "Enum": [
+                            "dir",
+                            "String",
+                            [
+                              "b",
+                              "f"
+                            ],
+                            null
+                          ]
+                        },
+                        "defaultValue": "b"
+                      }
+                    },
+                    "isRequired": false,
+                    "isReadOnly": false
+                  }
+                }
+              },
+              {
+                "name": "recurse",
+                "payload": {
+                  "LeafNode": {
+                    "name": "",
+                    "payload": {
+                      "Fuzzable": {
+                        "primitiveType": "Bool",
+                        "defaultValue": "true"
+                      }
+                    },
+                    "isRequired": false,
+                    "isReadOnly": false
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      ],
+      "bodyParameters": [
+        [
+          "Schema",
+          {
+            "ParameterList": []
+          }
+        ]
+      ],
+      "headerParameters": [
+        [
+          "Schema",
+          {
+            "ParameterList": []
+          }
+        ],
+        [
+          "DictionaryCustomPayload",
+          {
+            "ParameterList": []
+          }
+        ]
+      ],
+      "token": "Refreshable",
+      "headers": [
+        [
+          "Accept",
+          "application/json"
+        ],
+        [
+          "Host",
+          "localhost:8008"
+        ]
+      ],
+      "httpVersion": "1.1",
+      "requestMetadata": {
+        "isLongRunningOperation": false
+      }
+    },
+    {
+      "id": {
+        "endpoint": "/_matrix/client/v1/rooms/{roomId}/threads",
+        "method": "Get"
+      },
+      "method": "Get",
+      "basePath": "",
+      "path": [
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "_matrix"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "client"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "v1"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "rooms"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Fuzzable": {
+            "primitiveType": "String",
+            "defaultValue": "fuzzstring",
+            "exampleValue": "!room:example.org"
+          }
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "threads"
+          ]
+        }
+      ],
+      "queryParameters": [
+        [
+          "Schema",
+          {
+            "ParameterList": [
+              {
+                "name": "include",
+                "payload": {
+                  "LeafNode": {
+                    "name": "",
+                    "payload": {
+                      "Fuzzable": {
+                        "primitiveType": "String",
+                        "defaultValue": "fuzzstring",
+                        "exampleValue": "all"
+                      }
+                    },
+                    "isRequired": false,
+                    "isReadOnly": false
+                  }
+                }
+              },
+              {
+                "name": "limit",
+                "payload": {
+                  "LeafNode": {
+                    "name": "",
+                    "payload": {
+                      "Fuzzable": {
+                        "primitiveType": "Int",
+                        "defaultValue": "1",
+                        "exampleValue": "20"
+                      }
+                    },
+                    "isRequired": false,
+                    "isReadOnly": false
+                  }
+                }
+              },
+              {
+                "name": "from",
+                "payload": {
+                  "LeafNode": {
+                    "name": "",
+                    "payload": {
+                      "Fuzzable": {
+                        "primitiveType": "String",
+                        "defaultValue": "fuzzstring",
+                        "exampleValue": "next_batch_token"
+                      }
+                    },
+                    "isRequired": false,
+                    "isReadOnly": false
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      ],
+      "bodyParameters": [
+        [
+          "Schema",
+          {
+            "ParameterList": []
+          }
+        ]
+      ],
+      "headerParameters": [
+        [
+          "Schema",
+          {
+            "ParameterList": []
+          }
+        ],
+        [
+          "DictionaryCustomPayload",
+          {
+            "ParameterList": []
+          }
+        ]
+      ],
+      "token": "Refreshable",
+      "headers": [
+        [
+          "Accept",
+          "application/json"
+        ],
+        [
+          "Host",
+          "localhost:8008"
+        ]
+      ],
+      "httpVersion": "1.1",
+      "requestMetadata": {
+        "isLongRunningOperation": false
+      }
+    },
+    {
+      "id": {
+        "endpoint": "/_matrix/client/v1/rooms/{roomId}/timestamp_to_event",
+        "method": "Get"
+      },
+      "method": "Get",
+      "basePath": "",
+      "path": [
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "_matrix"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "client"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "v1"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "rooms"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Fuzzable": {
+            "primitiveType": "String",
+            "defaultValue": "fuzzstring",
+            "exampleValue": "!636q39766251:matrix.org"
+          }
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "timestamp_to_event"
+          ]
+        }
+      ],
+      "queryParameters": [
+        [
+          "Schema",
+          {
+            "ParameterList": [
+              {
+                "name": "ts",
+                "payload": {
+                  "LeafNode": {
+                    "name": "",
+                    "payload": {
+                      "Fuzzable": {
+                        "primitiveType": "Int",
+                        "defaultValue": "1",
+                        "exampleValue": "1432684800000"
+                      }
+                    },
+                    "isRequired": true,
+                    "isReadOnly": false
+                  }
+                }
+              },
+              {
+                "name": "dir",
+                "payload": {
+                  "LeafNode": {
+                    "name": "",
+                    "payload": {
+                      "Fuzzable": {
+                        "primitiveType": "String",
+                        "defaultValue": "fuzzstring",
+                        "exampleValue": "f"
+                      }
+                    },
+                    "isRequired": true,
+                    "isReadOnly": false
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      ],
+      "bodyParameters": [
+        [
+          "Schema",
+          {
+            "ParameterList": []
+          }
+        ]
+      ],
+      "headerParameters": [
+        [
+          "Schema",
+          {
+            "ParameterList": []
+          }
+        ],
+        [
+          "DictionaryCustomPayload",
+          {
+            "ParameterList": []
+          }
+        ]
+      ],
+      "token": "Refreshable",
+      "headers": [
+        [
+          "Accept",
+          "application/json"
+        ],
+        [
+          "Host",
+          "localhost:8008"
+        ]
+      ],
+      "httpVersion": "1.1",
+      "requestMetadata": {
+        "isLongRunningOperation": false
+      }
+    },
+    {
+      "id": {
+        "endpoint": "/_matrix/client/v3/createRoom",
         "method": "Post"
       },
       "method": "Post",
@@ -141,7 +1461,7 @@
         {
           "Constant": [
             "String",
-            "api"
+            "_matrix"
           ]
         },
         {
@@ -153,7 +1473,7 @@
         {
           "Constant": [
             "String",
-            "blog"
+            "client"
           ]
         },
         {
@@ -165,7 +1485,19 @@
         {
           "Constant": [
             "String",
-            "posts"
+            "v3"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "createRoom"
           ]
         }
       ],
@@ -195,317 +1527,12 @@
                     [
                       {
                         "LeafNode": {
-                          "name": "id",
+                          "name": "creation_content",
                           "payload": {
                             "Fuzzable": {
-                              "primitiveType": "Int",
-                              "defaultValue": "1",
-                              "exampleValue": "99"
-                            }
-                          },
-                          "isRequired": true,
-                          "isReadOnly": false
-                        }
-                      },
-                      {
-                        "LeafNode": {
-                          "name": "body",
-                          "payload": {
-                            "Fuzzable": {
-                              "primitiveType": "String",
-                              "defaultValue": "fuzzstring",
-                              "exampleValue": "my first blog post"
-                            }
-                          },
-                          "isRequired": true,
-                          "isReadOnly": false
-                        }
-                      }
-                    ]
-                  ]
-                }
-              }
-            ]
-          }
-        ]
-      ],
-      "headerParameters": [
-        [
-          "Schema",
-          {
-            "ParameterList": []
-          }
-        ],
-        [
-          "DictionaryCustomPayload",
-          {
-            "ParameterList": [
-              {
-                "name": "Content-Type",
-                "payload": {
-                  "LeafNode": {
-                    "name": "",
-                    "payload": {
-                      "Constant": [
-                        "String",
-                        "application/json"
-                      ]
-                    },
-                    "isRequired": true,
-                    "isReadOnly": false
-                  }
-                }
-              }
-            ]
-          }
-        ]
-      ],
-      "token": "Refreshable",
-      "headers": [
-        [
-          "Accept",
-          "application/json"
-        ],
-        [
-          "Host",
-          "localhost:8888"
-        ]
-      ],
-      "httpVersion": "1.1",
-      "dependencyData": {
-        "responseParser": {
-          "writerVariables": [
-            {
-              "requestId": {
-                "endpoint": "/api/blog/posts",
-                "method": "Post"
-              },
-              "accessPathParts": {
-                "path": [
-                  "body"
-                ]
-              },
-              "primitiveType": "String",
-              "kind": "BodyResponseProperty"
-            },
-            {
-              "requestId": {
-                "endpoint": "/api/blog/posts",
-                "method": "Post"
-              },
-              "accessPathParts": {
-                "path": [
-                  "id"
-                ]
-              },
-              "primitiveType": "Int",
-              "kind": "BodyResponseProperty"
-            }
-          ],
-          "headerWriterVariables": []
-        },
-        "inputWriterVariables": [],
-        "orderingConstraintWriterVariables": [],
-        "orderingConstraintReaderVariables": []
-      },
-      "requestMetadata": {
-        "isLongRunningOperation": false
-      }
-    },
-    {
-      "id": {
-        "endpoint": "/api/blog/posts/{postId}",
-        "method": "Get"
-      },
-      "method": "Get",
-      "basePath": "",
-      "path": [
-        {
-          "Constant": [
-            "String",
-            "/"
-          ]
-        },
-        {
-          "Constant": [
-            "String",
-            "api"
-          ]
-        },
-        {
-          "Constant": [
-            "String",
-            "/"
-          ]
-        },
-        {
-          "Constant": [
-            "String",
-            "blog"
-          ]
-        },
-        {
-          "Constant": [
-            "String",
-            "/"
-          ]
-        },
-        {
-          "Constant": [
-            "String",
-            "posts"
-          ]
-        },
-        {
-          "Constant": [
-            "String",
-            "/"
-          ]
-        },
-        {
-          "DynamicObject": {
-            "primitiveType": "Int",
-            "variableName": "_api_blog_posts_post_id",
-            "isWriter": false
-          }
-        }
-      ],
-      "queryParameters": [
-        [
-          "Schema",
-          {
-            "ParameterList": []
-          }
-        ]
-      ],
-      "bodyParameters": [
-        [
-          "Schema",
-          {
-            "ParameterList": []
-          }
-        ]
-      ],
-      "headerParameters": [
-        [
-          "Schema",
-          {
-            "ParameterList": []
-          }
-        ],
-        [
-          "DictionaryCustomPayload",
-          {
-            "ParameterList": []
-          }
-        ]
-      ],
-      "token": "Refreshable",
-      "headers": [
-        [
-          "Accept",
-          "application/json"
-        ],
-        [
-          "Host",
-          "localhost:8888"
-        ]
-      ],
-      "httpVersion": "1.1",
-      "requestMetadata": {
-        "isLongRunningOperation": false
-      }
-    },
-    {
-      "id": {
-        "endpoint": "/api/blog/posts/{postId}",
-        "method": "Put"
-      },
-      "method": "Put",
-      "basePath": "",
-      "path": [
-        {
-          "Constant": [
-            "String",
-            "/"
-          ]
-        },
-        {
-          "Constant": [
-            "String",
-            "api"
-          ]
-        },
-        {
-          "Constant": [
-            "String",
-            "/"
-          ]
-        },
-        {
-          "Constant": [
-            "String",
-            "blog"
-          ]
-        },
-        {
-          "Constant": [
-            "String",
-            "/"
-          ]
-        },
-        {
-          "Constant": [
-            "String",
-            "posts"
-          ]
-        },
-        {
-          "Constant": [
-            "String",
-            "/"
-          ]
-        },
-        {
-          "DynamicObject": {
-            "primitiveType": "Int",
-            "variableName": "_api_blog_posts_post_id",
-            "isWriter": false
-          }
-        }
-      ],
-      "queryParameters": [
-        [
-          "Schema",
-          {
-            "ParameterList": []
-          }
-        ]
-      ],
-      "bodyParameters": [
-        [
-          "Schema",
-          {
-            "ParameterList": [
-              {
-                "name": "__body__",
-                "payload": {
-                  "InternalNode": [
-                    {
-                      "name": "",
-                      "propertyType": "Object",
-                      "isRequired": true,
-                      "isReadOnly": false
-                    },
-                    [
-                      {
-                        "LeafNode": {
-                          "name": "id",
-                          "payload": {
-                            "DynamicObject": {
-                              "primitiveType": "Int",
-                              "variableName": "_api_blog_posts_post_id",
-                              "isWriter": false
+                              "primitiveType": "Object",
+                              "defaultValue": "{ \"fuzz\": false }",
+                              "exampleValue": "{\"m.federate\":false}"
                             }
                           },
                           "isRequired": false,
@@ -514,26 +1541,65 @@
                       },
                       {
                         "LeafNode": {
-                          "name": "body",
+                          "name": "name",
                           "payload": {
-                            "DynamicObject": {
+                            "Fuzzable": {
                               "primitiveType": "String",
-                              "variableName": "_api_blog_posts_post_body",
-                              "isWriter": false
+                              "defaultValue": "fuzzstring",
+                              "exampleValue": "The Grand Duke Pub"
                             }
                           },
-                          "isRequired": true,
+                          "isRequired": false,
                           "isReadOnly": false
                         }
                       },
                       {
                         "LeafNode": {
-                          "name": "checksum",
+                          "name": "preset",
+                          "payload": {
+                            "Fuzzable": {
+                              "primitiveType": {
+                                "Enum": [
+                                  "preset",
+                                  "String",
+                                  [
+                                    "private_chat",
+                                    "public_chat",
+                                    "trusted_private_chat"
+                                  ],
+                                  null
+                                ]
+                              },
+                              "defaultValue": "private_chat",
+                              "exampleValue": "public_chat"
+                            }
+                          },
+                          "isRequired": false,
+                          "isReadOnly": false
+                        }
+                      },
+                      {
+                        "LeafNode": {
+                          "name": "room_alias_name",
                           "payload": {
                             "Fuzzable": {
                               "primitiveType": "String",
                               "defaultValue": "fuzzstring",
-                              "exampleValue": "abcde"
+                              "exampleValue": "thepub"
+                            }
+                          },
+                          "isRequired": false,
+                          "isReadOnly": false
+                        }
+                      },
+                      {
+                        "LeafNode": {
+                          "name": "topic",
+                          "payload": {
+                            "Fuzzable": {
+                              "primitiveType": "String",
+                              "defaultValue": "fuzzstring",
+                              "exampleValue": "All about happy hour"
                             }
                           },
                           "isRequired": false,
@@ -587,7 +1653,7 @@
         ],
         [
           "Host",
-          "localhost:8888"
+          "localhost:8008"
         ]
       ],
       "httpVersion": "1.1",
@@ -597,7 +1663,7 @@
     },
     {
       "id": {
-        "endpoint": "/api/blog/posts/{postId}",
+        "endpoint": "/_matrix/client/v3/directory/room/{roomAlias}",
         "method": "Delete"
       },
       "method": "Delete",
@@ -612,7 +1678,7 @@
         {
           "Constant": [
             "String",
-            "api"
+            "_matrix"
           ]
         },
         {
@@ -624,7 +1690,7 @@
         {
           "Constant": [
             "String",
-            "blog"
+            "client"
           ]
         },
         {
@@ -636,7 +1702,7 @@
         {
           "Constant": [
             "String",
-            "posts"
+            "v3"
           ]
         },
         {
@@ -646,10 +1712,34 @@
           ]
         },
         {
-          "DynamicObject": {
-            "primitiveType": "Int",
-            "variableName": "_api_blog_posts_post_id",
-            "isWriter": false
+          "Constant": [
+            "String",
+            "directory"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "room"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Fuzzable": {
+            "primitiveType": "String",
+            "defaultValue": "fuzzstring",
+            "exampleValue": "#monkeys:matrix.org"
           }
         }
       ],
@@ -691,7 +1781,7 @@
         ],
         [
           "Host",
-          "localhost:8888"
+          "localhost:8008"
         ]
       ],
       "httpVersion": "1.1",
@@ -701,7 +1791,7 @@
     },
     {
       "id": {
-        "endpoint": "/api/doc",
+        "endpoint": "/_matrix/client/v3/directory/room/{roomAlias}",
         "method": "Get"
       },
       "method": "Get",
@@ -716,7 +1806,7 @@
         {
           "Constant": [
             "String",
-            "api"
+            "_matrix"
           ]
         },
         {
@@ -728,8 +1818,57 @@
         {
           "Constant": [
             "String",
-            "doc"
+            "client"
           ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "v3"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "directory"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "room"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Fuzzable": {
+            "primitiveType": "String",
+            "defaultValue": "fuzzstring",
+            "exampleValue": "#monkeys:matrix.org"
+          }
         }
       ],
       "queryParameters": [
@@ -770,7 +1909,2062 @@
         ],
         [
           "Host",
-          "localhost:8888"
+          "localhost:8008"
+        ]
+      ],
+      "httpVersion": "1.1",
+      "requestMetadata": {
+        "isLongRunningOperation": false
+      }
+    },
+    {
+      "id": {
+        "endpoint": "/_matrix/client/v3/directory/room/{roomAlias}",
+        "method": "Put"
+      },
+      "method": "Put",
+      "basePath": "",
+      "path": [
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "_matrix"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "client"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "v3"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "directory"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "room"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Custom": {
+            "payloadType": "UuidSuffix",
+            "primitiveType": "String",
+            "payloadValue": "roomAlias",
+            "isObject": false
+          }
+        }
+      ],
+      "queryParameters": [
+        [
+          "Schema",
+          {
+            "ParameterList": []
+          }
+        ]
+      ],
+      "bodyParameters": [
+        [
+          "Schema",
+          {
+            "ParameterList": [
+              {
+                "name": "__body__",
+                "payload": {
+                  "InternalNode": [
+                    {
+                      "name": "",
+                      "propertyType": "Object",
+                      "isRequired": true,
+                      "isReadOnly": false
+                    },
+                    [
+                      {
+                        "LeafNode": {
+                          "name": "room_id",
+                          "payload": {
+                            "Fuzzable": {
+                              "primitiveType": "String",
+                              "defaultValue": "fuzzstring",
+                              "exampleValue": "!abnjk1jdasj98:capuchins.com"
+                            }
+                          },
+                          "isRequired": true,
+                          "isReadOnly": false
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      ],
+      "headerParameters": [
+        [
+          "Schema",
+          {
+            "ParameterList": []
+          }
+        ],
+        [
+          "DictionaryCustomPayload",
+          {
+            "ParameterList": [
+              {
+                "name": "Content-Type",
+                "payload": {
+                  "LeafNode": {
+                    "name": "",
+                    "payload": {
+                      "Constant": [
+                        "String",
+                        "application/json"
+                      ]
+                    },
+                    "isRequired": true,
+                    "isReadOnly": false
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      ],
+      "token": "Refreshable",
+      "headers": [
+        [
+          "Accept",
+          "application/json"
+        ],
+        [
+          "Host",
+          "localhost:8008"
+        ]
+      ],
+      "httpVersion": "1.1",
+      "requestMetadata": {
+        "isLongRunningOperation": false
+      }
+    },
+    {
+      "id": {
+        "endpoint": "/_matrix/client/v3/room_keys/keys",
+        "method": "Delete"
+      },
+      "method": "Delete",
+      "basePath": "",
+      "path": [
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "_matrix"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "client"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "v3"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "room_keys"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "keys"
+          ]
+        }
+      ],
+      "queryParameters": [
+        [
+          "Schema",
+          {
+            "ParameterList": [
+              {
+                "name": "version",
+                "payload": {
+                  "LeafNode": {
+                    "name": "",
+                    "payload": {
+                      "Fuzzable": {
+                        "primitiveType": "String",
+                        "defaultValue": "fuzzstring",
+                        "exampleValue": "1"
+                      }
+                    },
+                    "isRequired": true,
+                    "isReadOnly": false
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      ],
+      "bodyParameters": [
+        [
+          "Schema",
+          {
+            "ParameterList": []
+          }
+        ]
+      ],
+      "headerParameters": [
+        [
+          "Schema",
+          {
+            "ParameterList": []
+          }
+        ],
+        [
+          "DictionaryCustomPayload",
+          {
+            "ParameterList": []
+          }
+        ]
+      ],
+      "token": "Refreshable",
+      "headers": [
+        [
+          "Accept",
+          "application/json"
+        ],
+        [
+          "Host",
+          "localhost:8008"
+        ]
+      ],
+      "httpVersion": "1.1",
+      "requestMetadata": {
+        "isLongRunningOperation": false
+      }
+    },
+    {
+      "id": {
+        "endpoint": "/_matrix/client/v3/room_keys/keys",
+        "method": "Get"
+      },
+      "method": "Get",
+      "basePath": "",
+      "path": [
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "_matrix"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "client"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "v3"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "room_keys"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "keys"
+          ]
+        }
+      ],
+      "queryParameters": [
+        [
+          "Schema",
+          {
+            "ParameterList": [
+              {
+                "name": "version",
+                "payload": {
+                  "LeafNode": {
+                    "name": "",
+                    "payload": {
+                      "Fuzzable": {
+                        "primitiveType": "String",
+                        "defaultValue": "fuzzstring",
+                        "exampleValue": "1"
+                      }
+                    },
+                    "isRequired": true,
+                    "isReadOnly": false
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      ],
+      "bodyParameters": [
+        [
+          "Schema",
+          {
+            "ParameterList": []
+          }
+        ]
+      ],
+      "headerParameters": [
+        [
+          "Schema",
+          {
+            "ParameterList": []
+          }
+        ],
+        [
+          "DictionaryCustomPayload",
+          {
+            "ParameterList": []
+          }
+        ]
+      ],
+      "token": "Refreshable",
+      "headers": [
+        [
+          "Accept",
+          "application/json"
+        ],
+        [
+          "Host",
+          "localhost:8008"
+        ]
+      ],
+      "httpVersion": "1.1",
+      "requestMetadata": {
+        "isLongRunningOperation": false
+      }
+    },
+    {
+      "id": {
+        "endpoint": "/_matrix/client/v3/room_keys/keys",
+        "method": "Put"
+      },
+      "method": "Put",
+      "basePath": "",
+      "path": [
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "_matrix"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "client"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "v3"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "room_keys"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "keys"
+          ]
+        }
+      ],
+      "queryParameters": [
+        [
+          "Schema",
+          {
+            "ParameterList": [
+              {
+                "name": "version",
+                "payload": {
+                  "LeafNode": {
+                    "name": "",
+                    "payload": {
+                      "Fuzzable": {
+                        "primitiveType": "String",
+                        "defaultValue": "fuzzstring",
+                        "exampleValue": "1"
+                      }
+                    },
+                    "isRequired": true,
+                    "isReadOnly": false
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      ],
+      "bodyParameters": [
+        [
+          "Schema",
+          {
+            "ParameterList": [
+              {
+                "name": "__body__",
+                "payload": {
+                  "InternalNode": [
+                    {
+                      "name": "",
+                      "propertyType": "Object",
+                      "isRequired": true,
+                      "isReadOnly": false
+                    },
+                    [
+                      {
+                        "LeafNode": {
+                          "name": "rooms",
+                          "payload": {
+                            "Fuzzable": {
+                              "primitiveType": "Object",
+                              "defaultValue": "{ \"fuzz\": false }",
+                              "exampleValue": "{\"!room:example.org\":{\"sessions\":{\"sessionid1\":{\"first_message_index\":1,\"forwarded_count\":0,\"is_verified\":true,\"session_data\":{\"ciphertext\":\"base64+ciphertext+of+JSON+data\",\"ephemeral\":\"base64+ephemeral+key\",\"mac\":\"base64+mac+of+ciphertext\"}}}}}"
+                            }
+                          },
+                          "isRequired": true,
+                          "isReadOnly": false
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      ],
+      "headerParameters": [
+        [
+          "Schema",
+          {
+            "ParameterList": []
+          }
+        ],
+        [
+          "DictionaryCustomPayload",
+          {
+            "ParameterList": [
+              {
+                "name": "Content-Type",
+                "payload": {
+                  "LeafNode": {
+                    "name": "",
+                    "payload": {
+                      "Constant": [
+                        "String",
+                        "application/json"
+                      ]
+                    },
+                    "isRequired": true,
+                    "isReadOnly": false
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      ],
+      "token": "Refreshable",
+      "headers": [
+        [
+          "Accept",
+          "application/json"
+        ],
+        [
+          "Host",
+          "localhost:8008"
+        ]
+      ],
+      "httpVersion": "1.1",
+      "requestMetadata": {
+        "isLongRunningOperation": false
+      }
+    },
+    {
+      "id": {
+        "endpoint": "/_matrix/client/v3/room_keys/keys/{roomId}",
+        "method": "Delete"
+      },
+      "method": "Delete",
+      "basePath": "",
+      "path": [
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "_matrix"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "client"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "v3"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "room_keys"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "keys"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Fuzzable": {
+            "primitiveType": "String",
+            "defaultValue": "fuzzstring",
+            "exampleValue": "!roomid:example.org"
+          }
+        }
+      ],
+      "queryParameters": [
+        [
+          "Schema",
+          {
+            "ParameterList": [
+              {
+                "name": "version",
+                "payload": {
+                  "LeafNode": {
+                    "name": "",
+                    "payload": {
+                      "Fuzzable": {
+                        "primitiveType": "String",
+                        "defaultValue": "fuzzstring",
+                        "exampleValue": "1"
+                      }
+                    },
+                    "isRequired": true,
+                    "isReadOnly": false
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      ],
+      "bodyParameters": [
+        [
+          "Schema",
+          {
+            "ParameterList": []
+          }
+        ]
+      ],
+      "headerParameters": [
+        [
+          "Schema",
+          {
+            "ParameterList": []
+          }
+        ],
+        [
+          "DictionaryCustomPayload",
+          {
+            "ParameterList": []
+          }
+        ]
+      ],
+      "token": "Refreshable",
+      "headers": [
+        [
+          "Accept",
+          "application/json"
+        ],
+        [
+          "Host",
+          "localhost:8008"
+        ]
+      ],
+      "httpVersion": "1.1",
+      "requestMetadata": {
+        "isLongRunningOperation": false
+      }
+    },
+    {
+      "id": {
+        "endpoint": "/_matrix/client/v3/room_keys/keys/{roomId}",
+        "method": "Get"
+      },
+      "method": "Get",
+      "basePath": "",
+      "path": [
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "_matrix"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "client"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "v3"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "room_keys"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "keys"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Fuzzable": {
+            "primitiveType": "String",
+            "defaultValue": "fuzzstring",
+            "exampleValue": "!roomid:example.org"
+          }
+        }
+      ],
+      "queryParameters": [
+        [
+          "Schema",
+          {
+            "ParameterList": [
+              {
+                "name": "version",
+                "payload": {
+                  "LeafNode": {
+                    "name": "",
+                    "payload": {
+                      "Fuzzable": {
+                        "primitiveType": "String",
+                        "defaultValue": "fuzzstring",
+                        "exampleValue": "1"
+                      }
+                    },
+                    "isRequired": true,
+                    "isReadOnly": false
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      ],
+      "bodyParameters": [
+        [
+          "Schema",
+          {
+            "ParameterList": []
+          }
+        ]
+      ],
+      "headerParameters": [
+        [
+          "Schema",
+          {
+            "ParameterList": []
+          }
+        ],
+        [
+          "DictionaryCustomPayload",
+          {
+            "ParameterList": []
+          }
+        ]
+      ],
+      "token": "Refreshable",
+      "headers": [
+        [
+          "Accept",
+          "application/json"
+        ],
+        [
+          "Host",
+          "localhost:8008"
+        ]
+      ],
+      "httpVersion": "1.1",
+      "requestMetadata": {
+        "isLongRunningOperation": false
+      }
+    },
+    {
+      "id": {
+        "endpoint": "/_matrix/client/v3/room_keys/keys/{roomId}",
+        "method": "Put"
+      },
+      "method": "Put",
+      "basePath": "",
+      "path": [
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "_matrix"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "client"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "v3"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "room_keys"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "keys"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Custom": {
+            "payloadType": "UuidSuffix",
+            "primitiveType": "String",
+            "payloadValue": "roomId",
+            "isObject": false
+          }
+        }
+      ],
+      "queryParameters": [
+        [
+          "Schema",
+          {
+            "ParameterList": [
+              {
+                "name": "version",
+                "payload": {
+                  "LeafNode": {
+                    "name": "",
+                    "payload": {
+                      "Fuzzable": {
+                        "primitiveType": "String",
+                        "defaultValue": "fuzzstring",
+                        "exampleValue": "1"
+                      }
+                    },
+                    "isRequired": true,
+                    "isReadOnly": false
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      ],
+      "bodyParameters": [
+        [
+          "Schema",
+          {
+            "ParameterList": [
+              {
+                "name": "__body__",
+                "payload": {
+                  "InternalNode": [
+                    {
+                      "name": "",
+                      "propertyType": "Object",
+                      "isRequired": true,
+                      "isReadOnly": false
+                    },
+                    [
+                      {
+                        "LeafNode": {
+                          "name": "sessions",
+                          "payload": {
+                            "Fuzzable": {
+                              "primitiveType": "Object",
+                              "defaultValue": "{ \"fuzz\": false }",
+                              "exampleValue": "{\"sessionid1\":{\"first_message_index\":1,\"forwarded_count\":0,\"is_verified\":true,\"session_data\":{\"ciphertext\":\"base64+ciphertext+of+JSON+data\",\"ephemeral\":\"base64+ephemeral+key\",\"mac\":\"base64+mac+of+ciphertext\"}}}"
+                            }
+                          },
+                          "isRequired": true,
+                          "isReadOnly": false
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      ],
+      "headerParameters": [
+        [
+          "Schema",
+          {
+            "ParameterList": []
+          }
+        ],
+        [
+          "DictionaryCustomPayload",
+          {
+            "ParameterList": [
+              {
+                "name": "Content-Type",
+                "payload": {
+                  "LeafNode": {
+                    "name": "",
+                    "payload": {
+                      "Constant": [
+                        "String",
+                        "application/json"
+                      ]
+                    },
+                    "isRequired": true,
+                    "isReadOnly": false
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      ],
+      "token": "Refreshable",
+      "headers": [
+        [
+          "Accept",
+          "application/json"
+        ],
+        [
+          "Host",
+          "localhost:8008"
+        ]
+      ],
+      "httpVersion": "1.1",
+      "requestMetadata": {
+        "isLongRunningOperation": false
+      }
+    },
+    {
+      "id": {
+        "endpoint": "/_matrix/client/v3/room_keys/keys/{roomId}/{sessionId}",
+        "method": "Delete"
+      },
+      "method": "Delete",
+      "basePath": "",
+      "path": [
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "_matrix"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "client"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "v3"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "room_keys"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "keys"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Fuzzable": {
+            "primitiveType": "String",
+            "defaultValue": "fuzzstring",
+            "exampleValue": "!roomid:example.org"
+          }
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Fuzzable": {
+            "primitiveType": "String",
+            "defaultValue": "fuzzstring",
+            "exampleValue": "sessionid"
+          }
+        }
+      ],
+      "queryParameters": [
+        [
+          "Schema",
+          {
+            "ParameterList": [
+              {
+                "name": "version",
+                "payload": {
+                  "LeafNode": {
+                    "name": "",
+                    "payload": {
+                      "Fuzzable": {
+                        "primitiveType": "String",
+                        "defaultValue": "fuzzstring",
+                        "exampleValue": "1"
+                      }
+                    },
+                    "isRequired": true,
+                    "isReadOnly": false
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      ],
+      "bodyParameters": [
+        [
+          "Schema",
+          {
+            "ParameterList": []
+          }
+        ]
+      ],
+      "headerParameters": [
+        [
+          "Schema",
+          {
+            "ParameterList": []
+          }
+        ],
+        [
+          "DictionaryCustomPayload",
+          {
+            "ParameterList": []
+          }
+        ]
+      ],
+      "token": "Refreshable",
+      "headers": [
+        [
+          "Accept",
+          "application/json"
+        ],
+        [
+          "Host",
+          "localhost:8008"
+        ]
+      ],
+      "httpVersion": "1.1",
+      "requestMetadata": {
+        "isLongRunningOperation": false
+      }
+    },
+    {
+      "id": {
+        "endpoint": "/_matrix/client/v3/room_keys/keys/{roomId}/{sessionId}",
+        "method": "Get"
+      },
+      "method": "Get",
+      "basePath": "",
+      "path": [
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "_matrix"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "client"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "v3"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "room_keys"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "keys"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Fuzzable": {
+            "primitiveType": "String",
+            "defaultValue": "fuzzstring",
+            "exampleValue": "!roomid:example.org"
+          }
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Fuzzable": {
+            "primitiveType": "String",
+            "defaultValue": "fuzzstring",
+            "exampleValue": "sessionid"
+          }
+        }
+      ],
+      "queryParameters": [
+        [
+          "Schema",
+          {
+            "ParameterList": [
+              {
+                "name": "version",
+                "payload": {
+                  "LeafNode": {
+                    "name": "",
+                    "payload": {
+                      "Fuzzable": {
+                        "primitiveType": "String",
+                        "defaultValue": "fuzzstring",
+                        "exampleValue": "1"
+                      }
+                    },
+                    "isRequired": true,
+                    "isReadOnly": false
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      ],
+      "bodyParameters": [
+        [
+          "Schema",
+          {
+            "ParameterList": []
+          }
+        ]
+      ],
+      "headerParameters": [
+        [
+          "Schema",
+          {
+            "ParameterList": []
+          }
+        ],
+        [
+          "DictionaryCustomPayload",
+          {
+            "ParameterList": []
+          }
+        ]
+      ],
+      "token": "Refreshable",
+      "headers": [
+        [
+          "Accept",
+          "application/json"
+        ],
+        [
+          "Host",
+          "localhost:8008"
+        ]
+      ],
+      "httpVersion": "1.1",
+      "requestMetadata": {
+        "isLongRunningOperation": false
+      }
+    },
+    {
+      "id": {
+        "endpoint": "/_matrix/client/v3/room_keys/keys/{roomId}/{sessionId}",
+        "method": "Put"
+      },
+      "method": "Put",
+      "basePath": "",
+      "path": [
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "_matrix"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "client"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "v3"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "room_keys"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "keys"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Fuzzable": {
+            "primitiveType": "String",
+            "defaultValue": "fuzzstring",
+            "exampleValue": "!roomid:example.org"
+          }
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Custom": {
+            "payloadType": "UuidSuffix",
+            "primitiveType": "String",
+            "payloadValue": "sessionId",
+            "isObject": false
+          }
+        }
+      ],
+      "queryParameters": [
+        [
+          "Schema",
+          {
+            "ParameterList": [
+              {
+                "name": "version",
+                "payload": {
+                  "LeafNode": {
+                    "name": "",
+                    "payload": {
+                      "Fuzzable": {
+                        "primitiveType": "String",
+                        "defaultValue": "fuzzstring",
+                        "exampleValue": "1"
+                      }
+                    },
+                    "isRequired": true,
+                    "isReadOnly": false
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      ],
+      "bodyParameters": [
+        [
+          "Schema",
+          {
+            "ParameterList": [
+              {
+                "name": "__body__",
+                "payload": {
+                  "InternalNode": [
+                    {
+                      "name": "",
+                      "propertyType": "Object",
+                      "isRequired": true,
+                      "isReadOnly": false
+                    },
+                    [
+                      {
+                        "LeafNode": {
+                          "name": "first_message_index",
+                          "payload": {
+                            "Fuzzable": {
+                              "primitiveType": "Int",
+                              "defaultValue": "1",
+                              "exampleValue": "1"
+                            }
+                          },
+                          "isRequired": true,
+                          "isReadOnly": false
+                        }
+                      },
+                      {
+                        "LeafNode": {
+                          "name": "forwarded_count",
+                          "payload": {
+                            "Fuzzable": {
+                              "primitiveType": "Int",
+                              "defaultValue": "1",
+                              "exampleValue": "0"
+                            }
+                          },
+                          "isRequired": true,
+                          "isReadOnly": false
+                        }
+                      },
+                      {
+                        "LeafNode": {
+                          "name": "is_verified",
+                          "payload": {
+                            "Fuzzable": {
+                              "primitiveType": "Bool",
+                              "defaultValue": "true",
+                              "exampleValue": "false"
+                            }
+                          },
+                          "isRequired": true,
+                          "isReadOnly": false
+                        }
+                      },
+                      {
+                        "LeafNode": {
+                          "name": "session_data",
+                          "payload": {
+                            "Fuzzable": {
+                              "primitiveType": "Object",
+                              "defaultValue": "{ \"fuzz\": false }",
+                              "exampleValue": "{\"ciphertext\":\"base64+ciphertext+of+JSON+data\",\"ephemeral\":\"base64+ephemeral+key\",\"mac\":\"base64+mac+of+ciphertext\"}"
+                            }
+                          },
+                          "isRequired": true,
+                          "isReadOnly": false
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      ],
+      "headerParameters": [
+        [
+          "Schema",
+          {
+            "ParameterList": []
+          }
+        ],
+        [
+          "DictionaryCustomPayload",
+          {
+            "ParameterList": [
+              {
+                "name": "Content-Type",
+                "payload": {
+                  "LeafNode": {
+                    "name": "",
+                    "payload": {
+                      "Constant": [
+                        "String",
+                        "application/json"
+                      ]
+                    },
+                    "isRequired": true,
+                    "isReadOnly": false
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      ],
+      "token": "Refreshable",
+      "headers": [
+        [
+          "Accept",
+          "application/json"
+        ],
+        [
+          "Host",
+          "localhost:8008"
+        ]
+      ],
+      "httpVersion": "1.1",
+      "requestMetadata": {
+        "isLongRunningOperation": false
+      }
+    },
+    {
+      "id": {
+        "endpoint": "/_matrix/client/v3/user/{userId}/rooms/{roomId}/tags/{tag}",
+        "method": "Delete"
+      },
+      "method": "Delete",
+      "basePath": "",
+      "path": [
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "_matrix"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "client"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "v3"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "user"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Fuzzable": {
+            "primitiveType": "String",
+            "defaultValue": "fuzzstring",
+            "exampleValue": "@alice:example.com"
+          }
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "rooms"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Fuzzable": {
+            "primitiveType": "String",
+            "defaultValue": "fuzzstring",
+            "exampleValue": "!726s6s6q:example.com"
+          }
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "tags"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Fuzzable": {
+            "primitiveType": "String",
+            "defaultValue": "fuzzstring",
+            "exampleValue": "u.work"
+          }
+        }
+      ],
+      "queryParameters": [
+        [
+          "Schema",
+          {
+            "ParameterList": []
+          }
+        ]
+      ],
+      "bodyParameters": [
+        [
+          "Schema",
+          {
+            "ParameterList": []
+          }
+        ]
+      ],
+      "headerParameters": [
+        [
+          "Schema",
+          {
+            "ParameterList": []
+          }
+        ],
+        [
+          "DictionaryCustomPayload",
+          {
+            "ParameterList": []
+          }
+        ]
+      ],
+      "token": "Refreshable",
+      "headers": [
+        [
+          "Accept",
+          "application/json"
+        ],
+        [
+          "Host",
+          "localhost:8008"
+        ]
+      ],
+      "httpVersion": "1.1",
+      "requestMetadata": {
+        "isLongRunningOperation": false
+      }
+    },
+    {
+      "id": {
+        "endpoint": "/_matrix/client/v3/user/{userId}/rooms/{roomId}/tags/{tag}",
+        "method": "Put"
+      },
+      "method": "Put",
+      "basePath": "",
+      "path": [
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "_matrix"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "client"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "v3"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "user"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Fuzzable": {
+            "primitiveType": "String",
+            "defaultValue": "fuzzstring",
+            "exampleValue": "@alice:example.com"
+          }
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "rooms"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Fuzzable": {
+            "primitiveType": "String",
+            "defaultValue": "fuzzstring",
+            "exampleValue": "!726s6s6q:example.com"
+          }
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "tags"
+          ]
+        },
+        {
+          "Constant": [
+            "String",
+            "/"
+          ]
+        },
+        {
+          "Custom": {
+            "payloadType": "UuidSuffix",
+            "primitiveType": "String",
+            "payloadValue": "tag",
+            "isObject": false
+          }
+        }
+      ],
+      "queryParameters": [
+        [
+          "Schema",
+          {
+            "ParameterList": []
+          }
+        ]
+      ],
+      "bodyParameters": [
+        [
+          "Schema",
+          {
+            "ParameterList": [
+              {
+                "name": "__body__",
+                "payload": {
+                  "InternalNode": [
+                    {
+                      "name": "",
+                      "propertyType": "Object",
+                      "isRequired": true,
+                      "isReadOnly": false
+                    },
+                    [
+                      {
+                        "LeafNode": {
+                          "name": "order",
+                          "payload": {
+                            "Fuzzable": {
+                              "primitiveType": "Number",
+                              "defaultValue": "1.23",
+                              "exampleValue": "0.25"
+                            }
+                          },
+                          "isRequired": false,
+                          "isReadOnly": false
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      ],
+      "headerParameters": [
+        [
+          "Schema",
+          {
+            "ParameterList": []
+          }
+        ],
+        [
+          "DictionaryCustomPayload",
+          {
+            "ParameterList": [
+              {
+                "name": "Content-Type",
+                "payload": {
+                  "LeafNode": {
+                    "name": "",
+                    "payload": {
+                      "Constant": [
+                        "String",
+                        "application/json"
+                      ]
+                    },
+                    "isRequired": true,
+                    "isReadOnly": false
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      ],
+      "token": "Refreshable",
+      "headers": [
+        [
+          "Accept",
+          "application/json"
+        ],
+        [
+          "Host",
+          "localhost:8008"
         ]
       ],
       "httpVersion": "1.1",

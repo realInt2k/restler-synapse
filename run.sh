@@ -11,7 +11,7 @@ case "$1" in
         -v $(pwd)/restler-work:/work \
         -w /work \
         restler \
-        /RESTler/restler/Restler compile --api_spec /data/swagger.json
+        /RESTler/restler/Restler compile --api_spec /data/room-api.json
     ;;
   
   test)

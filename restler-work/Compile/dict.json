@@ -29,7 +29,12 @@
   ],
   "restler_custom_payload": {},
   "restler_custom_payload_unquoted": {},
-  "restler_custom_payload_uuid4_suffix": {},
+  "restler_custom_payload_uuid4_suffix": {
+    "roomAlias": "roomalias",
+    "roomId": "roomid",
+    "sessionId": "sessionid",
+    "tag": "tag"
+  },
   "restler_custom_payload_header": {},
   "restler_custom_payload_query": {}
 }

@@ -1,6 +1,6 @@
 {
   "SwaggerSpecFilePath": [
-    "/data/swagger.json"
+    "/data/room-api.json"
   ],
   "GrammarOutputDirectoryPath": "/work/Compile",
   "CustomDictionaryFilePath": "/work/Compile/defaultDict.json",
