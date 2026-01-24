@@ -1,355 +1,268 @@
 {
-    "openapi": "3.0.2",
-    "info": {
-        "title": "Demo Blog Server",
-        "version": "0.1.0"
-    },
-    "servers": [
-        {
-            "url": "http://localhost:8888",
-            "description": "Staging environment"
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Matrix Client-Server API - Login",
+    "description": "Matrix Client-Server login endpoint",
+    "version": "r0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8008",
+      "description": "Matrix homeserver",
+      "variables": {
+        "homeserver": {
+          "default": "matrix.example.com"
         }
-    ],
-    "paths": {
-        "/api/blog/posts": {
-            "get": {
-                "summary": "Get Posts",
-                "operationId": "get_posts_api_blog_posts_get",
-                "parameters": [
-                    {
-                        "required": false,
-                        "schema": {
-                            "title": "Page",
-                            "type": "integer",
-                            "default": 10
-                        },
-                        "name": "page",
-                        "in": "query"
-                    },
-                    {
-                        "required": false,
-                        "schema": {
-                            "title": "Per Page",
-                            "type": "integer",
-                            "default": 5
-                        },
-                        "name": "per_page",
-                        "in": "query"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Successful Response",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/PageOfResults"
-                                }
-                            }
-                        }
-                    },
-                    "422": {
-                        "description": "Validation Error",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/HTTPValidationError"
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "post": {
-                "summary": "Create Post",
-                "operationId": "create_post_api_blog_posts_post",
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/BlogPostPublicInput"
-                            }
-                        }
-                    },
-                    "required": true
-                },
-                "responses": {
-                    "201": {
-                        "description": "Successful Response",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/BlogPostPublicInput"
-                                }
-                            }
-                        }
-                    },
-                    "422": {
-                        "description": "Validation Error",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/HTTPValidationError"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/api/blog/posts/{postId}": {
-            "get": {
-                "summary": "Get Blog Post",
-                "operationId": "get_blog_post_api_blog_posts__postId__get",
-                "parameters": [
-                    {
-                        "required": true,
-                        "schema": {
-                            "title": "Postid",
-                            "type": "integer"
-                        },
-                        "name": "postId",
-                        "in": "path"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Successful Response",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/BlogPostPublicInput"
-                                }
-                            }
-                        }
-                    },
-                    "422": {
-                        "description": "Validation Error",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/HTTPValidationError"
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "put": {
-                "summary": "Update Blog Post",
-                "operationId": "update_blog_post_api_blog_posts__postId__put",
-                "parameters": [
-                    {
-                        "required": true,
-                        "schema": {
-                            "title": "Postid",
-                            "type": "integer"
-                        },
-                        "name": "postId",
-                        "in": "path"
-                    }
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/BlogPostInput"
-                            }
-                        }
-                    },
-                    "required": true
-                },
-                "responses": {
-                    "204": {
-                        "description": "Successful Response"
-                    },
-                    "422": {
-                        "description": "Validation Error",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/HTTPValidationError"
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "delete": {
-                "summary": "Delete Blog Post",
-                "operationId": "delete_blog_post_api_blog_posts__postId__delete",
-                "parameters": [
-                    {
-                        "required": true,
-                        "schema": {
-                            "title": "Postid",
-                            "type": "integer"
-                        },
-                        "name": "postId",
-                        "in": "path"
-                    }
-                ],
-                "responses": {
-                    "204": {
-                        "description": "Successful Response"
-                    },
-                    "422": {
-                        "description": "Validation Error",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/HTTPValidationError"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/api/doc": {
-            "get": {
-                "summary": "Root",
-                "operationId": "root_api_doc_get",
-                "responses": {
-                    "200": {
-                        "description": "Successful Response",
-                        "content": {
-                            "application/json": {
-                                "schema": {}
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    },
-    "components": {
-        "schemas": {
-            "BlogPostInput": {
-                "title": "BlogPostInput",
-                "required": [
-                    "body"
-                ],
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "title": "Id",
-                        "type": "integer"
-                    },
-                    "body": {
-                        "title": "Body",
-                        "type": "string"
-                    },
-                    "checksum": {
-                        "title": "Checksum",
-                        "type": "string"
-                    }
-                },
-                "example": {
-                    "id": 22,
-                    "body": "my first blog post",
-                    "checksum": "abcde"
-                }
-            },
-            "BlogPostPublicInput": {
-                "title": "BlogPostPublicInput",
-                "required": [
-                    "id",
-                    "body"
-                ],
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "title": "Id",
-                        "type": "integer"
-                    },
-                    "body": {
-                        "title": "Body",
-                        "type": "string"
-                    }
-                },
-                "example": {
-                    "id": 99,
-                    "body": "my first blog post"
-                }
-            },
-            "HTTPValidationError": {
-                "title": "HTTPValidationError",
-                "type": "object",
-                "properties": {
-                    "detail": {
-                        "title": "Detail",
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/ValidationError"
-                        }
-                    }
-                }
-            },
-            "PageOfResults": {
-                "title": "PageOfResults",
-                "required": [
-                    "items",
-                    "per_page",
-                    "page",
-                    "total"
-                ],
-                "type": "object",
-                "properties": {
-                    "items": {
-                        "title": "Items",
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/BlogPostInput"
-                        }
-                    },
-                    "per_page": {
-                        "title": "Per Page",
-                        "type": "integer"
-                    },
-                    "page": {
-                        "title": "Page",
-                        "type": "integer"
-                    },
-                    "total": {
-                        "title": "Total",
-                        "type": "integer"
-                    }
-                }
-            },
-            "ValidationError": {
-                "title": "ValidationError",
-                "required": [
-                    "loc",
-                    "msg",
-                    "type"
-                ],
-                "type": "object",
-                "properties": {
-                    "loc": {
-                        "title": "Location",
-                        "type": "array",
-                        "items": {
-                            "anyOf": [
-                                {
-                                    "type": "string"
-                                },
-                                {
-                                    "type": "integer"
-                                }
-                            ]
-                        }
-                    },
-                    "msg": {
-                        "title": "Message",
-                        "type": "string"
-                    },
-                    "type": {
-                        "title": "Error Type",
-                        "type": "string"
-                    }
-                }
-            }
-        }
+      }
     }
+  ],
+  "paths": {
+    "/_matrix/client/v3/login": {
+      "post": {
+        "operationId": "login",
+        "summary": "Authenticate user and get access token",
+        "description": "Authenticates the user, and issues an access token.\n\nIf the client does not supply a device_id, the server must auto-generate one.",
+        "tags": [
+          "Authentication"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequest"
+              },
+              "examples": {
+                "password-login": {
+                  "value": {
+                    "type": "m.login.password",
+                    "identifier": {
+                      "type": "m.id.user",
+                      "user": "cheeky_monkey"
+                    },
+                    "password": "ilovebananas",
+                    "initial_device_display_name": "Jungle Phone"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Login successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoginResponse"
+                },
+                "examples": {
+                  "success": {
+                    "value": {
+                      "user_id": "@cheeky_monkey:matrix.org",
+                      "access_token": "abc123",
+                      "device_id": "GHTYAJCE",
+                      "well_known": {
+                        "m.homeserver": {
+                          "base_url": "https://example.org"
+                        },
+                        "m.identity_server": {
+                          "base_url": "https://id.example.org"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request / invalid parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "errcode": "M_UNKNOWN",
+                  "error": "Bad login type."
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden – wrong password / user deactivated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "examples": {
+                  "forbidden": {
+                    "value": {
+                      "errcode": "M_FORBIDDEN",
+                      "error": "Invalid username and/or password"
+                    }
+                  },
+                  "deactivated": {
+                    "value": {
+                      "errcode": "M_USER_DEACTIVATED",
+                      "error": "This account has been deactivated"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests – rate limited",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RateLimitError"
+                },
+                "example": {
+                  "errcode": "M_LIMIT_EXCEEDED",
+                  "error": "Too many requests",
+                  "retry_after_ms": 2000
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+
+  "components": {
+    "schemas": {
+
+      "LoginRequest": {
+        "type": "object",
+        "required": ["type"],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["m.login.password"],
+            "description": "The login type being used"
+          },
+          "identifier": {
+            "$ref": "#/components/schemas/Identifier"
+          },
+          "password": {
+            "type": "string",
+            "description": "Required when type = m.login.password"
+          }
+        }
+      },
+
+      "Identifier": {
+        "type": "object",
+        "required": ["type"],
+        "properties": {
+          "type": {
+            "type": "string",
+	    "enum": ["m.id.user"],
+            "description": "Type of identifier (e.g. m.id.user, m.id.thirdparty, m.id.phone)"
+          },
+          "user": {
+            "type": "string",
+            "description": "Localpart or full MXID when type = m.id.user"
+          }
+        }
+      },
+
+      "LoginResponse": {
+        "type": "object",
+        "required": ["user_id", "access_token", "device_id"],
+        "properties": {
+          "user_id": {
+            "type": "string",
+            "description": "Fully-qualified Matrix user ID"
+          },
+          "access_token": {
+            "type": "string",
+            "description": "Access token for future requests"
+          },
+          "device_id": {
+            "type": "string",
+            "description": "ID of the logged-in device"
+          },
+          "home_server": {
+            "type": "string",
+            "description": "Deprecated – use user_id instead"
+          },
+          "well_known": {
+            "$ref": "#/components/schemas/WellKnown"
+          }
+        }
+      },
+
+      "WellKnown": {
+        "type": "object",
+        "properties": {
+          "m.homeserver": {
+            "$ref": "#/components/schemas/HomeserverInfo"
+          },
+          "m.identity_server": {
+            "$ref": "#/components/schemas/IdentityServerInfo"
+          }
+        }
+      },
+
+      "HomeserverInfo": {
+        "type": "object",
+        "required": ["base_url"],
+        "properties": {
+          "base_url": {
+            "type": "string",
+            "format": "uri",
+            "description": "Base URL for client-server API"
+          }
+        }
+      },
+
+      "IdentityServerInfo": {
+        "type": "object",
+        "properties": {
+          "base_url": {
+            "type": "string",
+            "format": "uri",
+            "description": "Base URL for identity server"
+          }
+        }
+      },
+
+      "Error": {
+        "type": "object",
+        "properties": {
+          "errcode": {
+            "type": "string",
+            "example": "M_FORBIDDEN"
+          },
+          "error": {
+            "type": "string",
+            "example": "Invalid username and/or password"
+          }
+        }
+      },
+
+      "RateLimitError": {
+        "type": "object",
+        "properties": {
+          "errcode": {
+            "type": "string",
+            "example": "M_LIMIT_EXCEEDED"
+          },
+          "error": {
+            "type": "string"
+          },
+          "retry_after_ms": {
+            "type": "integer",
+            "example": 2500
+          }
+        }
+      }
+    }
+  }
 }
