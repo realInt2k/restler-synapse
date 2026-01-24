@@ -1,0 +1,164 @@
+[01/23/2026 20:33:13] Generating grammar...
+[01/23/2026 20:33:13] Getting requests...
+[01/23/2026 20:33:13] Getting dependencies...
+[01/23/2026 20:33:13] Getting path consumers...
+[01/23/2026 20:33:13] Getting query consumers...
+[01/23/2026 20:33:13] Getting header consumers...
+[01/23/2026 20:33:13] Getting body consumers...
+[01/23/2026 20:33:13] Getting producers...
+[01/23/2026 20:33:13] Done processing producers
+[01/23/2026 20:33:13] Compute dependencies
+[01/23/2026 20:33:13] Second pass dependencies for request { endpoint = "/api/blog/posts/{postId}"
+  xMsPath = None
+  method = Get }[01/23/2026 20:33:13] Second pass dependencies for request { endpoint = "/api/doc"
+  xMsPath = None
+  method = Get }
+[[[01/23/2026 20:33:13] Second pass dependencies for request { endpoint = "/api/blog/posts/{postId}"
+  xMsPath = None
+  method = Delete }01/23/2026 20:33:13] Second pass dependencies for request { endpoint = "/api/blog/posts"
+  xMsPath = None
+  method = Get }
+
+[01/23/2026 20:33:13] Second pass dependencies for request { endpoint = "/api/blog/posts"
+  xMsPath = None
+  method = Post }
+[01/23/2026 20:33:13] Second pass dependencies for request { endpoint = "/api/blog/posts/{postId}"
+  xMsPath = None
+  method = Get }
+
+[01/23/2026 20:33:13] [01/23/2026 20:33:13] Second pass dependencies for request { endpoint = "/api/blog/posts"
+  xMsPath = None
+  method = Get }
+Second pass dependencies for request { endpoint = "/api/doc"
+  xMsPath = None
+  method = Get }
+[01/23/2026 20:33:13] Second pass dependencies for request { endpoint = "/api/blog/posts/{postId}"
+  xMsPath = None
+  method = Put }
+01/23/2026 20:33:13] Second pass dependencies for request { endpoint = "/api/blog/posts"
+  xMsPath = None
+  method = Post }
+[01/23/2026 20:33:13] Second pass dependencies for request { endpoint = "/api/blog/posts/{postId}"
+  xMsPath = None
+  method = Delete }
+[[[01/23/2026 20:33:13] Done dependencies for request { endpoint = "/api/blog/posts"
+  xMsPath = None
+  method = Get }
+01/23/2026 20:33:13] Done dependencies for request { endpoint = "/api/blog/posts/{postId}"
+  xMsPath = None
+  method = Get }
+01/23/2026 20:33:13] Done dependencies for request { endpoint = "/api/blog/posts/{postId}"
+  xMsPath = None
+  method = Get }
+[01/23/2026 20:33:13] Done dependencies for request { endpoint = "/api/blog/posts"
+  xMsPath = None
+  method = Post }
+[01/23/2026 20:33:13] Done dependencies for request { endpoint = "/api/blog/posts"
+  xMsPath = None
+  method = Get }[01/23/2026 20:33:13] Done dependencies for request { endpoint = "/api/blog/posts/{postId}"
+  xMsPath = None
+  method = Delete }
+[01/23/2026 20:33:13] Done dependencies for request { endpoint = "/api/blog/posts/{postId}"
+  xMsPath = None
+  method = Put }
+
+[01/23/2026 20:33:13] Second pass dependencies for request { endpoint = "/api/doc"
+  xMsPath = None
+  method = Get }
+[01/23/2026 20:33:13] Done dependencies for request { endpoint = "/api/doc"
+  xMsPath = None
+  method = Get }
+[01/23/2026 20:33:13] Done dependencies for request { endpoint = "/api/blog/posts/{postId}"
+  xMsPath = None
+  method = Delete }
+[01/23/2026 20:33:13] Done dependencies for request { endpoint = "/api/doc"
+  xMsPath = None
+  method = Get }
+[01/23/2026 20:33:13] Done dependencies for request { endpoint = "/api/blog/posts"
+  xMsPath = None
+  method = Post }
+[01/23/2026 20:33:13] Second pass dependencies for request { endpoint = "/api/blog/posts"
+  xMsPath = None
+  method = Post }
+[01/23/2026 20:33:13] Second pass dependencies for request { endpoint = "/api/blog/posts/{postId}"
+  xMsPath = None
+  method = Get }
+[01/23/2026 20:33:13] Second pass dependencies for request { endpoint = "/api/blog/posts"
+  xMsPath = None
+  method = Get }
+[01/23/2026 20:33:13] Second pass dependencies for request { endpoint = "/api/blog/posts/{postId}"
+  xMsPath = None
+  method = Delete }
+[01/23/2026 20:33:13] Second pass dependencies for request { endpoint = "/api/blog/posts/{postId}"
+  xMsPath = None
+  method = Put }
+[01/23/2026 20:33:13] Second pass dependencies for request { endpoint = "/api/doc"
+  xMsPath = None
+  method = Get }
+[01/23/2026 20:33:13] Done dependencies for request { endpoint = "/api/doc"
+  xMsPath = None
+  method = Get }
+[01/23/2026 20:33:13] Done dependencies for request { endpoint = "/api/blog/posts"
+  xMsPath = None
+  method = Get }
+[01/23/2026 20:33:13[01/23/2026 20:33:13] Done dependencies for request { endpoint = "/api/blog/posts/{postId}"
+  xMsPath = None
+  method = Get }
+] Done dependencies for request { endpoint = "/api/blog/posts"
+  xMsPath = None
+  method = Post }
+[01/23/2026 20:33:13] Done dependencies for request { endpoint = "/api/blog/posts/{postId}"
+  xMsPath = None
+  method = Delete }
+[01/23/2026 20:33:13[] Done dependencies for request { endpoint = "/api/blog/posts/{postId}"
+  xMsPath = None
+  method = Put }
+01/23/2026 20:33:13] Done dependencies for request { endpoint = "/api/doc"
+  xMsPath = None
+  method = Get }
+[01/23/2026 20:33:13] Second pass dependencies for request { endpoint = "/api/blog/posts/{postId}"
+  xMsPath = None
+  method = Delete }
+[01/23/2026 20:33:13] Second pass dependencies for request { endpoint = "/api/blog/posts"
+  xMsPath = None
+  method = Get }
+[01/23/2026 20:33:13] Second pass dependencies for request { endpoint = "/api/blog/posts/{postId}"
+  xMsPath = None
+  method = Get }
+[01/23/2026 20:33:13] Second pass dependencies for request { endpoint = "/api/blog/posts"
+  xMsPath = None
+  method = Post }
+[01/23/2026 20:33:13] Done dependencies for request { endpoint = "/api/blog/posts/{postId}"
+  xMsPath = None
+  method = Delete }
+[01/23/2026 20:33:13] Done dependencies for request { endpoint = "/api/blog/posts/{postId}"
+  xMsPath = None
+  method = Get }
+[01/23/2026 20:33:13] Done dependencies for request { endpoint = "/api/blog/posts"
+  xMsPath = None
+  method = Get }
+[01/23/2026 20:33:13] Second pass dependencies for request { endpoint = "/api/blog/posts/{postId}"
+  xMsPath = None
+  method = Put }
+[01/23/2026 20:33:13] Done dependencies for request { endpoint = "/api/blog/posts"
+  xMsPath = None
+  method = Post }
+[01/23/2026 20:33:13] Done dependencies for request { endpoint = "/api/blog/posts/{postId}"
+  xMsPath = None
+  method = Put }
+[01/23/2026 20:33:13] Second pass dependencies for request { endpoint = "/api/blog/posts/{postId}"
+  xMsPath = None
+  method = Put }
+[01/23/2026 20:33:13] Done dependencies for request { endpoint = "/api/blog/posts/{postId}"
+  xMsPath = None
+  method = Put }
+[01/23/2026 20:33:13] Assigning equality constraints...
+[01/23/2026 20:33:13] Getting ordering constraints...
+[01/23/2026 20:33:13] Dependency analysis completed.
+[01/23/2026 20:33:13] Generating request primitives...
+Writing new dictionary to /work/Compile/dict.json
+[01/23/2026 20:33:13] Generating python grammar...
+[01/23/2026 20:33:13] Get requests
+[01/23/2026 20:33:13] Done get requests
+[01/23/2026 20:33:13] Done generating python grammar.
+Workflow completed.  See /work/Compile for REST-ler grammar.

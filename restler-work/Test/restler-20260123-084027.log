@@ -1,0 +1,36 @@
+Restler Information: 0 : Starting task Test...
+    DateTime=2026-01-23T20:40:27.7243293Z
+Restler Information: 0 : Launching 'python --version'
+    DateTime=2026-01-23T20:40:27.8906778Z
+Restler Information: 0 : Launching 'python3 --version'
+    DateTime=2026-01-23T20:40:27.8907289Z
+Restler Information: 0 : Process execution terminated in 00:00:00.0067281 with exit code 0x0: 'python --version'
+    DateTime=2026-01-23T20:40:27.9014198Z
+Restler Information: 0 : Process execution terminated in 00:00:00.0067040 with exit code 0x0: 'python3 --version'
+    DateTime=2026-01-23T20:40:27.9014436Z
+Restler Information: 0 : (22) python3 --version exited with code: 0
+    DateTime=2026-01-23T20:40:27.9046780Z
+Restler Information: 0 : (21) python --version exited with code: 0
+    DateTime=2026-01-23T20:40:27.9046980Z
+Restler Information: 0 : Launching 'python3 -B "/RESTler/restler/../engine/restler.py" --restler_grammar "/work/Compile/grammar.py" --custom_mutations "/work/Compile/dict.json" --set_version 9.3.1    --no_ssl   --settings "/work/Compile/engine_settings.json"     --include_user_agent --no_tokens_in_logs t --garbage_collection_interval 30 --fuzzing_mode directed-smoke-test'
+    DateTime=2026-01-23T20:40:27.9133330Z
+Restler Information: 0 : Process execution terminated in 00:00:00.7917343 with exit code 0x0: 'python3 -B "/RESTler/restler/../engine/restler.py" --restler_grammar "/work/Compile/grammar.py" --custom_mutations "/work/Compile/dict.json" --set_version 9.3.1    --no_ssl   --settings "/work/Compile/engine_settings.json"     --include_user_agent --no_tokens_in_logs t --garbage_collection_interval 30 --fuzzing_mode directed-smoke-test'
+    DateTime=2026-01-23T20:40:28.7051831Z
+Restler Information: 0 : (30) python3 -B "/RESTler/restler/../engine/restler.py" --restler_grammar "/work/Compile/grammar.py" --custom_mutations "/work/Compile/dict.json" --set_version 9.3.1    --no_ssl   --settings "/work/Compile/engine_settings.json"     --include_user_agent --no_tokens_in_logs t --garbage_collection_interval 30 --fuzzing_mode directed-smoke-test exited with code: 0
+    DateTime=2026-01-23T20:40:28.7052991Z
+Restler Information: 0 : Launching 'dotnet "/RESTler/restler/../resultsAnalyzer/Restler.ResultsAnalyzer.dll" analyze "/work/Test" --output_dir "/work/Test/ResponseBuckets" --dictionary_file "/work/Compile/dict.json" --max_instances_per_bucket 10'
+    DateTime=2026-01-23T20:40:28.7109518Z
+Restler Information: 0 : Process execution terminated in 00:00:00.1917820 with exit code 0x0: 'dotnet "/RESTler/restler/../resultsAnalyzer/Restler.ResultsAnalyzer.dll" analyze "/work/Test" --output_dir "/work/Test/ResponseBuckets" --dictionary_file "/work/Compile/dict.json" --max_instances_per_bucket 10'
+    DateTime=2026-01-23T20:40:28.9027951Z
+Restler Information: 0 : (33) dotnet "/RESTler/restler/../resultsAnalyzer/Restler.ResultsAnalyzer.dll" analyze "/work/Test" --output_dir "/work/Test/ResponseBuckets" --dictionary_file "/work/Compile/dict.json" --max_instances_per_bucket 10 exited with code: 0
+    DateTime=2026-01-23T20:40:28.9028244Z
+Restler Information: 0 : Request coverage (successful / total): 6 / 6
+    DateTime=2026-01-23T20:40:28.9711668Z
+Restler Information: 0 : Attempted requests: 6 / 6
+    DateTime=2026-01-23T20:40:28.9711909Z
+Restler Information: 0 : No bugs were found.
+    DateTime=2026-01-23T20:40:28.9721766Z
+Restler Information: 0 : Task Test succeeded.
+    DateTime=2026-01-23T20:40:28.9797371Z
+Restler Information: 0 : Collecting logs...
+    DateTime=2026-01-23T20:40:28.9985227Z

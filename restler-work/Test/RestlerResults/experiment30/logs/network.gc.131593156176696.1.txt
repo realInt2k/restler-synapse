@@ -1,0 +1,16 @@
+2026-01-23 20:40:28.644: Sending: 'DELETE /api/blog/posts/4 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8888\r\nContent-Length: 0\r\nUser-Agent: restler/9.3.1\r\n\r\n'
+
+2026-01-23 20:40:28.649: Received: 'HTTP/1.1 404 Not Found\r\ndate: Fri, 23 Jan 2026 20:40:28 GMT\r\nserver: uvicorn\r\ncontent-length: 43\r\ncontent-type: application/json\r\n\r\n{"detail":"Blog post with id=4 not found."}'
+
+2026-01-23 20:40:28.652: Sending: 'DELETE /api/blog/posts/3 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8888\r\nContent-Length: 0\r\nUser-Agent: restler/9.3.1\r\n\r\n'
+
+2026-01-23 20:40:28.662: Received: 'HTTP/1.1 204 No Content\r\ndate: Fri, 23 Jan 2026 20:40:28 GMT\r\nserver: uvicorn\r\n\r\n'
+
+2026-01-23 20:40:28.666: Sending: 'DELETE /api/blog/posts/2 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8888\r\nContent-Length: 0\r\nUser-Agent: restler/9.3.1\r\n\r\n'
+
+2026-01-23 20:40:28.675: Received: 'HTTP/1.1 204 No Content\r\ndate: Fri, 23 Jan 2026 20:40:28 GMT\r\nserver: uvicorn\r\n\r\n'
+
+2026-01-23 20:40:28.679: Sending: 'DELETE /api/blog/posts/1 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8888\r\nContent-Length: 0\r\nUser-Agent: restler/9.3.1\r\n\r\n'
+
+2026-01-23 20:40:28.689: Received: 'HTTP/1.1 204 No Content\r\ndate: Fri, 23 Jan 2026 20:40:28 GMT\r\nserver: uvicorn\r\n\r\n'
+

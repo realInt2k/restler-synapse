@@ -1,0 +1,10 @@
+{
+  "failedRequestsCount": 1,
+  "bugCount": 0,
+  "codeCounts": {
+    "400": 1
+  },
+  "errorBuckets": {
+    "(400, 87ae1e92-b654-4e9f-94d3-c20a5ca2c5ac)": 1
+  }
+}

@@ -1,0 +1,72 @@
+{
+    "1950cbddab7726489624c3d346d3426561c921ad_1": {
+        "verb": "GET",
+        "endpoint": "/api/blog/posts",
+        "valid": 0,
+        "matching_prefix": [],
+        "request": "GET /api/blog/posts?page=1&per_page=1 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8888\r\n\r\n",
+        "response": "HTTP/1.1 400 Bad Request\r\ndate: Fri, 23 Jan 2026 20:40:27 GMT\r\nserver: uvicorn\r\ncontent-length: 41\r\ncontent-type: application/json\r\n\r\n{\"detail\":\"per_page must be at least 2.\"}"
+    },
+    "1950cbddab7726489624c3d346d3426561c921ad_2": {
+        "verb": "GET",
+        "endpoint": "/api/blog/posts",
+        "valid": 1,
+        "matching_prefix": [],
+        "request": "GET /api/blog/posts HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8888\r\n\r\n",
+        "response": "HTTP/1.1 200 OK\r\ndate: Fri, 23 Jan 2026 20:40:27 GMT\r\nserver: uvicorn\r\ncontent-length: 45\r\ncontent-type: application/json\r\n\r\n{\"items\":[],\"per_page\":5,\"page\":10,\"total\":0}"
+    },
+    "4fc287fccdb64d22a7d070386dacdde9207540d0_1": {
+        "verb": "POST",
+        "endpoint": "/api/blog/posts",
+        "valid": 1,
+        "matching_prefix": [],
+        "request": "POST /api/blog/posts HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8888\r\nContent-Type: application/json\r\n\r\n{\n    \"id\":99,\n    \"body\":\"my first blog post\"}\r\n",
+        "response": "HTTP/1.1 201 Created\r\ndate: Fri, 23 Jan 2026 20:40:27 GMT\r\nserver: uvicorn\r\ncontent-length: 36\r\ncontent-type: application/json\r\n\r\n{\"id\":1,\"body\":\"my first blog post\"}"
+    },
+    "b6c2efcdc1799e1e6a48374d29a3c2b594bea52c_1": {
+        "verb": "GET",
+        "endpoint": "/api/doc",
+        "valid": 1,
+        "matching_prefix": [],
+        "request": "GET /api/doc HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8888\r\n\r\n",
+        "response": "HTTP/1.1 200 OK\r\ndate: Fri, 23 Jan 2026 20:40:27 GMT\r\nserver: uvicorn\r\ncontent-length: 30\r\ncontent-type: application/json\r\n\r\n{\"message\":\"this is the docs\"}"
+    },
+    "3cdc49380f5bafe726c625d93ca3d38d271808f5_1__1": {
+        "verb": "GET",
+        "endpoint": "/api/blog/posts/{postId}",
+        "valid": 1,
+        "matching_prefix": [
+            {
+                "id": "4fc287fccdb64d22a7d070386dacdde9207540d0_1",
+                "valid": 1
+            }
+        ],
+        "request": "GET /api/blog/posts/2 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8888\r\n\r\n",
+        "response": "HTTP/1.1 200 OK\r\ndate: Fri, 23 Jan 2026 20:40:27 GMT\r\nserver: uvicorn\r\ncontent-length: 36\r\ncontent-type: application/json\r\n\r\n{\"id\":2,\"body\":\"my first blog post\"}"
+    },
+    "67e6114625784b6f417b8bf1b54f2785f3877ab6_1__1": {
+        "verb": "PUT",
+        "endpoint": "/api/blog/posts/{postId}",
+        "valid": 1,
+        "matching_prefix": [
+            {
+                "id": "4fc287fccdb64d22a7d070386dacdde9207540d0_1",
+                "valid": 1
+            }
+        ],
+        "request": "PUT /api/blog/posts/3 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8888\r\nContent-Type: application/json\r\n\r\n{\n    \"id\":3,\n    \"body\":\"my first blog post\",\n    \"checksum\":\"abcde\"}\r\n",
+        "response": "HTTP/1.1 204 No Content\r\ndate: Fri, 23 Jan 2026 20:40:28 GMT\r\nserver: uvicorn\r\n\r\n"
+    },
+    "78e06fccfed50bd52918df57068206e977b23d96_1__1": {
+        "verb": "DELETE",
+        "endpoint": "/api/blog/posts/{postId}",
+        "valid": 1,
+        "matching_prefix": [
+            {
+                "id": "4fc287fccdb64d22a7d070386dacdde9207540d0_1",
+                "valid": 1
+            }
+        ],
+        "request": "DELETE /api/blog/posts/4 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8888\r\n\r\n",
+        "response": "HTTP/1.1 204 No Content\r\ndate: Fri, 23 Jan 2026 20:40:28 GMT\r\nserver: uvicorn\r\n\r\n"
+    }}

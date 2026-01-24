@@ -1,0 +1,25 @@
+{
+  "400": {
+    "87ae1e92-b654-4e9f-94d3-c20a5ca2c5ac": [
+      {
+        "request": {
+          "RequestData": {
+            "method": "GET",
+            "path": "/api/blog/posts",
+            "query": "page=1&per_page=1",
+            "body": ""
+          }
+        },
+        "response": {
+          "ResponseData": {
+            "code": 400,
+            "codeDescription": "Bad Request",
+            "content": "{\"detail\":\"per_page must be at least 2.\"}",
+            "isFailure": true,
+            "isBug": false
+          }
+        }
+      }
+    ]
+  }
+}
