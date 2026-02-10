@@ -1,0 +1,888 @@
+{
+    "components": {
+        "securitySchemes": {
+            "accessTokenBearer": {
+                "description": "The `access_token` obtained during [account registration](https://spec.matrix.org/v1.17/client-server-api/#account-registration)\nor [login](https://spec.matrix.org/v1.17/client-server-api/#login), using the `Authorization: Bearer` header.\n\nIt can also be the `as_token` of an application service.\n\nThis is the preferred method.",
+                "scheme": "bearer",
+                "type": "http"
+            },
+            "accessTokenQuery": {
+                "description": "**Deprecated.** The `access_token` obtained during [account registration](https://spec.matrix.org/v1.17/client-server-api/#account-registration)\nor [login](https://spec.matrix.org/v1.17/client-server-api/#login), as a query parameter.\n\nIt can also be the `as_token` of an application service.",
+                "in": "query",
+                "name": "access_token",
+                "type": "apiKey"
+            },
+            "appserviceAccessTokenBearer": {
+                "description": "The `as_token` of an application service, using the `Authorization: Bearer`\nheader.\n\nThis is the preferred method.",
+                "scheme": "bearer",
+                "type": "http"
+            },
+            "appserviceAccessTokenQuery": {
+                "description": "**Deprecated.** The `as_token` of an application service, as a query\nparameter.",
+                "in": "query",
+                "name": "access_token",
+                "type": "apiKey"
+            }
+        }
+    },
+    "info": {
+        "title": "Matrix Client-Server API",
+        "version": "v1.17"
+    },
+    "openapi": "3.1.0",
+    "servers": [
+        {
+            "url": "http://localhost:8008"
+        },
+        {
+            "url": "http://localhost:8008",
+            "variables": {
+                "homeserver_address": {
+                    "default": "localhost:8008",
+                    "description": "The base URL for your homeserver"
+                }
+            }
+        }
+    ],
+    "paths": {
+        "/_matrix/client/v1/room_summary/{roomIdOrAlias}": {
+            "get": {
+                "description": "Retrieves a summary for a room.\n\nClients should note that requests for rooms where the user's membership\nis `invite` or `knock` might yield outdated, partial or even no data\nsince the server may not have access to the current state of the room.\n\nServers MAY allow unauthenticated access to this API if at least one of\nthe following conditions holds true:\n\n- The room has a [join rule](#mroomjoin_rules) of `public`, `knock` or\n  `knock_restricted`.\n- The room has a `world_readable` [history visibility](#room-history-visibility).\n\nServers should consider rate limiting requests that require a federation\nrequest more heavily if the client is unauthenticated.",
+                "operationId": "getRoomSummary",
+                "parameters": [
+                    {
+                        "description": "The room identifier or alias to summarise.",
+                        "example": "#monkeys:matrix.org",
+                        "in": "path",
+                        "name": "roomIdOrAlias",
+                        "required": true,
+                        "schema": {
+                            "oneOf": [
+                                {
+                                    "format": "mx-room-id",
+                                    "pattern": "^!",
+                                    "type": "string"
+                                },
+                                {
+                                    "format": "mx-room-alias",
+                                    "pattern": "^#",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "description": "The servers to attempt to request the summary from when\nthe local server cannot generate it (for instance, because\nit has no local user in the room).",
+                        "example": [
+                            "matrix.org",
+                            "elsewhere.ca"
+                        ],
+                        "in": "query",
+                        "name": "via",
+                        "schema": {
+                            "items": {
+                                "format": "mx-server-name",
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "examples": {
+                                    "response": {
+                                        "value": {
+                                            "avatar_url": "mxc://bleecker.street/CHEDDARandBRIE",
+                                            "encryption": "m.megolm.v1.aes-sha2",
+                                            "guest_can_join": false,
+                                            "join_rule": "public",
+                                            "membership": "invite",
+                                            "name": "CHEESE",
+                                            "num_joined_members": 37,
+                                            "room_id": "!ol19s:bleecker.street",
+                                            "room_type": "m.space",
+                                            "room_version": "9001",
+                                            "topic": "Tasty tasty cheese",
+                                            "world_readable": true
+                                        }
+                                    }
+                                },
+                                "schema": {
+                                    "allOf": [
+                                        {
+                                            "allOf": [
+                                                {
+                                                    "properties": {
+                                                        "avatar_url": {
+                                                            "description": "The URL for the room's avatar, if one is set.",
+                                                            "example": "mxc://example.org/abcdef",
+                                                            "format": "uri",
+                                                            "type": "string"
+                                                        },
+                                                        "canonical_alias": {
+                                                            "description": "The canonical alias of the room, if any.",
+                                                            "example": "#general:example.org",
+                                                            "format": "mx-room-alias",
+                                                            "pattern": "^#",
+                                                            "type": "string"
+                                                        },
+                                                        "guest_can_join": {
+                                                            "description": "Whether guest users may join the room and participate in it.\nIf they can, they will be subject to ordinary power level\nrules like any other user.",
+                                                            "example": true,
+                                                            "type": "boolean"
+                                                        },
+                                                        "join_rule": {
+                                                            "description": "The room's join rule. When not present, the room is assumed to\nbe `public`.",
+                                                            "example": "public",
+                                                            "type": "string"
+                                                        },
+                                                        "name": {
+                                                            "description": "The name of the room, if any.",
+                                                            "example": "General Chat",
+                                                            "type": "string"
+                                                        },
+                                                        "num_joined_members": {
+                                                            "description": "The number of members joined to the room.",
+                                                            "example": 42,
+                                                            "type": "integer"
+                                                        },
+                                                        "room_id": {
+                                                            "description": "The ID of the room.",
+                                                            "example": "!abcdefg:example.org",
+                                                            "format": "mx-room-id",
+                                                            "pattern": "^!",
+                                                            "type": "string"
+                                                        },
+                                                        "room_type": {
+                                                            "description": "The `type` of room (from [`m.room.create`](https://spec.matrix.org/v1.17/client-server-api/#mroomcreate)), if any.",
+                                                            "type": "string"
+                                                        },
+                                                        "topic": {
+                                                            "description": "The plain text topic of the room. Omitted if no `text/plain` mimetype\nexists in [`m.room.topic`](https://spec.matrix.org/v1.17/client-server-api/#mroomtopic).",
+                                                            "example": "All things general",
+                                                            "type": "string"
+                                                        },
+                                                        "world_readable": {
+                                                            "description": "Whether the room may be viewed by users without joining.",
+                                                            "example": false,
+                                                            "type": "boolean"
+                                                        }
+                                                    },
+                                                    "required": [
+                                                        "room_id",
+                                                        "num_joined_members",
+                                                        "world_readable",
+                                                        "guest_can_join"
+                                                    ],
+                                                    "title": "PublishedRoomsChunk",
+                                                    "type": "object"
+                                                },
+                                                {
+                                                    "properties": {
+                                                        "allowed_room_ids": {
+                                                            "description": "If the room is a [restricted room](https://spec.matrix.org/v1.17/server-server-api/#restricted-rooms), these are the room IDs which\nare specified by the join rules. Empty or omitted otherwise.",
+                                                            "items": {
+                                                                "format": "mx-room-id",
+                                                                "pattern": "^!",
+                                                                "type": "string"
+                                                            },
+                                                            "type": "array"
+                                                        },
+                                                        "encryption": {
+                                                            "description": "The encryption algorithm to be used to encrypt messages sent in the\nroom.",
+                                                            "enum": [
+                                                                "m.megolm.v1.aes-sha2"
+                                                            ],
+                                                            "type": "string"
+                                                        },
+                                                        "room_type": {
+                                                            "description": "The `type` of room (from [`m.room.create`](https://spec.matrix.org/v1.17/client-server-api/#mroomcreate)), if any.",
+                                                            "type": "string"
+                                                        },
+                                                        "room_version": {
+                                                            "description": "The version of the room.",
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                }
+                                            ],
+                                            "title": "RoomSummary",
+                                            "type": "object"
+                                        },
+                                        {
+                                            "properties": {
+                                                "membership": {
+                                                    "description": "The membership state of the user if the user is joined to the room. Absent\nif the API was called unauthenticated.",
+                                                    "enum": [
+                                                        "invite",
+                                                        "join",
+                                                        "knock",
+                                                        "leave",
+                                                        "ban"
+                                                    ],
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    ],
+                                    "description": "A summary of the room."
+                                }
+                            }
+                        },
+                        "description": "A summary of the room."
+                    },
+                    "404": {
+                        "content": {
+                            "application/json": {
+                                "examples": {
+                                    "response": {
+                                        "value": {
+                                            "errcode": "M_NOT_FOUND",
+                                            "error": "Room not found."
+                                        }
+                                    }
+                                },
+                                "schema": {
+                                    "description": "A Matrix-level Error",
+                                    "properties": {
+                                        "errcode": {
+                                            "description": "An error code.",
+                                            "example": "M_UNKNOWN",
+                                            "type": "string"
+                                        },
+                                        "error": {
+                                            "description": "A human-readable error message.",
+                                            "example": "An unknown error occurred",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "errcode"
+                                    ],
+                                    "title": "Error",
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "description": "The room could not be found."
+                    }
+                },
+                "security": [
+                    {
+                        "signedRequest": []
+                    }
+                ],
+                "summary": "Retrieves a summary for a room.",
+                "x-addedInMatrixVersion": "1.15"
+            }
+        },
+        "/_matrix/client/v3/createRoom": {
+            "post": {
+                "description": "Create a new room with various configuration options.\n\nThe server MUST apply the normal state resolution rules when creating\nthe new room, including checking power levels for each event. It MUST\napply the events implied by the request in the following order:\n\n1. The `m.room.create` event itself. Must be the first event in the\n   room.\n\n2. An `m.room.member` event for the creator to join the room. This is\n   needed so the remaining events can be sent.\n\n3. A default `m.room.power_levels` event. Overridden by the\n   `power_level_content_override` parameter.\n\n   In [room versions](https://spec.matrix.org/v1.17/rooms) 1 through 11, the room creator (and not\n   other members) will be given permission to send state events.\n\n   In room versions 12 and later, the room creator is given infinite\n   power level and cannot be specified in the `users` field of\n   `m.room.power_levels`, so is not listed explicitly.\n\n   **Note**: For `trusted_private_chat`, the users specified in the\n   `invite` parameter SHOULD also be appended to `additional_creators`\n   by the server, per the `creation_content` parameter.\n\n   If the room's version is 12 or higher, the power level for sending\n   `m.room.tombstone` events MUST explicitly be higher than `state_default`.\n   For example, set to 150 instead of 100.\n\n4. An `m.room.canonical_alias` event if `room_alias_name` is given.\n\n5. Events set by the `preset`. Currently these are the `m.room.join_rules`,\n   `m.room.history_visibility`, and `m.room.guest_access` state events.\n\n6. Events listed in `initial_state`, in the order that they are\n   listed.\n\n7. Events implied by `name` and `topic` (`m.room.name` and `m.room.topic`\n   state events).\n\n8. Invite events implied by `invite` and `invite_3pid` (`m.room.member` with\n   `membership: invite` and `m.room.third_party_invite`).\n\nThe available presets do the following with respect to room state:\n\n| Preset                 | `join_rules` | `history_visibility` | `guest_access` | Other |\n|------------------------|--------------|----------------------|----------------|-------|\n| `private_chat`         | `invite`     | `shared`             | `can_join`     |       |\n| `trusted_private_chat` | `invite`     | `shared`             | `can_join`     | All invitees are given the same power level as the room creator. |\n| `public_chat`          | `public`     | `shared`             | `forbidden`    |       |\n\nThe server will create a `m.room.create` event in the room with the\nrequesting user as the creator, alongside other keys provided in the\n`creation_content` or implied by behaviour of `creation_content`.",
+                "operationId": "createRoom",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "example": {
+                                    "creation_content": {
+                                        "m.federate": false
+                                    },
+                                    "name": "The Grand Duke Pub",
+                                    "preset": "public_chat",
+                                    "room_alias_name": "thepub",
+                                    "topic": "All about happy hour"
+                                },
+                                "properties": {
+                                    
+                                    "topic": {
+                                        "description": "If this is included, an [`m.room.topic`](https://spec.matrix.org/v1.17/client-server-api/#mroomtopic)\nevent with a `text/plain` mimetype will be sent into the room\nto indicate the topic for the room. This overwrites any\n[`m.room.topic`](https://spec.matrix.org/v1.17/client-server-api/#mroomtopic) event in `initial_state`.",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    },
+                    "description": "The desired room configuration.",
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "examples": {
+                                    "response": {
+                                        "value": {
+                                            "room_id": "!sefiuhWgwghwWgh:example.com"
+                                        }
+                                    }
+                                },
+                                "schema": {
+                                    "description": "Information about the newly created room.",
+                                    "properties": {
+                                        "room_id": {
+                                            "description": "The created room's ID.",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "room_id"
+                                    ],
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "description": "Information about the newly created room."
+                    },
+                    "400": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "A Matrix-level Error",
+                                    "properties": {
+                                        "errcode": {
+                                            "description": "An error code.",
+                                            "example": "M_UNKNOWN",
+                                            "type": "string"
+                                        },
+                                        "error": {
+                                            "description": "A human-readable error message.",
+                                            "example": "An unknown error occurred",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "errcode"
+                                    ],
+                                    "title": "Error",
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "description": "\nThe request is invalid. A meaningful `errcode` and description\nerror text will be returned. Example reasons for rejection include:\n\n- The request body is malformed (`errcode` set to `M_BAD_JSON`\n  or `M_NOT_JSON`).\n\n- The room alias specified is already taken (`errcode` set to\n  `M_ROOM_IN_USE`).\n\n- The initial state implied by the parameters to the request is\n  invalid: for example, the user's `power_level` is set below\n  that necessary to set the room name (`errcode` set to\n  `M_INVALID_ROOM_STATE`).\n\n- The homeserver doesn't support the requested room version, or\n  one or more users being invited to the new room are residents\n  of a homeserver which does not support the requested room version.\n  The `errcode` will be `M_UNSUPPORTED_ROOM_VERSION` in these\n  cases."
+                    }
+                },
+                "security": [
+                    {
+                        "accessTokenQuery": []
+                    },
+                    {
+                        "accessTokenBearer": []
+                    }
+                ],
+                "summary": "Create a new room",
+                "tags": [
+                    "Room creation"
+                ],
+                "x-changedInMatrixVersion": {
+                    "1.16": "Added server behaviour for how the initial power levels change depending on room version."
+                }
+            }
+        },
+        "/_matrix/client/v3/directory/room/{roomAlias}": {
+            "delete": {
+                "description": "Remove a mapping of room alias to room ID.\n\nServers may choose to implement additional access control checks here, for instance that\nroom aliases can only be deleted by their creator or a server administrator.\n\n**Note:**\nServers may choose to update the `alt_aliases` for the `m.room.canonical_alias`\nstate event in the room when an alias is removed. Servers which choose to update the\ncanonical alias event are recommended to, in addition to their other relevant permission\nchecks, delete the alias and return a successful response even if the user does not\nhave permission to update the `m.room.canonical_alias` event.",
+                "operationId": "deleteRoomAlias",
+                "parameters": [
+                    {
+                        "description": "The room alias to remove. Its format is defined\n[in the appendices](https://spec.matrix.org/v1.17/appendices/#room-aliases).\n",
+                        "example": "#monkeys:matrix.org",
+                        "in": "path",
+                        "name": "roomAlias",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "examples": {
+                                    "response": {
+                                        "value": {}
+                                    }
+                                },
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "description": "The mapping was deleted."
+                    },
+                    "404": {
+                        "content": {
+                            "application/json": {
+                                "examples": {
+                                    "response": {
+                                        "value": {
+                                            "errcode": "M_NOT_FOUND",
+                                            "error": "Room alias #monkeys:example.org not found."
+                                        }
+                                    }
+                                },
+                                "schema": {
+                                    "description": "A Matrix-level Error",
+                                    "properties": {
+                                        "errcode": {
+                                            "description": "An error code.",
+                                            "example": "M_UNKNOWN",
+                                            "type": "string"
+                                        },
+                                        "error": {
+                                            "description": "A human-readable error message.",
+                                            "example": "An unknown error occurred",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "errcode"
+                                    ],
+                                    "title": "Error",
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "description": "There is no mapped room ID for this room alias."
+                    }
+                },
+                "security": [
+                    {
+                        "accessTokenQuery": []
+                    },
+                    {
+                        "accessTokenBearer": []
+                    }
+                ],
+                "summary": "Remove a mapping of room alias to room ID.",
+                "tags": [
+                    "Room directory"
+                ]
+            },
+            "get": {
+                "description": "Requests that the server resolve a room alias to a room ID.\n\nThe server will use the federation API to resolve the alias if the\ndomain part of the alias does not correspond to the server's own\ndomain.",
+                "operationId": "getRoomIdByAlias",
+                "parameters": [
+                    {
+                        "description": "The room alias. Its format is defined\n[in the appendices](https://spec.matrix.org/v1.17/appendices/#room-aliases).\n",
+                        "example": "#monkeys:matrix.org",
+                        "in": "path",
+                        "name": "roomAlias",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "examples": {
+                                    "response": {
+                                        "value": {
+                                            "room_id": "!abnjk1jdasj98:capuchins.com",
+                                            "servers": [
+                                                "capuchins.com",
+                                                "matrix.org",
+                                                "another.com"
+                                            ]
+                                        }
+                                    }
+                                },
+                                "schema": {
+                                    "properties": {
+                                        "room_id": {
+                                            "description": "The room ID for this room alias.",
+                                            "type": "string"
+                                        },
+                                        "servers": {
+                                            "description": "A list of servers that are aware of this room alias.",
+                                            "items": {
+                                                "description": "A server which is aware of this room alias.",
+                                                "type": "string"
+                                            },
+                                            "type": "array"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "description": "The room ID and other information for this alias."
+                    },
+                    "400": {
+                        "content": {
+                            "application/json": {
+                                "examples": {
+                                    "response": {
+                                        "value": {
+                                            "errcode": "M_INVALID_PARAM",
+                                            "error": "Room alias invalid"
+                                        }
+                                    }
+                                },
+                                "schema": {
+                                    "description": "A Matrix-level Error",
+                                    "properties": {
+                                        "errcode": {
+                                            "description": "An error code.",
+                                            "example": "M_UNKNOWN",
+                                            "type": "string"
+                                        },
+                                        "error": {
+                                            "description": "A human-readable error message.",
+                                            "example": "An unknown error occurred",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "errcode"
+                                    ],
+                                    "title": "Error",
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "description": "The given `roomAlias` is not a valid room alias."
+                    },
+                    "404": {
+                        "content": {
+                            "application/json": {
+                                "examples": {
+                                    "response": {
+                                        "value": {
+                                            "errcode": "M_NOT_FOUND",
+                                            "error": "Room alias #monkeys:matrix.org not found."
+                                        }
+                                    }
+                                },
+                                "schema": {
+                                    "description": "A Matrix-level Error",
+                                    "properties": {
+                                        "errcode": {
+                                            "description": "An error code.",
+                                            "example": "M_UNKNOWN",
+                                            "type": "string"
+                                        },
+                                        "error": {
+                                            "description": "A human-readable error message.",
+                                            "example": "An unknown error occurred",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "errcode"
+                                    ],
+                                    "title": "Error",
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "description": "There is no mapped room ID for this room alias."
+                    }
+                },
+                "summary": "Get the room ID corresponding to this room alias.",
+                "tags": [
+                    "Room directory"
+                ]
+            },
+            "put": {
+                "operationId": "setRoomAlias",
+                "parameters": [
+                    {
+                        "description": "The room alias to set. Its format is defined\n[in the appendices](https://spec.matrix.org/v1.17/appendices/#room-aliases).\n",
+                        "example": "#monkeys:matrix.org",
+                        "in": "path",
+                        "name": "roomAlias",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "example": {
+                                    "room_id": "!abnjk1jdasj98:capuchins.com"
+                                },
+                                "properties": {
+                                    "room_id": {
+                                        "description": "The room ID to set.",
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "room_id"
+                                ],
+                                "type": "object"
+                            }
+                        }
+                    },
+                    "description": "Information about this room alias.",
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "examples": {
+                                    "response": {
+                                        "value": {}
+                                    }
+                                },
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "description": "The mapping was created."
+                    },
+                    "400": {
+                        "content": {
+                            "application/json": {
+                                "examples": {
+                                    "response": {
+                                        "value": {
+                                            "errcode": "M_INVALID_PARAM",
+                                            "error": "Room alias invalid"
+                                        }
+                                    }
+                                },
+                                "schema": {
+                                    "description": "A Matrix-level Error",
+                                    "properties": {
+                                        "errcode": {
+                                            "description": "An error code.",
+                                            "example": "M_UNKNOWN",
+                                            "type": "string"
+                                        },
+                                        "error": {
+                                            "description": "A human-readable error message.",
+                                            "example": "An unknown error occurred",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "errcode"
+                                    ],
+                                    "title": "Error",
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "description": "The given `roomAlias` is not a valid room alias."
+                    },
+                    "409": {
+                        "content": {
+                            "application/json": {
+                                "examples": {
+                                    "response": {
+                                        "value": {
+                                            "errcode": "M_UNKNOWN",
+                                            "error": "Room alias #monkeys:matrix.org already exists."
+                                        }
+                                    }
+                                },
+                                "schema": {
+                                    "description": "A Matrix-level Error",
+                                    "properties": {
+                                        "errcode": {
+                                            "description": "An error code.",
+                                            "example": "M_UNKNOWN",
+                                            "type": "string"
+                                        },
+                                        "error": {
+                                            "description": "A human-readable error message.",
+                                            "example": "An unknown error occurred",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "errcode"
+                                    ],
+                                    "title": "Error",
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "description": "A room alias with that name already exists."
+                    }
+                },
+                "security": [
+                    {
+                        "accessTokenQuery": []
+                    },
+                    {
+                        "accessTokenBearer": []
+                    }
+                ],
+                "summary": "Create a new mapping from room alias to room ID.",
+                "tags": [
+                    "Room directory"
+                ]
+            }
+        },
+        "/_matrix/client/v3/user/{userId}/rooms/{roomId}/tags/{tag}": {
+            "delete": {
+                "description": "Remove a tag from the room.",
+                "operationId": "deleteRoomTag",
+                "parameters": [
+                    {
+                        "description": "The id of the user to remove a tag for. The access token must be\nauthorized to make requests for this user ID.",
+                        "example": "@alice:example.com",
+                        "in": "path",
+                        "name": "userId",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "The ID of the room to remove a tag from.",
+                        "example": "!726s6s6q:example.com",
+                        "in": "path",
+                        "name": "roomId",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "The tag to remove.",
+                        "example": "u.work",
+                        "in": "path",
+                        "name": "tag",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "examples": {
+                                    "response": {
+                                        "value": {}
+                                    }
+                                },
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "description": "The tag was successfully removed."
+                    }
+                },
+                "security": [
+                    {
+                        "accessTokenQuery": []
+                    },
+                    {
+                        "accessTokenBearer": []
+                    }
+                ],
+                "summary": "Remove a tag from the room.",
+                "tags": [
+                    "User data"
+                ]
+            },
+            "put": {
+                "description": "Add a tag to the room.",
+                "operationId": "setRoomTag",
+                "parameters": [
+                    {
+                        "description": "The id of the user to add a tag for. The access token must be\nauthorized to make requests for this user ID.",
+                        "example": "@alice:example.com",
+                        "in": "path",
+                        "name": "userId",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "The ID of the room to add a tag to.",
+                        "example": "!726s6s6q:example.com",
+                        "in": "path",
+                        "name": "roomId",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "The tag to add.",
+                        "example": "u.work",
+                        "in": "path",
+                        "name": "tag",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "order": {
+                                        "description": "A number in a range `[0,1]` describing a relative\nposition of the room under the given tag.",
+                                        "example": 0.25,
+                                        "format": "float",
+                                        "type": "number"
+                                    }
+                                },
+                                "title": "Tag",
+                                "type": "object"
+                            }
+                        }
+                    },
+                    "description": "Extra data for the tag, e.g. ordering.",
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "examples": {
+                                    "response": {
+                                        "value": {}
+                                    }
+                                },
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "description": "The tag was successfully added."
+                    }
+                },
+                "security": [
+                    {
+                        "accessTokenQuery": []
+                    },
+                    {
+                        "accessTokenBearer": []
+                    }
+                ],
+                "summary": "Add a tag to a room.",
+                "tags": [
+                    "User data"
+                ]
+            }
+        }
+    }
+}
