@@ -1,27 +1,16 @@
 {
+    "security": [
+        {
+            "accessTokenBearer": []
+        }
+    ],
     "components": {
         "securitySchemes": {
             "accessTokenBearer": {
-                "description": "The `access_token` obtained during [account registration](https://spec.matrix.org/v1.17/client-server-api/#account-registration)\nor [login](https://spec.matrix.org/v1.17/client-server-api/#login), using the `Authorization: Bearer` header.\n\nIt can also be the `as_token` of an application service.\n\nThis is the preferred method.",
-                "scheme": "bearer",
-                "type": "http"
-            },
-            "accessTokenQuery": {
-                "description": "**Deprecated.** The `access_token` obtained during [account registration](https://spec.matrix.org/v1.17/client-server-api/#account-registration)\nor [login](https://spec.matrix.org/v1.17/client-server-api/#login), as a query parameter.\n\nIt can also be the `as_token` of an application service.",
-                "in": "query",
-                "name": "access_token",
-                "type": "apiKey"
-            },
-            "appserviceAccessTokenBearer": {
-                "description": "The `as_token` of an application service, using the `Authorization: Bearer`\nheader.\n\nThis is the preferred method.",
-                "scheme": "bearer",
-                "type": "http"
-            },
-            "appserviceAccessTokenQuery": {
-                "description": "**Deprecated.** The `as_token` of an application service, as a query\nparameter.",
-                "in": "query",
-                "name": "access_token",
-                "type": "apiKey"
+            "type": "apiKey",
+            "in": "header",
+            "name": "Authorization",
+            "description": "Matrix access token using Authorization: Bearer <token>"
             }
         }
     },
@@ -31,16 +20,16 @@
     },
     "openapi": "3.1.0",
     "paths": {
-        "/_matrix/client/v3/rooms/!AOaLmLFXUOIwuCDMJd%3Alocalhost/send/m.room.message/{txnId}": {
+        "/_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/send/m.room.message/{stupidMeessage}": {
             "put": {
-                "description": "This endpoint is used to send a message event to a room. Message events\nallow access to historical events and pagination, making them suited\nfor \"once-off\" activity in a room.\n\nThe body of the request should be the content object of the event; the\nfields in this object will vary depending on the type of event. See\n[Room Events](https://spec.matrix.org/v1.17/client-server-api/#room-events) for the m. event specification.",
+                "description": "Send msg",
                 "operationId": "sendMessage",
                 "parameters": [
                     {
                         "description": "The [transaction ID](https://spec.matrix.org/v1.17/client-server-api/#transaction-identifiers) for this event. Clients should generate an\nID unique across requests with the same access token; it will be\nused by the server to ensure idempotency of requests.",
                         "example": "35",
                         "in": "path",
-                        "name": "txnId",
+                        "name": "stupidMeessage",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -130,16 +119,15 @@
                 ]
             }
         },
-        "/_matrix/client/v3/rooms/!AOaLmLFXUOIwuCDMJd%3Alocalhost/send/m.reaction/{txnId}": {
+        "/_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/send/m.reaction/{stupidMeessage}": {
             "put": {
-                "description": "This endpoint is used to send a message event to a room. Message events\nallow access to historical events and pagination, making them suited\nfor \"once-off\" activity in a room.\n\nThe body of the request should be the content object of the event; the\nfields in this object will vary depending on the type of event. See\n[Room Events](https://spec.matrix.org/v1.17/client-server-api/#room-events) for the m. event specification.",
-                "operationId": "sendMessage",
+                "description": "reaction",
                 "parameters": [
                     {
                         "description": "The [transaction ID](https://spec.matrix.org/v1.17/client-server-api/#transaction-identifiers) for this event. Clients should generate an\nID unique across requests with the same access token; it will be\nused by the server to ensure idempotency of requests.",
                         "example": "35",
                         "in": "path",
-                        "name": "txnId",
+                        "name": "stupidMeessage",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -232,7 +220,7 @@
                 ]
             }
         },
-        "/_matrix/client/v3/rooms/!AOaLmLFXUOIwuCDMJd%3Alocalhost/redact/{eventId}/{txnId}": {
+        "/_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/redact/{eventId}/{stupidMeessage}": {
             "put": {
                 "description": "Strips all information out of an event which isn't critical to the\nintegrity of the server-side representation of the room.\n\nThis cannot be undone.\n\nAny user with a power level greater than or equal to the `m.room.redaction`\nevent power level may send redactions for their own events in the room. If\nthe user's power level is also greater than or equal to the `redact` power\nlevel of the room, the user may redact events sent by other users.\n\nServer administrators may redact events sent by users on their server.",
                 "operationId": "redactEvent",
@@ -251,7 +239,7 @@
                         "description": "The [transaction ID](https://spec.matrix.org/v1.17/client-server-api/#transaction-identifiers) for this event. Clients should generate a\nunique ID; it will be used by the server to ensure idempotency of requests.",
                         "example": "37",
                         "in": "path",
-                        "name": "txnId",
+                        "name": "stupidMeessage",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -319,16 +307,7 @@
     },
     "servers": [
         {
-            "url": "https://matrix.org"
-        },
-        {
-            "url": "https://{homeserver_address}",
-            "variables": {
-                "homeserver_address": {
-                    "default": "matrix-client.matrix.org",
-                    "description": "The base URL for your homeserver"
-                }
-            }
+            "url": "http://localhost:8008"
         }
     ]
 }

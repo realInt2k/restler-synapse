@@ -1,0 +1,145 @@
+{
+  "400": {
+    "c57d29f0-7ea3-43c3-8c92-b55b1c3e1853": [
+      {
+        "request": {
+          "RequestData": {
+            "method": "PUT",
+            "path": "/_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/send/m.reaction/stupidmees_RANDOM_SUFFIX_ABSTRACTED_",
+            "query": "",
+            "body": "{\"m.relates_to\":{\"rel_type\":\"m.annotation\",\"event_id\":\"$jze-n6g469reZzarAuLF-kQPfgNSMynuDX9otPLe6KI\",\"key\":\"😁\"}}\r\n"
+          }
+        },
+        "response": {
+          "ResponseData": {
+            "code": 400,
+            "codeDescription": "Bad Request",
+            "content": "46\r\n{\"errcode\":\"M_UNKNOWN\",\"error\":\"Can\\'t send relation to unknown event\"}\r\n0\r\n\r\n",
+            "isFailure": true,
+            "isBug": false
+          }
+        }
+      }
+    ]
+  },
+  "404": {
+    "43b0df01-ba84-4b29-972d-6772d7e8aae8": [
+      {
+        "request": {
+          "RequestData": {
+            "method": "PUT",
+            "path": "/_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/redact/fuzzstring/stupidmees_RANDOM_SUFFIX_ABSTRACTED_",
+            "query": "",
+            "body": "{}"
+          }
+        },
+        "response": {
+          "ResponseData": {
+            "code": 404,
+            "codeDescription": "Not Found",
+            "content": "43\r\n{\"errcode\":\"M_NOT_FOUND\",\"error\":\"Could not find event fuzzstring\"}\r\n0\r\n\r\n",
+            "isFailure": true,
+            "isBug": false
+          }
+        }
+      },
+      {
+        "request": {
+          "RequestData": {
+            "method": "PUT",
+            "path": "/_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/redact/fuzzstring/stupidmees_RANDOM_SUFFIX_ABSTRACTED_",
+            "query": "",
+            "body": "{\n    \"reason\":\"fuzzstring\"}\r\n"
+          }
+        },
+        "response": {
+          "ResponseData": {
+            "code": 404,
+            "codeDescription": "Not Found",
+            "content": "43\r\n{\"errcode\":\"M_NOT_FOUND\",\"error\":\"Could not find event fuzzstring\"}\r\n0\r\n\r\n",
+            "isFailure": true,
+            "isBug": false
+          }
+        }
+      },
+      {
+        "request": {
+          "RequestData": {
+            "method": "PUT",
+            "path": "/_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/redact/fuzzstring/stupidmees_RANDOM_SUFFIX_ABSTRACTED_",
+            "query": "",
+            "body": "{\n    \"reason\":\"Indecent material\"}\r\n"
+          }
+        },
+        "response": {
+          "ResponseData": {
+            "code": 404,
+            "codeDescription": "Not Found",
+            "content": "43\r\n{\"errcode\":\"M_NOT_FOUND\",\"error\":\"Could not find event fuzzstring\"}\r\n0\r\n\r\n",
+            "isFailure": true,
+            "isBug": false
+          }
+        }
+      }
+    ],
+    "fc308a7f-76f8-46c3-8c94-bb0ff2700a47": [
+      {
+        "request": {
+          "RequestData": {
+            "method": "PUT",
+            "path": "/_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/redact/bai2b1i9%3Amatrix.org/stupidmees_RANDOM_SUFFIX_ABSTRACTED_",
+            "query": "",
+            "body": "{}"
+          }
+        },
+        "response": {
+          "ResponseData": {
+            "code": 404,
+            "codeDescription": "Not Found",
+            "content": "4c\r\n{\"errcode\":\"M_NOT_FOUND\",\"error\":\"Could not find event bai2b1i9:matrix.org\"}\r\n0\r\n\r\n",
+            "isFailure": true,
+            "isBug": false
+          }
+        }
+      },
+      {
+        "request": {
+          "RequestData": {
+            "method": "PUT",
+            "path": "/_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/redact/bai2b1i9%3Amatrix.org/stupidmees_RANDOM_SUFFIX_ABSTRACTED_",
+            "query": "",
+            "body": "{\n    \"reason\":\"fuzzstring\"}\r\n"
+          }
+        },
+        "response": {
+          "ResponseData": {
+            "code": 404,
+            "codeDescription": "Not Found",
+            "content": "4c\r\n{\"errcode\":\"M_NOT_FOUND\",\"error\":\"Could not find event bai2b1i9:matrix.org\"}\r\n0\r\n\r\n",
+            "isFailure": true,
+            "isBug": false
+          }
+        }
+      },
+      {
+        "request": {
+          "RequestData": {
+            "method": "PUT",
+            "path": "/_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/redact/bai2b1i9%3Amatrix.org/stupidmees_RANDOM_SUFFIX_ABSTRACTED_",
+            "query": "",
+            "body": "{\n    \"reason\":\"Indecent material\"}\r\n"
+          }
+        },
+        "response": {
+          "ResponseData": {
+            "code": 404,
+            "codeDescription": "Not Found",
+            "content": "4c\r\n{\"errcode\":\"M_NOT_FOUND\",\"error\":\"Could not find event bai2b1i9:matrix.org\"}\r\n0\r\n\r\n",
+            "isFailure": true,
+            "isBug": false
+          }
+        }
+      }
+    ]
+  }
+}

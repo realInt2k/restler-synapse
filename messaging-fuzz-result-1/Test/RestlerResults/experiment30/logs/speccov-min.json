@@ -1,0 +1,73 @@
+{
+    "1c0171ec6e88fc136b7c23c0d9d095940ee1822b_1": {
+        "verb": "PUT",
+        "endpoint": "/_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/send/m.reaction/{stupidMeessage}",
+        "valid": 0,
+        "matching_prefix": [],
+        "request": "PUT /_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/send/m.reaction/stupidmees56d6a0e874 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8008\r\nContent-Type: application/json\r\nAUTHORIZATION TOKEN\r\n\r\n{\"m.relates_to\":{\"rel_type\":\"m.annotation\",\"event_id\":\"$jze-n6g469reZzarAuLF-kQPfgNSMynuDX9otPLe6KI\",\"key\":\"\ud83d\ude01\"}}\r\n",
+        "response": "HTTP/1.1 400 Bad Request\r\nServer: Synapse/1.147.1\r\nDate: Fri, 13 Feb 2026 20:36:15 GMT\r\nContent-Type: application/json\r\nCache-Control: no-cache, no-store, must-revalidate\r\nAccess-Control-Allow-Origin: *\r\nAccess-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS\r\nAccess-Control-Allow-Headers: X-Requested-With, Content-Type, Authorization, Date\r\nAccess-Control-Expose-Headers: Synapse-Trace-Id, Server\r\nTransfer-Encoding: chunked\r\n\r\n46\r\n{\"errcode\":\"M_UNKNOWN\",\"error\":\"Can't send relation to unknown event\"}\r\n0\r\n\r\n"
+    },
+    "1c0171ec6e88fc136b7c23c0d9d095940ee1822b_2": {
+        "verb": "PUT",
+        "endpoint": "/_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/send/m.reaction/{stupidMeessage}",
+        "valid": 1,
+        "matching_prefix": [],
+        "request": "PUT /_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/send/m.reaction/stupidmees34e073ed25 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8008\r\nContent-Type: application/json\r\nAUTHORIZATION TOKEN\r\n\r\n{ \"fuzz\": false }\r\n",
+        "response": "HTTP/1.1 200 OK\r\nServer: Synapse/1.147.1\r\nDate: Fri, 13 Feb 2026 20:36:15 GMT\r\nContent-Type: application/json\r\nCache-Control: no-cache, no-store, must-revalidate\r\nAccess-Control-Allow-Origin: *\r\nAccess-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS\r\nAccess-Control-Allow-Headers: X-Requested-With, Content-Type, Authorization, Date\r\nAccess-Control-Expose-Headers: Synapse-Trace-Id, Server\r\nTransfer-Encoding: chunked\r\n\r\n3b\r\n{\"event_id\":\"$80zfb9ZTlAwtG0ektCL335si6Z2jSJpERBJgZb5mOM4\"}\r\n0\r\n\r\n"
+    },
+    "26699d8db7a2ffa35260b665a87309a0684de119_1": {
+        "verb": "PUT",
+        "endpoint": "/_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/redact/{eventId}/{stupidMeessage}",
+        "valid": 0,
+        "matching_prefix": [],
+        "request": "PUT /_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/redact/bai2b1i9%3Amatrix.org/stupidmees73caeaf79e HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8008\r\nContent-Type: application/json\r\nAUTHORIZATION TOKEN\r\n\r\n{\n    \"reason\":\"Indecent material\"}\r\n",
+        "response": "HTTP/1.1 404 Not Found\r\nServer: Synapse/1.147.1\r\nDate: Fri, 13 Feb 2026 20:36:15 GMT\r\nContent-Type: application/json\r\nCache-Control: no-cache, no-store, must-revalidate\r\nAccess-Control-Allow-Origin: *\r\nAccess-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS\r\nAccess-Control-Allow-Headers: X-Requested-With, Content-Type, Authorization, Date\r\nAccess-Control-Expose-Headers: Synapse-Trace-Id, Server\r\nTransfer-Encoding: chunked\r\n\r\n4c\r\n{\"errcode\":\"M_NOT_FOUND\",\"error\":\"Could not find event bai2b1i9:matrix.org\"}\r\n0\r\n\r\n"
+    },
+    "26699d8db7a2ffa35260b665a87309a0684de119_2": {
+        "verb": "PUT",
+        "endpoint": "/_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/redact/{eventId}/{stupidMeessage}",
+        "valid": 0,
+        "matching_prefix": [],
+        "request": "PUT /_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/redact/bai2b1i9%3Amatrix.org/stupidmees927759c0ef HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8008\r\nContent-Type: application/json\r\nAUTHORIZATION TOKEN\r\n\r\n{\n    \"reason\":\"fuzzstring\"}\r\n",
+        "response": "HTTP/1.1 404 Not Found\r\nServer: Synapse/1.147.1\r\nDate: Fri, 13 Feb 2026 20:36:15 GMT\r\nContent-Type: application/json\r\nCache-Control: no-cache, no-store, must-revalidate\r\nAccess-Control-Allow-Origin: *\r\nAccess-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS\r\nAccess-Control-Allow-Headers: X-Requested-With, Content-Type, Authorization, Date\r\nAccess-Control-Expose-Headers: Synapse-Trace-Id, Server\r\nTransfer-Encoding: chunked\r\n\r\n4c\r\n{\"errcode\":\"M_NOT_FOUND\",\"error\":\"Could not find event bai2b1i9:matrix.org\"}\r\n0\r\n\r\n"
+    },
+    "26699d8db7a2ffa35260b665a87309a0684de119_3": {
+        "verb": "PUT",
+        "endpoint": "/_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/redact/{eventId}/{stupidMeessage}",
+        "valid": 0,
+        "matching_prefix": [],
+        "request": "PUT /_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/redact/fuzzstring/stupidmeesadb236dd20 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8008\r\nContent-Type: application/json\r\nAUTHORIZATION TOKEN\r\n\r\n{\n    \"reason\":\"Indecent material\"}\r\n",
+        "response": "HTTP/1.1 404 Not Found\r\nServer: Synapse/1.147.1\r\nDate: Fri, 13 Feb 2026 20:36:15 GMT\r\nContent-Type: application/json\r\nCache-Control: no-cache, no-store, must-revalidate\r\nAccess-Control-Allow-Origin: *\r\nAccess-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS\r\nAccess-Control-Allow-Headers: X-Requested-With, Content-Type, Authorization, Date\r\nAccess-Control-Expose-Headers: Synapse-Trace-Id, Server\r\nTransfer-Encoding: chunked\r\n\r\n43\r\n{\"errcode\":\"M_NOT_FOUND\",\"error\":\"Could not find event fuzzstring\"}\r\n0\r\n\r\n"
+    },
+    "26699d8db7a2ffa35260b665a87309a0684de119_4": {
+        "verb": "PUT",
+        "endpoint": "/_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/redact/{eventId}/{stupidMeessage}",
+        "valid": 0,
+        "matching_prefix": [],
+        "request": "PUT /_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/redact/fuzzstring/stupidmees191277462d HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8008\r\nContent-Type: application/json\r\nAUTHORIZATION TOKEN\r\n\r\n{\n    \"reason\":\"fuzzstring\"}\r\n",
+        "response": "HTTP/1.1 404 Not Found\r\nServer: Synapse/1.147.1\r\nDate: Fri, 13 Feb 2026 20:36:15 GMT\r\nContent-Type: application/json\r\nCache-Control: no-cache, no-store, must-revalidate\r\nAccess-Control-Allow-Origin: *\r\nAccess-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS\r\nAccess-Control-Allow-Headers: X-Requested-With, Content-Type, Authorization, Date\r\nAccess-Control-Expose-Headers: Synapse-Trace-Id, Server\r\nTransfer-Encoding: chunked\r\n\r\n43\r\n{\"errcode\":\"M_NOT_FOUND\",\"error\":\"Could not find event fuzzstring\"}\r\n0\r\n\r\n"
+    },
+    "26699d8db7a2ffa35260b665a87309a0684de119_5": {
+        "verb": "PUT",
+        "endpoint": "/_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/redact/{eventId}/{stupidMeessage}",
+        "valid": 0,
+        "matching_prefix": [],
+        "request": "PUT /_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/redact/bai2b1i9%3Amatrix.org/stupidmeesa4493f9d0c HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8008\r\nContent-Type: application/json\r\nAUTHORIZATION TOKEN\r\n\r\n{}",
+        "response": "HTTP/1.1 404 Not Found\r\nServer: Synapse/1.147.1\r\nDate: Fri, 13 Feb 2026 20:36:15 GMT\r\nContent-Type: application/json\r\nCache-Control: no-cache, no-store, must-revalidate\r\nAccess-Control-Allow-Origin: *\r\nAccess-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS\r\nAccess-Control-Allow-Headers: X-Requested-With, Content-Type, Authorization, Date\r\nAccess-Control-Expose-Headers: Synapse-Trace-Id, Server\r\nTransfer-Encoding: chunked\r\n\r\n4c\r\n{\"errcode\":\"M_NOT_FOUND\",\"error\":\"Could not find event bai2b1i9:matrix.org\"}\r\n0\r\n\r\n"
+    },
+    "26699d8db7a2ffa35260b665a87309a0684de119_6": {
+        "verb": "PUT",
+        "endpoint": "/_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/redact/{eventId}/{stupidMeessage}",
+        "valid": 0,
+        "matching_prefix": [],
+        "request": "PUT /_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/redact/fuzzstring/stupidmees158c9b4102 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8008\r\nContent-Type: application/json\r\nAUTHORIZATION TOKEN\r\n\r\n{}",
+        "response": "HTTP/1.1 404 Not Found\r\nServer: Synapse/1.147.1\r\nDate: Fri, 13 Feb 2026 20:36:15 GMT\r\nContent-Type: application/json\r\nCache-Control: no-cache, no-store, must-revalidate\r\nAccess-Control-Allow-Origin: *\r\nAccess-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS\r\nAccess-Control-Allow-Headers: X-Requested-With, Content-Type, Authorization, Date\r\nAccess-Control-Expose-Headers: Synapse-Trace-Id, Server\r\nTransfer-Encoding: chunked\r\n\r\n43\r\n{\"errcode\":\"M_NOT_FOUND\",\"error\":\"Could not find event fuzzstring\"}\r\n0\r\n\r\n"
+    },
+    "96ad2bd0d4deb69b639bf17e48b8b7e9e03956d7_1": {
+        "verb": "PUT",
+        "endpoint": "/_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/send/m.room.message/{stupidMeessage}",
+        "valid": 1,
+        "matching_prefix": [],
+        "request": "PUT /_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/send/m.room.message/stupidmees5a9dde2337 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8008\r\nContent-Type: application/json\r\nAUTHORIZATION TOKEN\r\n\r\n{\"body\":\"hello\",\"msgtype\":\"m.text\"}\r\n",
+        "response": "HTTP/1.1 200 OK\r\nServer: Synapse/1.147.1\r\nDate: Fri, 13 Feb 2026 20:36:16 GMT\r\nContent-Type: application/json\r\nCache-Control: no-cache, no-store, must-revalidate\r\nAccess-Control-Allow-Origin: *\r\nAccess-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS\r\nAccess-Control-Allow-Headers: X-Requested-With, Content-Type, Authorization, Date\r\nAccess-Control-Expose-Headers: Synapse-Trace-Id, Server\r\nTransfer-Encoding: chunked\r\n\r\n3b\r\n{\"event_id\":\"$wzxwOi37UELzSJG7gMzg1xd-B3kI1yRmBrbb4Fg2b2Q\"}\r\n0\r\n\r\n"
+    }}

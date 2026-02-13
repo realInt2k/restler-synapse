@@ -1,0 +1,52 @@
+{
+  "/_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/redact/{eventId}/{stupidMeessage}": {
+    "PUT": {
+      "Path": [
+        {
+          "producer_endpoint": "",
+          "producer_method": "",
+          "producer_resource_name": "",
+          "consumer_param": "eventId"
+        },
+        {
+          "producer_endpoint": "",
+          "producer_method": "",
+          "producer_resource_name": "restler_custom_payload_uuid_suffix__stupidMeessage",
+          "consumer_param": "stupidMeessage"
+        }
+      ],
+      "Body": [
+        {
+          "producer_endpoint": "",
+          "producer_method": "",
+          "producer_resource_name": "",
+          "consumer_param": "reason"
+        }
+      ]
+    }
+  },
+  "/_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/send/m.reaction/{stupidMeessage}": {
+    "PUT": {
+      "Path": [
+        {
+          "producer_endpoint": "",
+          "producer_method": "",
+          "producer_resource_name": "restler_custom_payload_uuid_suffix__stupidMeessage",
+          "consumer_param": "stupidMeessage"
+        }
+      ]
+    }
+  },
+  "/_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/send/m.room.message/{stupidMeessage}": {
+    "PUT": {
+      "Path": [
+        {
+          "producer_endpoint": "",
+          "producer_method": "",
+          "producer_resource_name": "restler_custom_payload_uuid_suffix__stupidMeessage",
+          "consumer_param": "stupidMeessage"
+        }
+      ]
+    }
+  }
+}

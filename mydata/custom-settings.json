@@ -2,7 +2,9 @@
     "authentication": {
         "token": {
             "location": "/data/authentication_token.txt",
-            "token_refresh_interval":  300
+            "token_refresh_interval":  30
         }
-    }
+    },
+    "per_resource_settings": {},
+    "max_combinations": 20
 }

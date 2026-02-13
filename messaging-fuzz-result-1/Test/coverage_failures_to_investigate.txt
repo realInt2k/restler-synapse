@@ -1,0 +1,44 @@
+This file contains the failing requests, ordered by the number of blocked dependent requests.
+To improve coverage, fix the failing requests in the order listed in this file.
+
+Note: some requests are labeled as 'sequence failure'.
+This means the request depends on another request that is failing intermittently.
+For example, a DELETE request for a resource may be skipped because the resource
+PUT request failed due to exceeding quota.  The same PUT request succeeded earlier (and may
+succeed later depending on the resource clean-up behavior in the service), so it is
+considered an intermittent failure.
+
+-----------------------------------------------
+Request: Put /_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/redact/{eventId}/{stupidMeessage}
+Number of blocked dependent requests: 0
+
+	+++ Combination 1 +++:
+	Request sequence: 
+	> PUT /_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/redact/bai2b1i9%3Amatrix.org/stupidmees73caeaf79e HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8008\r\nContent-Type: application/json\r\nAUTHORIZATION TOKEN\r\n\r\n{\n    "reason":"Indecent material"}\r\n
+	< HTTP/1.1 404 Not Found\r\nServer: Synapse/1.147.1\r\nDate: Fri, 13 Feb 2026 20:36:15 GMT\r\nContent-Type: application/json\r\nCache-Control: no-cache, no-store, must-revalidate\r\nAccess-Control-Allow-Origin: *\r\nAccess-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS\r\nAccess-Control-Allow-Headers: X-Requested-With, Content-Type, Authorization, Date\r\nAccess-Control-Expose-Headers: Synapse-Trace-Id, Server\r\nTransfer-Encoding: chunked\r\n\r\n4c\r\n{"errcode":"M_NOT_FOUND","error":"Could not find event bai2b1i9:matrix.org"}\r\n0\r\n\r\n
+
+
+	+++ Combination 2 +++:
+	Request sequence: 
+	> PUT /_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/redact/bai2b1i9%3Amatrix.org/stupidmees927759c0ef HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8008\r\nContent-Type: application/json\r\nAUTHORIZATION TOKEN\r\n\r\n{\n    "reason":"fuzzstring"}\r\n
+	< HTTP/1.1 404 Not Found\r\nServer: Synapse/1.147.1\r\nDate: Fri, 13 Feb 2026 20:36:15 GMT\r\nContent-Type: application/json\r\nCache-Control: no-cache, no-store, must-revalidate\r\nAccess-Control-Allow-Origin: *\r\nAccess-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS\r\nAccess-Control-Allow-Headers: X-Requested-With, Content-Type, Authorization, Date\r\nAccess-Control-Expose-Headers: Synapse-Trace-Id, Server\r\nTransfer-Encoding: chunked\r\n\r\n4c\r\n{"errcode":"M_NOT_FOUND","error":"Could not find event bai2b1i9:matrix.org"}\r\n0\r\n\r\n
+
+
+	+++ Combination 3 +++:
+	Request sequence: 
+	> PUT /_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/redact/fuzzstring/stupidmeesadb236dd20 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8008\r\nContent-Type: application/json\r\nAUTHORIZATION TOKEN\r\n\r\n{\n    "reason":"Indecent material"}\r\n
+	< HTTP/1.1 404 Not Found\r\nServer: Synapse/1.147.1\r\nDate: Fri, 13 Feb 2026 20:36:15 GMT\r\nContent-Type: application/json\r\nCache-Control: no-cache, no-store, must-revalidate\r\nAccess-Control-Allow-Origin: *\r\nAccess-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS\r\nAccess-Control-Allow-Headers: X-Requested-With, Content-Type, Authorization, Date\r\nAccess-Control-Expose-Headers: Synapse-Trace-Id, Server\r\nTransfer-Encoding: chunked\r\n\r\n43\r\n{"errcode":"M_NOT_FOUND","error":"Could not find event fuzzstring"}\r\n0\r\n\r\n
+
+
+	+++ Combination 4 +++:
+	Request sequence: 
+	> PUT /_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/redact/fuzzstring/stupidmees191277462d HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8008\r\nContent-Type: application/json\r\nAUTHORIZATION TOKEN\r\n\r\n{\n    "reason":"fuzzstring"}\r\n
+	< HTTP/1.1 404 Not Found\r\nServer: Synapse/1.147.1\r\nDate: Fri, 13 Feb 2026 20:36:15 GMT\r\nContent-Type: application/json\r\nCache-Control: no-cache, no-store, must-revalidate\r\nAccess-Control-Allow-Origin: *\r\nAccess-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS\r\nAccess-Control-Allow-Headers: X-Requested-With, Content-Type, Authorization, Date\r\nAccess-Control-Expose-Headers: Synapse-Trace-Id, Server\r\nTransfer-Encoding: chunked\r\n\r\n43\r\n{"errcode":"M_NOT_FOUND","error":"Could not find event fuzzstring"}\r\n0\r\n\r\n
+
+
+	+++ Combination 5 +++:
+	Request sequence: 
+	> PUT /_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/redact/bai2b1i9%3Amatrix.org/stupidmeesa4493f9d0c HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8008\r\nContent-Type: application/json\r\nAUTHORIZATION TOKEN\r\n\r\n{}
+	< HTTP/1.1 404 Not Found\r\nServer: Synapse/1.147.1\r\nDate: Fri, 13 Feb 2026 20:36:15 GMT\r\nContent-Type: application/json\r\nCache-Control: no-cache, no-store, must-revalidate\r\nAccess-Control-Allow-Origin: *\r\nAccess-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS\r\nAccess-Control-Allow-Headers: X-Requested-With, Content-Type, Authorization, Date\r\nAccess-Control-Expose-Headers: Synapse-Trace-Id, Server\r\nTransfer-Encoding: chunked\r\n\r\n4c\r\n{"errcode":"M_NOT_FOUND","error":"Could not find event bai2b1i9:matrix.org"}\r\n0\r\n\r\n
+
+

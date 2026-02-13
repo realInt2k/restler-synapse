@@ -1,0 +1,41 @@
+Restler Information: 0 : Starting task Fuzz...
+    DateTime=2026-02-13T20:36:44.6328636Z
+Restler Information: 0 : Launching 'python3 --version'
+    DateTime=2026-02-13T20:36:45.5341909Z
+Restler Information: 0 : Launching 'python --version'
+    DateTime=2026-02-13T20:36:45.5343610Z
+Restler Information: 0 : Process execution terminated in 00:00:00.0240215 with exit code 0x0: 'python --version'
+    DateTime=2026-02-13T20:36:45.5635600Z
+Restler Information: 0 : Process execution terminated in 00:00:00.0240957 with exit code 0x0: 'python3 --version'
+    DateTime=2026-02-13T20:36:45.5636195Z
+Restler Information: 0 : (22) python3 --version exited with code: 0
+    DateTime=2026-02-13T20:36:45.5678902Z
+Restler Information: 0 : (21) python --version exited with code: 0
+    DateTime=2026-02-13T20:36:45.5679381Z
+Restler Information: 0 : Launching 'python3 -B "/RESTler/restler/../engine/restler.py" --restler_grammar "/work/Compile/grammar.py" --custom_mutations "/work/Compile/dict.json" --set_version 9.3.1    --no_ssl   --settings "/data/custom-settings.json" --enable_checkers * --disable_checkers namespacerule --time_budget 0.500000   --include_user_agent --no_tokens_in_logs t --garbage_collection_interval 30 --fuzzing_mode bfs-cheap'
+    DateTime=2026-02-13T20:36:45.5795975Z
+Restler Information: 0 : Process execution terminated in 00:30:13.2121805 with exit code 0x0: 'python3 -B "/RESTler/restler/../engine/restler.py" --restler_grammar "/work/Compile/grammar.py" --custom_mutations "/work/Compile/dict.json" --set_version 9.3.1    --no_ssl   --settings "/data/custom-settings.json" --enable_checkers * --disable_checkers namespacerule --time_budget 0.500000   --include_user_agent --no_tokens_in_logs t --garbage_collection_interval 30 --fuzzing_mode bfs-cheap'
+    DateTime=2026-02-13T21:06:47.0228530Z
+Restler Information: 0 : (28) python3 -B "/RESTler/restler/../engine/restler.py" --restler_grammar "/work/Compile/grammar.py" --custom_mutations "/work/Compile/dict.json" --set_version 9.3.1    --no_ssl   --settings "/data/custom-settings.json" --enable_checkers * --disable_checkers namespacerule --time_budget 0.500000   --include_user_agent --no_tokens_in_logs t --garbage_collection_interval 30 --fuzzing_mode bfs-cheap exited with code: 0
+    DateTime=2026-02-13T21:06:47.0231267Z
+Restler Information: 0 : Launching 'dotnet "/RESTler/restler/../resultsAnalyzer/Restler.ResultsAnalyzer.dll" analyze "/work/Fuzz" --output_dir "/work/Fuzz/ResponseBuckets" --dictionary_file "/work/Compile/dict.json" --max_instances_per_bucket 10'
+    DateTime=2026-02-13T21:06:47.0400053Z
+Restler Information: 0 : Process execution terminated in 00:00:06.2983630 with exit code 0x0: 'dotnet "/RESTler/restler/../resultsAnalyzer/Restler.ResultsAnalyzer.dll" analyze "/work/Fuzz" --output_dir "/work/Fuzz/ResponseBuckets" --dictionary_file "/work/Compile/dict.json" --max_instances_per_bucket 10'
+    DateTime=2026-02-13T21:06:53.1457393Z
+Restler Information: 0 : (48) dotnet "/RESTler/restler/../resultsAnalyzer/Restler.ResultsAnalyzer.dll" analyze "/work/Fuzz" --output_dir "/work/Fuzz/ResponseBuckets" --dictionary_file "/work/Compile/dict.json" --max_instances_per_bucket 10 exited with code: 0
+    DateTime=2026-02-13T21:06:53.1458393Z
+Restler Information: 0 : Request coverage (successful / total): 3 / 3
+    DateTime=2026-02-13T21:06:53.2521158Z
+Restler Information: 0 : Attempted requests: 3 / 3
+    DateTime=2026-02-13T21:06:53.2521623Z
+Restler Information: 0 : Bugs were found!
+    DateTime=2026-02-13T21:06:53.2556652Z
+Restler Information: 0 : Bug buckets:
+    DateTime=2026-02-13T21:06:53.2557035Z
+Restler Information: 0 : 
+InvalidValueChecker_500: 2
+    DateTime=2026-02-13T21:06:53.2564459Z
+Restler Information: 0 : Task Fuzz succeeded.
+    DateTime=2026-02-13T21:06:53.2582545Z
+Restler Information: 0 : Collecting logs...
+    DateTime=2026-02-13T21:06:54.1915239Z

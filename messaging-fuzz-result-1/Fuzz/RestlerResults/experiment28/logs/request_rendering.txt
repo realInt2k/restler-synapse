@@ -1,0 +1,121 @@
+
+2026-02-13 20:37:17.299: Generation-1
+2026-02-13 20:37:17.299: 	Rendered requests: 3 / 3
+2026-02-13 20:37:17.299: 	Rendered requests with "valid" status codes: 2 / 3
+2026-02-13 20:37:17.299: 	Rendered requests determined to be fully valid (no resource creation failures): 2 / 3
+2026-02-13 20:37:17.299: List of failing requests:
+	Request: 2
+		- restler_static_string: 'PUT '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: '_matrix'
+		- restler_static_string: '/'
+		- restler_static_string: 'client'
+		- restler_static_string: '/'
+		- restler_static_string: 'v3'
+		- restler_static_string: '/'
+		- restler_static_string: 'rooms'
+		- restler_static_string: '/'
+		- restler_static_string: '!zoMbfQHLAEshTaknsN%3Alocalhost'
+		- restler_static_string: '/'
+		- restler_static_string: 'redact'
+		- restler_static_string: '/'
+		+ restler_fuzzable_string: [bai2b1i9:matrix.org, fuzzstring, ...]
+		- restler_static_string: '/'
+		- restler_custom_payload_uuid4_suffix: 's'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: localhost:8008\r\n'
+		- restler_static_string: 'Content-Type: '
+		- restler_static_string: 'application/json'
+		- restler_static_string: '\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+		- restler_static_string: '{'
+		- restler_static_string: '\n    "reason":'
+		+ restler_fuzzable_string: ["Indecent material", "fuzzstring", ...]
+		- restler_static_string: '}'
+		- restler_static_string: '\r\n'
+
+-------------------------
+
+
+2026-02-13 20:37:34.172: Generation-2
+2026-02-13 20:37:34.172: 	Rendered requests: 3 / 3
+2026-02-13 20:37:34.172: 	Rendered requests with "valid" status codes: 2 / 3
+2026-02-13 20:37:34.172: 	Rendered requests determined to be fully valid (no resource creation failures): 2 / 3
+2026-02-13 20:37:34.172: List of failing requests:
+	Request: 2
+		- restler_static_string: 'PUT '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: '_matrix'
+		- restler_static_string: '/'
+		- restler_static_string: 'client'
+		- restler_static_string: '/'
+		- restler_static_string: 'v3'
+		- restler_static_string: '/'
+		- restler_static_string: 'rooms'
+		- restler_static_string: '/'
+		- restler_static_string: '!zoMbfQHLAEshTaknsN%3Alocalhost'
+		- restler_static_string: '/'
+		- restler_static_string: 'redact'
+		- restler_static_string: '/'
+		+ restler_fuzzable_string: [bai2b1i9:matrix.org, fuzzstring, ...]
+		- restler_static_string: '/'
+		- restler_custom_payload_uuid4_suffix: 's'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: localhost:8008\r\n'
+		- restler_static_string: 'Content-Type: '
+		- restler_static_string: 'application/json'
+		- restler_static_string: '\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+		- restler_static_string: '{'
+		- restler_static_string: '\n    "reason":'
+		+ restler_fuzzable_string: ["Indecent material", "fuzzstring", ...]
+		- restler_static_string: '}'
+		- restler_static_string: '\r\n'
+
+-------------------------
+
+
+2026-02-13 20:38:09.154: Generation-3
+2026-02-13 20:38:09.154: 	Rendered requests: 3 / 3
+2026-02-13 20:38:09.154: 	Rendered requests with "valid" status codes: 3 / 3
+2026-02-13 20:38:09.154: 	Rendered requests determined to be fully valid (no resource creation failures): 3 / 3
+
+2026-02-13 20:38:33.199: Generation-4
+2026-02-13 20:38:33.199: 	Rendered requests: 3 / 3
+2026-02-13 20:38:33.199: 	Rendered requests with "valid" status codes: 3 / 3
+2026-02-13 20:38:33.199: 	Rendered requests determined to be fully valid (no resource creation failures): 3 / 3
+
+2026-02-13 20:40:09.513: Generation-5
+2026-02-13 20:40:09.513: 	Rendered requests: 3 / 3
+2026-02-13 20:40:09.513: 	Rendered requests with "valid" status codes: 3 / 3
+2026-02-13 20:40:09.513: 	Rendered requests determined to be fully valid (no resource creation failures): 3 / 3
+
+2026-02-13 20:41:19.233: Generation-6
+2026-02-13 20:41:19.233: 	Rendered requests: 3 / 3
+2026-02-13 20:41:19.233: 	Rendered requests with "valid" status codes: 3 / 3
+2026-02-13 20:41:19.233: 	Rendered requests determined to be fully valid (no resource creation failures): 3 / 3
+
+2026-02-13 20:48:23.381: Generation-7
+2026-02-13 20:48:23.381: 	Rendered requests: 3 / 3
+2026-02-13 20:48:23.381: 	Rendered requests with "valid" status codes: 3 / 3
+2026-02-13 20:48:23.381: 	Rendered requests determined to be fully valid (no resource creation failures): 3 / 3
+
+2026-02-13 20:54:19.533: Generation-8
+2026-02-13 20:54:19.533: 	Rendered requests: 3 / 3
+2026-02-13 20:54:19.533: 	Rendered requests with "valid" status codes: 3 / 3
+2026-02-13 20:54:19.533: 	Rendered requests determined to be fully valid (no resource creation failures): 3 / 3
+
+2026-02-13 21:06:46.833: Generation-9
+2026-02-13 21:06:46.833: 	Rendered requests: 3 / 3
+2026-02-13 21:06:46.833: 	Rendered requests with "valid" status codes: 3 / 3
+2026-02-13 21:06:46.833: 	Rendered requests determined to be fully valid (no resource creation failures): 3 / 3
+
+2026-02-13 21:06:46.856: 	Never Rendered requests:
+-------------------------
+

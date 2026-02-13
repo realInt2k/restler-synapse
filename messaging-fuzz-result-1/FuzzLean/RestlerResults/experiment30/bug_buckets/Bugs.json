@@ -1,0 +1,21 @@
+{"bugs":[{
+    "filepath": "InvalidValueChecker_500_1.json",
+    "reproducible": true,
+    "checker_name": "InvalidValueChecker",
+    "error_code": "500"},{
+    "filepath": "InvalidDynamicObjectChecker_20x_1.json",
+    "reproducible": true,
+    "checker_name": "InvalidDynamicObjectChecker",
+    "error_code": "20x"},{
+    "filepath": "InvalidDynamicObjectChecker_20x_2.json",
+    "reproducible": true,
+    "checker_name": "InvalidDynamicObjectChecker",
+    "error_code": "20x"},{
+    "filepath": "PayloadBodyChecker_500_1.json",
+    "reproducible": true,
+    "checker_name": "PayloadBodyChecker",
+    "error_code": "500"},{
+    "filepath": "UseAfterFreeChecker_500_1.json",
+    "reproducible": true,
+    "checker_name": "UseAfterFreeChecker",
+    "error_code": "500"}]}

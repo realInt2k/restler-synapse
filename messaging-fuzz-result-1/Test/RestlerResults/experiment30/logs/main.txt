@@ -1,0 +1,150 @@
+Random seed: 12345
+Setting fuzzing schemes: directed-smoke-test
+2026-02-13 20:36:15.151: Going to fuzz a set with 3 requests
+2026-02-13 20:36:15.151: Request-0: Value Combinations: 4
+2026-02-13 20:36:15.151: Request-1: Value Combinations: 6
+2026-02-13 20:36:15.151: Request-2: Value Combinations: 4
+2026-02-13 20:36:15.151: Avg. Value Combinations per Request: 4.666666666666667
+2026-02-13 20:36:15.151: Median Value Combinations per Request: 4
+2026-02-13 20:36:15.151: Min Value Combinations per Request: 4
+2026-02-13 20:36:15.151: Max Value Combinations per Request: 6
+2026-02-13 20:36:15.151: Total dependencies: 0
+
+2026-02-13 20:36:15.157: Generation: 1 / Sequences Collection Size: 3 
+(After directed-smoke-test Extend)
+
+Rendering request 0 from scratch
+
+2026-02-13 20:36:15.406: Request 0
+2026-02-13 20:36:15.406: Endpoint - /_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/send/m.reaction/{stupidMeessage}
+2026-02-13 20:36:15.406: Hex Def - 1c0171ec6e88fc136b7c23c0d9d095940ee1822b
+2026-02-13 20:36:15.406: Sequence length that satisfies dependencies: 1
+2026-02-13 20:36:15.408: Rendering VALID
+		- restler_static_string: 'PUT '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: '_matrix'
+		- restler_static_string: '/'
+		- restler_static_string: 'client'
+		- restler_static_string: '/'
+		- restler_static_string: 'v3'
+		- restler_static_string: '/'
+		- restler_static_string: 'rooms'
+		- restler_static_string: '/'
+		- restler_static_string: '!zoMbfQHLAEshTaknsN%3Alocalhost'
+		- restler_static_string: '/'
+		- restler_static_string: 'send'
+		- restler_static_string: '/'
+		- restler_static_string: 'm.reaction'
+		- restler_static_string: '/'
+		- restler_custom_payload_uuid4_suffix: 's'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: localhost:8008\r\n'
+		- restler_static_string: 'Content-Type: '
+		- restler_static_string: 'application/json'
+		- restler_static_string: '\r\n'
+		+ restler_refreshable_authentication_token: ['token_auth_method', 'token_refresh_interval', 'token_location']
+		- restler_static_string: '\r\n'
+		+ restler_fuzzable_object: ['{"m.relates_to":{"rel_type":"m.annotation","event_id":"$jze-n6g469reZzarAuLF-kQPfgNSMynuDX9otPLe6KI","key":"😁"}}', '{ "fuzz": false }']
+		- restler_static_string: '\r\n'
+
+Rendering request 1 from scratch
+
+2026-02-13 20:36:16.017: Request 1
+2026-02-13 20:36:16.017: Endpoint - /_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/redact/{eventId}/{stupidMeessage}
+2026-02-13 20:36:16.017: Hex Def - 26699d8db7a2ffa35260b665a87309a0684de119
+2026-02-13 20:36:16.017: Sequence length that satisfies dependencies: 1
+2026-02-13 20:36:16.020: Rendering INVALID
+		- restler_static_string: 'PUT '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: '_matrix'
+		- restler_static_string: '/'
+		- restler_static_string: 'client'
+		- restler_static_string: '/'
+		- restler_static_string: 'v3'
+		- restler_static_string: '/'
+		- restler_static_string: 'rooms'
+		- restler_static_string: '/'
+		- restler_static_string: '!zoMbfQHLAEshTaknsN%3Alocalhost'
+		- restler_static_string: '/'
+		- restler_static_string: 'redact'
+		- restler_static_string: '/'
+		+ restler_fuzzable_string: ['bai2b1i9:matrix.org', 'fuzzstring']
+		- restler_static_string: '/'
+		- restler_custom_payload_uuid4_suffix: 's'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: localhost:8008\r\n'
+		- restler_static_string: 'Content-Type: '
+		- restler_static_string: 'application/json'
+		- restler_static_string: '\r\n'
+		+ restler_refreshable_authentication_token: ['token_auth_method', 'token_refresh_interval', 'token_location']
+		- restler_static_string: '\r\n'
+		- restler_static_string: '{'
+		- restler_static_string: '\n    "reason":'
+		+ restler_fuzzable_string: ['"Indecent material"', '"fuzzstring"']
+		- restler_static_string: '}'
+		- restler_static_string: '\r\n'
+
+Rendering request 2 from scratch
+
+2026-02-13 20:36:16.179: Request 2
+2026-02-13 20:36:16.179: Endpoint - /_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/send/m.room.message/{stupidMeessage}
+2026-02-13 20:36:16.179: Hex Def - 96ad2bd0d4deb69b639bf17e48b8b7e9e03956d7
+2026-02-13 20:36:16.179: Sequence length that satisfies dependencies: 1
+2026-02-13 20:36:16.182: Rendering VALID
+		- restler_static_string: 'PUT '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: '_matrix'
+		- restler_static_string: '/'
+		- restler_static_string: 'client'
+		- restler_static_string: '/'
+		- restler_static_string: 'v3'
+		- restler_static_string: '/'
+		- restler_static_string: 'rooms'
+		- restler_static_string: '/'
+		- restler_static_string: '!zoMbfQHLAEshTaknsN%3Alocalhost'
+		- restler_static_string: '/'
+		- restler_static_string: 'send'
+		- restler_static_string: '/'
+		- restler_static_string: 'm.room.message'
+		- restler_static_string: '/'
+		- restler_custom_payload_uuid4_suffix: 's'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: localhost:8008\r\n'
+		- restler_static_string: 'Content-Type: '
+		- restler_static_string: 'application/json'
+		- restler_static_string: '\r\n'
+		+ restler_refreshable_authentication_token: ['token_auth_method', 'token_refresh_interval', 'token_location']
+		- restler_static_string: '\r\n'
+		+ restler_fuzzable_object: ['{"body":"hello","msgtype":"m.text"}', '{ "fuzz": false }']
+		- restler_static_string: '\r\n'
+
+2026-02-13 20:36:16.215: Generation: 1 / Sequences Collection Size: 2 
+(After directed-smoke-test Render)
+
+2026-02-13 20:36:16.224: Final Swagger spec coverage: 2 / 3
+2026-02-13 20:36:16.224: Rendered requests: 3 / 3
+2026-02-13 20:36:16.224: Rendered requests with "valid" status codes: 2 / 3
+2026-02-13 20:36:16.224: Num fully valid requests (no resource creation failures): 2
+2026-02-13 20:36:16.224: Num requests not rendered due to invalid sequence re-renders: 0
+2026-02-13 20:36:16.224: Num invalid requests caused by failed resource creations: 0
+2026-02-13 20:36:16.224: Total Creations of Dyn Objects: 0
+2026-02-13 20:36:16.224: Total Requests Sent: {'gc': 0, 'main_driver': 9}
+2026-02-13 20:36:16.224: Bug Buckets: {}
+
+Testing completed -- below are the final stats:
+
+2026-02-13 20:36:16.252: Final Swagger spec coverage: 2 / 3
+2026-02-13 20:36:16.252: Rendered requests: 3 / 3
+2026-02-13 20:36:16.252: Rendered requests with "valid" status codes: 2 / 3
+2026-02-13 20:36:16.252: Num fully valid requests (no resource creation failures): 2
+2026-02-13 20:36:16.252: Num requests not rendered due to invalid sequence re-renders: 0
+2026-02-13 20:36:16.252: Num invalid requests caused by failed resource creations: 0
+2026-02-13 20:36:16.252: Total Creations of Dyn Objects: 0
+2026-02-13 20:36:16.252: Total Requests Sent: {'gc': 0, 'main_driver': 9}
+2026-02-13 20:36:16.252: Bug Buckets: {}

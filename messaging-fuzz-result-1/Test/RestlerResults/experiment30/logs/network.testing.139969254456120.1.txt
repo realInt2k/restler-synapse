@@ -1,0 +1,369 @@
+
+Generation-1: Rendering Sequence-1
+
+	Request: 1 (Remaining candidate combinations: 4)
+	Request hash: 1c0171ec6e88fc136b7c23c0d9d095940ee1822b
+
+		- restler_static_string: 'PUT '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: '_matrix'
+		- restler_static_string: '/'
+		- restler_static_string: 'client'
+		- restler_static_string: '/'
+		- restler_static_string: 'v3'
+		- restler_static_string: '/'
+		- restler_static_string: 'rooms'
+		- restler_static_string: '/'
+		- restler_static_string: '!zoMbfQHLAEshTaknsN%3Alocalhost'
+		- restler_static_string: '/'
+		- restler_static_string: 'send'
+		- restler_static_string: '/'
+		- restler_static_string: 'm.reaction'
+		- restler_static_string: '/'
+		- restler_custom_payload_uuid4_suffix: 's'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: localhost:8008\r\n'
+		- restler_static_string: 'Content-Type: '
+		- restler_static_string: 'application/json'
+		- restler_static_string: '\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+		+ restler_fuzzable_object: [{"m.relates_to":{"rel_type":"m.annotation","event_id":"$jze-n6g469reZzarAuLF-kQPfgNSMynuDX9otPLe6KI","key":"😁"}}, { "fuzz": false }, ...]
+		- restler_static_string: '\r\n'
+
+2026-02-13 20:36:15.209: Sending: 'PUT /_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/send/m.reaction/stupidmees56d6a0e874 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8008\r\nContent-Type: application/json\r\n_OMITTED_AUTH_TOKEN_\r\nContent-Length: 117\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: feada004-177e-4d03-a8f6-6dcc5f98e77c\r\n\r\n{"m.relates_to":{"rel_type":"m.annotation","event_id":"$jze-n6g469reZzarAuLF-kQPfgNSMynuDX9otPLe6KI","key":"😁"}}\r\n'
+
+2026-02-13 20:36:15.231: Received: 'HTTP/1.1 400 Bad Request\r\nServer: Synapse/1.147.1\r\nDate: Fri, 13 Feb 2026 20:36:15 GMT\r\nContent-Type: application/json\r\nCache-Control: no-cache, no-store, must-revalidate\r\nAccess-Control-Allow-Origin: *\r\nAccess-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS\r\nAccess-Control-Allow-Headers: X-Requested-With, Content-Type, Authorization, Date\r\nAccess-Control-Expose-Headers: Synapse-Trace-Id, Server\r\nTransfer-Encoding: chunked\r\n\r\n46\r\n{"errcode":"M_UNKNOWN","error":"Can\'t send relation to unknown event"}\r\n0\r\n\r\n'
+
+
+Generation-1: Rendering Sequence-1
+
+	Request: 1 (Remaining candidate combinations: 3)
+	Request hash: 1c0171ec6e88fc136b7c23c0d9d095940ee1822b
+
+		- restler_static_string: 'PUT '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: '_matrix'
+		- restler_static_string: '/'
+		- restler_static_string: 'client'
+		- restler_static_string: '/'
+		- restler_static_string: 'v3'
+		- restler_static_string: '/'
+		- restler_static_string: 'rooms'
+		- restler_static_string: '/'
+		- restler_static_string: '!zoMbfQHLAEshTaknsN%3Alocalhost'
+		- restler_static_string: '/'
+		- restler_static_string: 'send'
+		- restler_static_string: '/'
+		- restler_static_string: 'm.reaction'
+		- restler_static_string: '/'
+		- restler_custom_payload_uuid4_suffix: 's'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: localhost:8008\r\n'
+		- restler_static_string: 'Content-Type: '
+		- restler_static_string: 'application/json'
+		- restler_static_string: '\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+		+ restler_fuzzable_object: [{"m.relates_to":{"rel_type":"m.annotation","event_id":"$jze-n6g469reZzarAuLF-kQPfgNSMynuDX9otPLe6KI","key":"😁"}}, { "fuzz": false }, ...]
+		- restler_static_string: '\r\n'
+
+2026-02-13 20:36:15.317: Sending: 'PUT /_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/send/m.reaction/stupidmees34e073ed25 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8008\r\nContent-Type: application/json\r\n_OMITTED_AUTH_TOKEN_\r\nContent-Length: 19\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: a0bab18f-f709-41ad-acb4-4d460d181b41\r\n\r\n{ "fuzz": false }\r\n'
+
+2026-02-13 20:36:15.390: Received: 'HTTP/1.1 200 OK\r\nServer: Synapse/1.147.1\r\nDate: Fri, 13 Feb 2026 20:36:15 GMT\r\nContent-Type: application/json\r\nCache-Control: no-cache, no-store, must-revalidate\r\nAccess-Control-Allow-Origin: *\r\nAccess-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS\r\nAccess-Control-Allow-Headers: X-Requested-With, Content-Type, Authorization, Date\r\nAccess-Control-Expose-Headers: Synapse-Trace-Id, Server\r\nTransfer-Encoding: chunked\r\n\r\n3b\r\n{"event_id":"$80zfb9ZTlAwtG0ektCL335si6Z2jSJpERBJgZb5mOM4"}\r\n0\r\n\r\n'
+
+
+Generation-1: Rendering Sequence-2
+
+	Request: 1 (Remaining candidate combinations: 6)
+	Request hash: 26699d8db7a2ffa35260b665a87309a0684de119
+
+		- restler_static_string: 'PUT '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: '_matrix'
+		- restler_static_string: '/'
+		- restler_static_string: 'client'
+		- restler_static_string: '/'
+		- restler_static_string: 'v3'
+		- restler_static_string: '/'
+		- restler_static_string: 'rooms'
+		- restler_static_string: '/'
+		- restler_static_string: '!zoMbfQHLAEshTaknsN%3Alocalhost'
+		- restler_static_string: '/'
+		- restler_static_string: 'redact'
+		- restler_static_string: '/'
+		+ restler_fuzzable_string: [bai2b1i9:matrix.org, fuzzstring, ...]
+		- restler_static_string: '/'
+		- restler_custom_payload_uuid4_suffix: 's'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: localhost:8008\r\n'
+		- restler_static_string: 'Content-Type: '
+		- restler_static_string: 'application/json'
+		- restler_static_string: '\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+		- restler_static_string: '{'
+		- restler_static_string: '\n    "reason":'
+		+ restler_fuzzable_string: ["Indecent material", "fuzzstring", ...]
+		- restler_static_string: '}'
+		- restler_static_string: '\r\n'
+
+2026-02-13 20:36:15.497: Sending: 'PUT /_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/redact/bai2b1i9%3Amatrix.org/stupidmees73caeaf79e HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8008\r\nContent-Type: application/json\r\n_OMITTED_AUTH_TOKEN_\r\nContent-Length: 37\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: b8ef056c-eef3-451e-843b-1393cba49c53\r\n\r\n{\n    "reason":"Indecent material"}\r\n'
+
+2026-02-13 20:36:15.527: Received: 'HTTP/1.1 404 Not Found\r\nServer: Synapse/1.147.1\r\nDate: Fri, 13 Feb 2026 20:36:15 GMT\r\nContent-Type: application/json\r\nCache-Control: no-cache, no-store, must-revalidate\r\nAccess-Control-Allow-Origin: *\r\nAccess-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS\r\nAccess-Control-Allow-Headers: X-Requested-With, Content-Type, Authorization, Date\r\nAccess-Control-Expose-Headers: Synapse-Trace-Id, Server\r\nTransfer-Encoding: chunked\r\n\r\n4c\r\n{"errcode":"M_NOT_FOUND","error":"Could not find event bai2b1i9:matrix.org"}\r\n0\r\n\r\n'
+
+
+Generation-1: Rendering Sequence-2
+
+	Request: 1 (Remaining candidate combinations: 5)
+	Request hash: 26699d8db7a2ffa35260b665a87309a0684de119
+
+		- restler_static_string: 'PUT '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: '_matrix'
+		- restler_static_string: '/'
+		- restler_static_string: 'client'
+		- restler_static_string: '/'
+		- restler_static_string: 'v3'
+		- restler_static_string: '/'
+		- restler_static_string: 'rooms'
+		- restler_static_string: '/'
+		- restler_static_string: '!zoMbfQHLAEshTaknsN%3Alocalhost'
+		- restler_static_string: '/'
+		- restler_static_string: 'redact'
+		- restler_static_string: '/'
+		+ restler_fuzzable_string: [bai2b1i9:matrix.org, fuzzstring, ...]
+		- restler_static_string: '/'
+		- restler_custom_payload_uuid4_suffix: 's'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: localhost:8008\r\n'
+		- restler_static_string: 'Content-Type: '
+		- restler_static_string: 'application/json'
+		- restler_static_string: '\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+		- restler_static_string: '{'
+		- restler_static_string: '\n    "reason":'
+		+ restler_fuzzable_string: ["Indecent material", "fuzzstring", ...]
+		- restler_static_string: '}'
+		- restler_static_string: '\r\n'
+
+2026-02-13 20:36:15.587: Sending: 'PUT /_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/redact/bai2b1i9%3Amatrix.org/stupidmees927759c0ef HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8008\r\nContent-Type: application/json\r\n_OMITTED_AUTH_TOKEN_\r\nContent-Length: 30\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: 32605512-b058-44de-bbbb-8b70c4462556\r\n\r\n{\n    "reason":"fuzzstring"}\r\n'
+
+2026-02-13 20:36:15.613: Received: 'HTTP/1.1 404 Not Found\r\nServer: Synapse/1.147.1\r\nDate: Fri, 13 Feb 2026 20:36:15 GMT\r\nContent-Type: application/json\r\nCache-Control: no-cache, no-store, must-revalidate\r\nAccess-Control-Allow-Origin: *\r\nAccess-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS\r\nAccess-Control-Allow-Headers: X-Requested-With, Content-Type, Authorization, Date\r\nAccess-Control-Expose-Headers: Synapse-Trace-Id, Server\r\nTransfer-Encoding: chunked\r\n\r\n4c\r\n{"errcode":"M_NOT_FOUND","error":"Could not find event bai2b1i9:matrix.org"}\r\n0\r\n\r\n'
+
+
+Generation-1: Rendering Sequence-2
+
+	Request: 1 (Remaining candidate combinations: 4)
+	Request hash: 26699d8db7a2ffa35260b665a87309a0684de119
+
+		- restler_static_string: 'PUT '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: '_matrix'
+		- restler_static_string: '/'
+		- restler_static_string: 'client'
+		- restler_static_string: '/'
+		- restler_static_string: 'v3'
+		- restler_static_string: '/'
+		- restler_static_string: 'rooms'
+		- restler_static_string: '/'
+		- restler_static_string: '!zoMbfQHLAEshTaknsN%3Alocalhost'
+		- restler_static_string: '/'
+		- restler_static_string: 'redact'
+		- restler_static_string: '/'
+		+ restler_fuzzable_string: [bai2b1i9:matrix.org, fuzzstring, ...]
+		- restler_static_string: '/'
+		- restler_custom_payload_uuid4_suffix: 's'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: localhost:8008\r\n'
+		- restler_static_string: 'Content-Type: '
+		- restler_static_string: 'application/json'
+		- restler_static_string: '\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+		- restler_static_string: '{'
+		- restler_static_string: '\n    "reason":'
+		+ restler_fuzzable_string: ["Indecent material", "fuzzstring", ...]
+		- restler_static_string: '}'
+		- restler_static_string: '\r\n'
+
+2026-02-13 20:36:15.673: Sending: 'PUT /_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/redact/fuzzstring/stupidmeesadb236dd20 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8008\r\nContent-Type: application/json\r\n_OMITTED_AUTH_TOKEN_\r\nContent-Length: 37\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: 0f854467-13aa-4e66-b4a5-90dbb620b24f\r\n\r\n{\n    "reason":"Indecent material"}\r\n'
+
+2026-02-13 20:36:15.702: Received: 'HTTP/1.1 404 Not Found\r\nServer: Synapse/1.147.1\r\nDate: Fri, 13 Feb 2026 20:36:15 GMT\r\nContent-Type: application/json\r\nCache-Control: no-cache, no-store, must-revalidate\r\nAccess-Control-Allow-Origin: *\r\nAccess-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS\r\nAccess-Control-Allow-Headers: X-Requested-With, Content-Type, Authorization, Date\r\nAccess-Control-Expose-Headers: Synapse-Trace-Id, Server\r\nTransfer-Encoding: chunked\r\n\r\n43\r\n{"errcode":"M_NOT_FOUND","error":"Could not find event fuzzstring"}\r\n0\r\n\r\n'
+
+
+Generation-1: Rendering Sequence-2
+
+	Request: 1 (Remaining candidate combinations: 3)
+	Request hash: 26699d8db7a2ffa35260b665a87309a0684de119
+
+		- restler_static_string: 'PUT '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: '_matrix'
+		- restler_static_string: '/'
+		- restler_static_string: 'client'
+		- restler_static_string: '/'
+		- restler_static_string: 'v3'
+		- restler_static_string: '/'
+		- restler_static_string: 'rooms'
+		- restler_static_string: '/'
+		- restler_static_string: '!zoMbfQHLAEshTaknsN%3Alocalhost'
+		- restler_static_string: '/'
+		- restler_static_string: 'redact'
+		- restler_static_string: '/'
+		+ restler_fuzzable_string: [bai2b1i9:matrix.org, fuzzstring, ...]
+		- restler_static_string: '/'
+		- restler_custom_payload_uuid4_suffix: 's'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: localhost:8008\r\n'
+		- restler_static_string: 'Content-Type: '
+		- restler_static_string: 'application/json'
+		- restler_static_string: '\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+		- restler_static_string: '{'
+		- restler_static_string: '\n    "reason":'
+		+ restler_fuzzable_string: ["Indecent material", "fuzzstring", ...]
+		- restler_static_string: '}'
+		- restler_static_string: '\r\n'
+
+2026-02-13 20:36:15.770: Sending: 'PUT /_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/redact/fuzzstring/stupidmees191277462d HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8008\r\nContent-Type: application/json\r\n_OMITTED_AUTH_TOKEN_\r\nContent-Length: 30\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: 07471391-97ec-4de6-a11b-7bb2d43e54df\r\n\r\n{\n    "reason":"fuzzstring"}\r\n'
+
+2026-02-13 20:36:15.802: Received: 'HTTP/1.1 404 Not Found\r\nServer: Synapse/1.147.1\r\nDate: Fri, 13 Feb 2026 20:36:15 GMT\r\nContent-Type: application/json\r\nCache-Control: no-cache, no-store, must-revalidate\r\nAccess-Control-Allow-Origin: *\r\nAccess-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS\r\nAccess-Control-Allow-Headers: X-Requested-With, Content-Type, Authorization, Date\r\nAccess-Control-Expose-Headers: Synapse-Trace-Id, Server\r\nTransfer-Encoding: chunked\r\n\r\n43\r\n{"errcode":"M_NOT_FOUND","error":"Could not find event fuzzstring"}\r\n0\r\n\r\n'
+
+
+Generation-1: Rendering Sequence-2
+
+	Request: 1 (Remaining candidate combinations: 2)
+	Request hash: 26699d8db7a2ffa35260b665a87309a0684de119
+
+		- restler_static_string: 'PUT '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: '_matrix'
+		- restler_static_string: '/'
+		- restler_static_string: 'client'
+		- restler_static_string: '/'
+		- restler_static_string: 'v3'
+		- restler_static_string: '/'
+		- restler_static_string: 'rooms'
+		- restler_static_string: '/'
+		- restler_static_string: '!zoMbfQHLAEshTaknsN%3Alocalhost'
+		- restler_static_string: '/'
+		- restler_static_string: 'redact'
+		- restler_static_string: '/'
+		+ restler_fuzzable_string: [bai2b1i9:matrix.org, fuzzstring, ...]
+		- restler_static_string: '/'
+		- restler_custom_payload_uuid4_suffix: 's'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: localhost:8008\r\n'
+		- restler_static_string: 'Content-Type: '
+		- restler_static_string: 'application/json'
+		- restler_static_string: '\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+		- restler_static_string: '{'
+		- restler_static_string: '\n    "reason":'
+		+ restler_fuzzable_string: ["Indecent material", "fuzzstring", ...]
+		- restler_static_string: '}'
+		- restler_static_string: '\r\n'
+
+2026-02-13 20:36:15.865: Sending: 'PUT /_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/redact/bai2b1i9%3Amatrix.org/stupidmeesa4493f9d0c HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8008\r\nContent-Type: application/json\r\n_OMITTED_AUTH_TOKEN_\r\nContent-Length: 2\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: b86f2811-c4ee-4c01-ba35-35703823e3b6\r\n\r\n{}'
+
+2026-02-13 20:36:15.900: Received: 'HTTP/1.1 404 Not Found\r\nServer: Synapse/1.147.1\r\nDate: Fri, 13 Feb 2026 20:36:15 GMT\r\nContent-Type: application/json\r\nCache-Control: no-cache, no-store, must-revalidate\r\nAccess-Control-Allow-Origin: *\r\nAccess-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS\r\nAccess-Control-Allow-Headers: X-Requested-With, Content-Type, Authorization, Date\r\nAccess-Control-Expose-Headers: Synapse-Trace-Id, Server\r\nTransfer-Encoding: chunked\r\n\r\n4c\r\n{"errcode":"M_NOT_FOUND","error":"Could not find event bai2b1i9:matrix.org"}\r\n0\r\n\r\n'
+
+
+Generation-1: Rendering Sequence-2
+
+	Request: 1 (Remaining candidate combinations: 1)
+	Request hash: 26699d8db7a2ffa35260b665a87309a0684de119
+
+		- restler_static_string: 'PUT '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: '_matrix'
+		- restler_static_string: '/'
+		- restler_static_string: 'client'
+		- restler_static_string: '/'
+		- restler_static_string: 'v3'
+		- restler_static_string: '/'
+		- restler_static_string: 'rooms'
+		- restler_static_string: '/'
+		- restler_static_string: '!zoMbfQHLAEshTaknsN%3Alocalhost'
+		- restler_static_string: '/'
+		- restler_static_string: 'redact'
+		- restler_static_string: '/'
+		+ restler_fuzzable_string: [bai2b1i9:matrix.org, fuzzstring, ...]
+		- restler_static_string: '/'
+		- restler_custom_payload_uuid4_suffix: 's'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: localhost:8008\r\n'
+		- restler_static_string: 'Content-Type: '
+		- restler_static_string: 'application/json'
+		- restler_static_string: '\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+		- restler_static_string: '{'
+		- restler_static_string: '\n    "reason":'
+		+ restler_fuzzable_string: ["Indecent material", "fuzzstring", ...]
+		- restler_static_string: '}'
+		- restler_static_string: '\r\n'
+
+2026-02-13 20:36:15.971: Sending: 'PUT /_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/redact/fuzzstring/stupidmees158c9b4102 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8008\r\nContent-Type: application/json\r\n_OMITTED_AUTH_TOKEN_\r\nContent-Length: 2\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: 45be451b-0be8-409c-90e5-a193bd231719\r\n\r\n{}'
+
+2026-02-13 20:36:16.000: Received: 'HTTP/1.1 404 Not Found\r\nServer: Synapse/1.147.1\r\nDate: Fri, 13 Feb 2026 20:36:15 GMT\r\nContent-Type: application/json\r\nCache-Control: no-cache, no-store, must-revalidate\r\nAccess-Control-Allow-Origin: *\r\nAccess-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS\r\nAccess-Control-Allow-Headers: X-Requested-With, Content-Type, Authorization, Date\r\nAccess-Control-Expose-Headers: Synapse-Trace-Id, Server\r\nTransfer-Encoding: chunked\r\n\r\n43\r\n{"errcode":"M_NOT_FOUND","error":"Could not find event fuzzstring"}\r\n0\r\n\r\n'
+
+
+Generation-1: Rendering Sequence-3
+
+	Request: 1 (Remaining candidate combinations: 4)
+	Request hash: 96ad2bd0d4deb69b639bf17e48b8b7e9e03956d7
+
+		- restler_static_string: 'PUT '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: '_matrix'
+		- restler_static_string: '/'
+		- restler_static_string: 'client'
+		- restler_static_string: '/'
+		- restler_static_string: 'v3'
+		- restler_static_string: '/'
+		- restler_static_string: 'rooms'
+		- restler_static_string: '/'
+		- restler_static_string: '!zoMbfQHLAEshTaknsN%3Alocalhost'
+		- restler_static_string: '/'
+		- restler_static_string: 'send'
+		- restler_static_string: '/'
+		- restler_static_string: 'm.room.message'
+		- restler_static_string: '/'
+		- restler_custom_payload_uuid4_suffix: 's'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: localhost:8008\r\n'
+		- restler_static_string: 'Content-Type: '
+		- restler_static_string: 'application/json'
+		- restler_static_string: '\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+		+ restler_fuzzable_object: [{"body":"hello","msgtype":"m.text"}, { "fuzz": false }, ...]
+		- restler_static_string: '\r\n'
+
+2026-02-13 20:36:16.102: Sending: 'PUT /_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/send/m.room.message/stupidmees5a9dde2337 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8008\r\nContent-Type: application/json\r\n_OMITTED_AUTH_TOKEN_\r\nContent-Length: 37\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: b97bf919-1640-482d-ab20-bebe5f8039f3\r\n\r\n{"body":"hello","msgtype":"m.text"}\r\n'
+
+2026-02-13 20:36:16.163: Received: 'HTTP/1.1 200 OK\r\nServer: Synapse/1.147.1\r\nDate: Fri, 13 Feb 2026 20:36:16 GMT\r\nContent-Type: application/json\r\nCache-Control: no-cache, no-store, must-revalidate\r\nAccess-Control-Allow-Origin: *\r\nAccess-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS\r\nAccess-Control-Allow-Headers: X-Requested-With, Content-Type, Authorization, Date\r\nAccess-Control-Expose-Headers: Synapse-Trace-Id, Server\r\nTransfer-Encoding: chunked\r\n\r\n3b\r\n{"event_id":"$wzxwOi37UELzSJG7gMzg1xd-B3kI1yRmBrbb4Fg2b2Q"}\r\n0\r\n\r\n'
+

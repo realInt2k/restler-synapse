@@ -1,0 +1,217 @@
+[
+  {
+    "consumer": {
+      "id": {
+        "RequestId": {
+          "endpoint": "/_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/redact/{eventId}/{stupidMeessage}",
+          "method": "Put"
+        },
+        "ResourceReference": {
+          "PathResource": {
+            "name": "eventId",
+            "pathToParameter": [
+              "_matrix",
+              "client",
+              "v3",
+              "rooms",
+              "!zoMbfQHLAEshTaknsN%3Alocalhost",
+              "redact"
+            ],
+            "responsePath": {
+              "path": []
+            }
+          }
+        },
+        "ContainerName": "redact",
+        "CandidateTypeNames": [
+          "redact"
+        ],
+        "AccessPathParts": {
+          "path": []
+        },
+        "ResourceName": "eventId",
+        "ProducerParameterName": "id",
+        "IsNestedBodyResource": false,
+        "PrimitiveType": "String"
+      },
+      "parameterKind": "Path"
+    }
+  },
+  {
+    "consumer": {
+      "id": {
+        "RequestId": {
+          "endpoint": "/_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/redact/{eventId}/{stupidMeessage}",
+          "method": "Put"
+        },
+        "ResourceReference": {
+          "PathResource": {
+            "name": "stupidMeessage",
+            "pathToParameter": [
+              "_matrix",
+              "client",
+              "v3",
+              "rooms",
+              "!zoMbfQHLAEshTaknsN%3Alocalhost",
+              "redact",
+              "{eventId}"
+            ],
+            "responsePath": {
+              "path": []
+            }
+          }
+        },
+        "ContainerName": "redact",
+        "CandidateTypeNames": [
+          "redact"
+        ],
+        "AccessPathParts": {
+          "path": []
+        },
+        "ResourceName": "stupidMeessage",
+        "ProducerParameterName": "meessage",
+        "IsNestedBodyResource": false,
+        "PrimitiveType": "String"
+      },
+      "parameterKind": "Path"
+    },
+    "producer": {
+      "DictionaryPayload": {
+        "payloadType": "UuidSuffix",
+        "primitiveType": "String",
+        "name": "stupidMeessage",
+        "isObject": false
+      }
+    }
+  },
+  {
+    "consumer": {
+      "id": {
+        "RequestId": {
+          "endpoint": "/_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/redact/{eventId}/{stupidMeessage}",
+          "method": "Put"
+        },
+        "ResourceReference": {
+          "BodyResource": {
+            "name": "reason",
+            "fullPath": {
+              "path": [
+                "reason"
+              ]
+            }
+          }
+        },
+        "CandidateTypeNames": [
+          "reason"
+        ],
+        "AccessPath": "reason",
+        "AccessPathParts": {
+          "path": [
+            "reason"
+          ]
+        },
+        "ResourceName": "reason",
+        "ProducerParameterName": "reason",
+        "IsNestedBodyResource": false,
+        "PrimitiveType": "String"
+      },
+      "parameterKind": "Body"
+    }
+  },
+  {
+    "consumer": {
+      "id": {
+        "RequestId": {
+          "endpoint": "/_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/send/m.reaction/{stupidMeessage}",
+          "method": "Put"
+        },
+        "ResourceReference": {
+          "PathResource": {
+            "name": "stupidMeessage",
+            "pathToParameter": [
+              "_matrix",
+              "client",
+              "v3",
+              "rooms",
+              "!zoMbfQHLAEshTaknsN%3Alocalhost",
+              "send",
+              "m.reaction"
+            ],
+            "responsePath": {
+              "path": []
+            }
+          }
+        },
+        "ContainerName": "m.reaction",
+        "PathContainerName": "m.reaction",
+        "CandidateTypeNames": [
+          "m.reaction"
+        ],
+        "AccessPathParts": {
+          "path": []
+        },
+        "ResourceName": "stupidMeessage",
+        "ProducerParameterName": "meessage",
+        "IsNestedBodyResource": false,
+        "PrimitiveType": "String"
+      },
+      "parameterKind": "Path"
+    },
+    "producer": {
+      "DictionaryPayload": {
+        "payloadType": "UuidSuffix",
+        "primitiveType": "String",
+        "name": "stupidMeessage",
+        "isObject": false
+      }
+    }
+  },
+  {
+    "consumer": {
+      "id": {
+        "RequestId": {
+          "endpoint": "/_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/send/m.room.message/{stupidMeessage}",
+          "method": "Put"
+        },
+        "ResourceReference": {
+          "PathResource": {
+            "name": "stupidMeessage",
+            "pathToParameter": [
+              "_matrix",
+              "client",
+              "v3",
+              "rooms",
+              "!zoMbfQHLAEshTaknsN%3Alocalhost",
+              "send",
+              "m.room.message"
+            ],
+            "responsePath": {
+              "path": []
+            }
+          }
+        },
+        "ContainerName": "m.room.message",
+        "PathContainerName": "m.room.message",
+        "CandidateTypeNames": [
+          "m.room.message"
+        ],
+        "AccessPathParts": {
+          "path": []
+        },
+        "ResourceName": "stupidMeessage",
+        "ProducerParameterName": "meessage",
+        "IsNestedBodyResource": false,
+        "PrimitiveType": "String"
+      },
+      "parameterKind": "Path"
+    },
+    "producer": {
+      "DictionaryPayload": {
+        "payloadType": "UuidSuffix",
+        "primitiveType": "String",
+        "name": "stupidMeessage",
+        "isObject": false
+      }
+    }
+  }
+]

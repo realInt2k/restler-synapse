@@ -1,0 +1,109 @@
+2026-02-13 20:36:45.943: Initializing: Garbage collection every 30 seconds.
+2026-02-13 20:36:45.954: Generation: 1 
+Invalid value generator random seed: 1771015006.8874211
+Setting invalid value generator random seed: 12345
+Invalid value generator random seed: 1771015013.373829
+Setting invalid value generator random seed: 12345
+Invalid value generator random seed: 1771015016.7184932
+Setting invalid value generator random seed: 12345
+Invalid value generator random seed: 1771015019.9479873
+Setting invalid value generator random seed: 12345
+Invalid value generator random seed: 1771015025.2586973
+Setting invalid value generator random seed: 12345
+Invalid value generator random seed: 1771015029.8220992
+Setting invalid value generator random seed: 12345
+Invalid value generator random seed: 1771015033.4678447
+Setting invalid value generator random seed: 12345
+2026-02-13 20:37:17.303: Generation: 2 
+Invalid value generator random seed: 1771015037.78806
+Setting invalid value generator random seed: 12345
+Invalid value generator random seed: 1771015041.676995
+Setting invalid value generator random seed: 12345
+Invalid value generator random seed: 1771015045.4841073
+Setting invalid value generator random seed: 12345
+Invalid value generator random seed: 1771015050.0470483
+Setting invalid value generator random seed: 12345
+2026-02-13 20:37:34.174: Generation: 3 
+Invalid value generator random seed: 1771015054.806357
+Setting invalid value generator random seed: 12345
+Invalid value generator random seed: 1771015058.9933608
+Setting invalid value generator random seed: 12345
+Invalid value generator random seed: 1771015064.025419
+Setting invalid value generator random seed: 12345
+Invalid value generator random seed: 1771015066.9857574
+Setting invalid value generator random seed: 12345
+Invalid value generator random seed: 1771015072.984847
+Setting invalid value generator random seed: 12345
+Invalid value generator random seed: 1771015076.9146752
+Setting invalid value generator random seed: 12345
+Invalid value generator random seed: 1771015080.0482883
+Setting invalid value generator random seed: 12345
+2026-02-13 20:38:09.158: Generation: 4 
+Invalid value generator random seed: 1771015089.923014
+Setting invalid value generator random seed: 12345
+Invalid value generator random seed: 1771015093.6639984
+Setting invalid value generator random seed: 12345
+Invalid value generator random seed: 1771015100.6733217
+Setting invalid value generator random seed: 12345
+Invalid value generator random seed: 1771015104.3736808
+Setting invalid value generator random seed: 12345
+2026-02-13 20:38:33.202: Generation: 5 
+Invalid value generator random seed: 1771015114.045458
+Setting invalid value generator random seed: 12345
+Invalid value generator random seed: 1771015117.5761747
+Setting invalid value generator random seed: 12345
+Invalid value generator random seed: 1771015130.1946921
+Setting invalid value generator random seed: 12345
+Invalid value generator random seed: 1771015133.8642032
+Setting invalid value generator random seed: 12345
+Invalid value generator random seed: 1771015155.5409293
+Setting invalid value generator random seed: 12345
+Invalid value generator random seed: 1771015159.8124182
+Setting invalid value generator random seed: 12345
+Invalid value generator random seed: 1771015163.5071728
+Setting invalid value generator random seed: 12345
+2026-02-13 20:40:09.516: Generation: 6 
+Invalid value generator random seed: 1771015210.5913243
+Setting invalid value generator random seed: 12345
+Invalid value generator random seed: 1771015214.1794019
+Setting invalid value generator random seed: 12345
+Invalid value generator random seed: 1771015238.8870544
+Setting invalid value generator random seed: 12345
+Invalid value generator random seed: 1771015242.5865111
+Setting invalid value generator random seed: 12345
+2026-02-13 20:41:19.238: Generation: 7 
+Invalid value generator random seed: 1771015280.423733
+Setting invalid value generator random seed: 12345
+Invalid value generator random seed: 1771015284.0514765
+Setting invalid value generator random seed: 12345
+Invalid value generator random seed: 1771015337.454924
+Setting invalid value generator random seed: 12345
+Invalid value generator random seed: 1771015340.9942937
+Setting invalid value generator random seed: 12345
+Invalid value generator random seed: 1771015441.0679743
+Setting invalid value generator random seed: 12345
+Invalid value generator random seed: 1771015445.2588665
+Setting invalid value generator random seed: 12345
+Invalid value generator random seed: 1771015449.2054453
+Setting invalid value generator random seed: 12345
+2026-02-13 20:48:23.387: Generation: 8 
+Invalid value generator random seed: 1771015705.056917
+Setting invalid value generator random seed: 12345
+Invalid value generator random seed: 1771015709.146623
+Setting invalid value generator random seed: 12345
+Invalid value generator random seed: 1771015851.2584348
+Setting invalid value generator random seed: 12345
+Invalid value generator random seed: 1771015855.60666
+Setting invalid value generator random seed: 12345
+2026-02-13 20:54:19.543: Generation: 9 
+Invalid value generator random seed: 1771016061.5484357
+Setting invalid value generator random seed: 12345
+Invalid value generator random seed: 1771016065.9229558
+Setting invalid value generator random seed: 12345
+Invalid value generator random seed: 1771016378.450885
+Setting invalid value generator random seed: 12345
+Invalid value generator random seed: 1771016382.4646397
+Setting invalid value generator random seed: 12345
+timeout reached
+2026-02-13 21:06:46.858: Terminating garbage collection. Waiting for max 300 seconds. 
+Done.

@@ -1,0 +1,116 @@
+[02/13/2026 19:35:00] Generating grammar...
+[02/13/2026 19:35:00] Getting requests...
+[02/13/2026 19:35:00] Getting dependencies...
+[02/13/2026 19:35:00] Getting path consumers...
+[02/13/2026 19:35:00] Getting query consumers...
+[02/13/2026 19:35:00] Getting header consumers...
+[02/13/2026 19:35:00] Getting body consumers...
+[02/13/2026 19:35:00] Getting producers...
+[02/13/2026 19:35:00] Done processing producers
+[02/13/2026 19:35:00] Compute dependencies
+[[[02/13/2026 19:35:00] Second pass dependencies for request { endpoint =
+            "/_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/send/m.reaction/{stupidMeessage}"
+  xMsPath = None
+  method = Put }
+[02/13/2026 19:35:00] Second pass dependencies for request { endpoint =
+            "/_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/send/m.reaction/{stupidMeessage}"
+  xMsPath = None
+  method = Put }
+[[02/13/2026 19:35:00] Second pass dependencies for request { endpoint =
+            "/_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/send/m.reaction/{stupidMeessage}"
+  xMsPath = None
+  method = Put }
+02/13/2026 19:35:00] Second pass dependencies for request { endpoint =
+            "/_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/redact/{eventId}/{stupidMeessage}"
+  xMsPath = None
+  method = Put }
+02/13/2026 19:35:00] Second pass dependencies for request { endpoint =
+            "/_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/send/m.room.message/{stupidMeessage}"
+  xMsPath = None
+  method = Put }
+[02/13/2026 19:35:0002/13/2026 19:35:00] Second pass dependencies for request { endpoint =
+            "/_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/send/m.room.message/{stupidMeessage}"
+  xMsPath = None
+  method = Put }
+] Second pass dependencies for request { endpoint =
+            "/_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/redact/{eventId}/{stupidMeessage}"
+  xMsPath = None
+  method = Put }[
+02/13/2026 19:35:00] Second pass dependencies for request { endpoint =
+            "/_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/send/m.room.message/{stupidMeessage}"
+  xMsPath = None
+  method = Put }
+[02/13/2026 19:35:00] Done dependencies for request { endpoint =
+            "/_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/send/m.room.message/{stupidMeessage}"
+  xMsPath = None
+  method = Put }
+[02/13/2026 19:35:00] Done dependencies for request { endpoint =
+            "/_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/redact/{eventId}/{stupidMeessage}"
+  xMsPath = None
+  method = Put }
+[02/13/2026 19:35:00] Done dependencies for request { endpoint =
+            "/_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/send/m.room.message/{stupidMeessage}"
+  xMsPath = None
+  method = Put }[[02/13/2026 19:35:00] Done dependencies for request { endpoint =
+            "/_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/redact/{eventId}/{stupidMeessage}"
+  xMsPath = None
+  method = Put }
+[02/13/2026 19:35:00] Done dependencies for request { endpoint =
+            "/_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/send/m.reaction/{stupidMeessage}"
+  xMsPath = None
+  method = Put }
+02/13/2026 19:35:00] Done dependencies for request { endpoint =
+            "/_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/send/m.reaction/{stupidMeessage}"
+  xMsPath = None
+  method = Put }
+[02/13/2026 19:35:00[] Done dependencies for request { endpoint =
+            "/_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/send/m.reaction/{stupidMeessage}"
+  xMsPath = None
+  method = Put }
+02/13/2026 19:35:00] Done dependencies for request { endpoint =
+            "/_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/send/m.room.message/{stupidMeessage}"
+  xMsPath = None
+  method = Put }[
+02/13/2026 19:35:00] Second pass dependencies for request { endpoint =
+            "/_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/redact/{eventId}/{stupidMeessage}"
+  xMsPath = None
+  method = Put }
+
+[02/13/2026 19:35:00] Done dependencies for request { endpoint =
+            "/_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/redact/{eventId}/{stupidMeessage}"
+  xMsPath = None
+  method = Put }
+[02/13/2026 19:35:00] Second pass dependencies for request { endpoint =
+            "/_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/send/m.room.message/{stupidMeessage}"
+  xMsPath = None
+  method = Put }
+[02/13/2026 19:35:00] Second pass dependencies for request { endpoint =
+            "/_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/send/m.reaction/{stupidMeessage}"
+  xMsPath = None
+  method = Put }
+[02/13/2026 19:35:00] Second pass dependencies for request { endpoint =
+            "/_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/redact/{eventId}/{stupidMeessage}"
+  xMsPath = None
+  method = Put }
+[02/13/2026 19:35:00] Done dependencies for request { endpoint =
+            "/_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/send/m.room.message/{stupidMeessage}"
+  xMsPath = None
+  method = Put }
+[02/13/2026 19:35:00] Done dependencies for request { endpoint =
+            "/_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/send/m.reaction/{stupidMeessage}"
+  xMsPath = None
+  method = Put }
+[02/13/2026 19:35:00] Done dependencies for request { endpoint =
+            "/_matrix/client/v3/rooms/!zoMbfQHLAEshTaknsN%3Alocalhost/redact/{eventId}/{stupidMeessage}"
+  xMsPath = None
+  method = Put }
+[02/13/2026 19:35:00] Assigning equality constraints...
+[02/13/2026 19:35:00] Getting ordering constraints...
+[02/13/2026 19:35:00] Dependency analysis completed.
+[02/13/2026 19:35:00] Generating request primitives...
+Writing new dictionary to /work/Compile/dict.json
+[02/13/2026 19:35:00] Generating python grammar...
+[02/13/2026 19:35:00] Get requests
+[02/13/2026 19:35:00] Done get requests
+[02/13/2026 19:35:00] Done generating python grammar.
+Workflow completed.  See /work/Compile for REST-ler grammar.
