@@ -1,0 +1,8 @@
+{
+    "authentication": {
+        "token": {
+            "location": "/data/authentication_token.txt",
+            "token_refresh_interval":  300
+        }
+    }
+}

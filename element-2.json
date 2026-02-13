@@ -1,0 +1,2052 @@
+{
+  "2026-02-08T05:07:20.966Z": {
+    "method": "GET",
+    "url": "http://localhost:8008/_matrix/client/v3/rooms/!nFepJfmBqXtLCSWkQL%3Alocalhost/members?not_membership=leave&at=s308_1295_0_63_123_1_1_214_0_1_2",
+    "payload": null,
+    "response": {
+      "status": 200,
+      "statusText": "OK",
+      "body": {
+        "chunk": [
+          {
+            "type": "m.room.member",
+            "sender": "@user1:localhost",
+            "content": {
+              "displayname": "user1",
+              "membership": "join"
+            },
+            "room_id": "!nFepJfmBqXtLCSWkQL:localhost",
+            "state_key": "@user1:localhost",
+            "origin_server_ts": 1769293610480,
+            "unsigned": {
+              "age": 1233630508
+            },
+            "event_id": "$kCwNAAXncK6mfdJf9Rum93Ae27CGCd8U_oa-kCJS7TU",
+            "user_id": "@user1:localhost",
+            "age": 1233630508
+          }
+        ]
+      }
+    }
+  },
+  "2026-02-08T05:07:20.967Z": {
+    "method": "OPTIONS",
+    "url": "http://localhost:8008/_matrix/client/v3/rooms/!nFepJfmBqXtLCSWkQL%3Alocalhost/members?not_membership=leave&at=s308_1295_0_63_123_1_1_214_0_1_2",
+    "payload": null,
+    "response": {
+      "status": 204,
+      "statusText": "No Content",
+      "body": null
+    }
+  },
+  "2026-02-08T05:07:20.996Z": {
+    "method": "OPTIONS",
+    "url": "http://localhost:8008/_matrix/client/v3/rooms/!nFepJfmBqXtLCSWkQL%3Alocalhost/receipt/m.read/%24wG47a2xsaWKgHVJcPxs92V-zftxPRmjAZF9AUItdxoo",
+    "payload": null,
+    "response": {
+      "status": 204,
+      "statusText": "No Content",
+      "body": null
+    }
+  },
+  "2026-02-08T05:07:21.067Z": {
+    "method": "GET",
+    "url": "http://localhost:8008/_matrix/client/v3/rooms/!nFepJfmBqXtLCSWkQL%3Alocalhost/messages?limit=50&dir=b&from=s274_942_0_4_26_1_1_165_0_1_2&filter=%7B%22lazy_load_members%22%3Atrue%7D",
+    "payload": null,
+    "response": {
+      "status": 200,
+      "statusText": "OK",
+      "body": {
+        "chunk": [
+          {
+            "type": "m.room.topic",
+            "sender": "@user1:localhost",
+            "content": {
+              "topic": "All about happy hour",
+              "m.topic": {
+                "m.text": [
+                  {
+                    "body": "All about happy hour"
+                  }
+                ]
+              }
+            },
+            "room_id": "!nFepJfmBqXtLCSWkQL:localhost",
+            "state_key": "",
+            "origin_server_ts": 1769293610511,
+            "unsigned": {
+              "membership": "join",
+              "age": 1233630581
+            },
+            "event_id": "$8mkCO3wMFW9xeCnvaV7aXV9Eoe2TobKmhQfwXcZlmmo",
+            "user_id": "@user1:localhost",
+            "age": 1233630581
+          },
+          {
+            "type": "m.room.guest_access",
+            "sender": "@user1:localhost",
+            "content": {
+              "guest_access": "can_join"
+            },
+            "room_id": "!nFepJfmBqXtLCSWkQL:localhost",
+            "state_key": "",
+            "origin_server_ts": 1769293610511,
+            "unsigned": {
+              "membership": "join",
+              "age": 1233630581
+            },
+            "event_id": "$-LuCOWsahIEzhTrlINNOaAbmuaDTvV5N73QIEjxmy2s",
+            "user_id": "@user1:localhost",
+            "age": 1233630581
+          },
+          {
+            "type": "m.room.history_visibility",
+            "sender": "@user1:localhost",
+            "content": {
+              "history_visibility": "shared"
+            },
+            "room_id": "!nFepJfmBqXtLCSWkQL:localhost",
+            "state_key": "",
+            "origin_server_ts": 1769293610511,
+            "unsigned": {
+              "membership": "join",
+              "age": 1233630581
+            },
+            "event_id": "$cIEU4cel8kIDJG08wlLEJQE1QnjmUbMcrHe6eYLmK0s",
+            "user_id": "@user1:localhost",
+            "age": 1233630581
+          },
+          {
+            "type": "m.room.join_rules",
+            "sender": "@user1:localhost",
+            "content": {
+              "join_rule": "invite"
+            },
+            "room_id": "!nFepJfmBqXtLCSWkQL:localhost",
+            "state_key": "",
+            "origin_server_ts": 1769293610510,
+            "unsigned": {
+              "membership": "join",
+              "age": 1233630582
+            },
+            "event_id": "$JH8p410R30UQLQ0A_aak7c7quHsFgySTTBxu0jBknCo",
+            "user_id": "@user1:localhost",
+            "age": 1233630582
+          },
+          {
+            "type": "m.room.power_levels",
+            "sender": "@user1:localhost",
+            "content": {
+              "users": {
+                "@user1:localhost": 100
+              },
+              "users_default": 0,
+              "events": {
+                "m.room.name": 50,
+                "m.room.power_levels": 100,
+                "m.room.history_visibility": 100,
+                "m.room.canonical_alias": 50,
+                "m.room.avatar": 50,
+                "m.room.tombstone": 100,
+                "m.room.server_acl": 100,
+                "m.room.encryption": 100
+              },
+              "events_default": 0,
+              "state_default": 50,
+              "ban": 50,
+              "kick": 50,
+              "redact": 50,
+              "invite": 0,
+              "historical": 100
+            },
+            "room_id": "!nFepJfmBqXtLCSWkQL:localhost",
+            "state_key": "",
+            "origin_server_ts": 1769293610504,
+            "unsigned": {
+              "membership": "join",
+              "age": 1233630588
+            },
+            "event_id": "$tVIzx0crB6KnBTVuON4VTj_kF1y0saVmD_JGtZu3GSI",
+            "user_id": "@user1:localhost",
+            "age": 1233630588
+          },
+          {
+            "type": "m.room.member",
+            "sender": "@user1:localhost",
+            "content": {
+              "displayname": "user1",
+              "membership": "join"
+            },
+            "room_id": "!nFepJfmBqXtLCSWkQL:localhost",
+            "state_key": "@user1:localhost",
+            "origin_server_ts": 1769293610480,
+            "unsigned": {
+              "membership": "join",
+              "age": 1233630612
+            },
+            "event_id": "$kCwNAAXncK6mfdJf9Rum93Ae27CGCd8U_oa-kCJS7TU",
+            "user_id": "@user1:localhost",
+            "age": 1233630612
+          },
+          {
+            "type": "m.room.create",
+            "sender": "@user1:localhost",
+            "content": {
+              "room_version": "10",
+              "creator": "@user1:localhost"
+            },
+            "room_id": "!nFepJfmBqXtLCSWkQL:localhost",
+            "state_key": "",
+            "origin_server_ts": 1769293610444,
+            "unsigned": {
+              "membership": "leave",
+              "age": 1233630648
+            },
+            "event_id": "$Wj3xGqXnn29IR6dJzf708XLDiVbCJs8YNRI1nxWgT3s",
+            "user_id": "@user1:localhost",
+            "age": 1233630648
+          }
+        ],
+        "start": "s274_942_0_4_26_1_1_165_0_1_2",
+        "end": "t1-246_942_0_4_26_1_1_165_0_1_2",
+        "state": [
+          {
+            "type": "m.room.member",
+            "sender": "@user1:localhost",
+            "content": {
+              "displayname": "user1",
+              "membership": "join"
+            },
+            "room_id": "!nFepJfmBqXtLCSWkQL:localhost",
+            "state_key": "@user1:localhost",
+            "origin_server_ts": 1769293610480,
+            "unsigned": {
+              "age": 1233630612
+            },
+            "event_id": "$kCwNAAXncK6mfdJf9Rum93Ae27CGCd8U_oa-kCJS7TU",
+            "user_id": "@user1:localhost",
+            "age": 1233630612
+          }
+        ]
+      }
+    }
+  },
+  "2026-02-08T05:07:21.068Z": {
+    "method": "OPTIONS",
+    "url": "http://localhost:8008/_matrix/client/v3/rooms/!nFepJfmBqXtLCSWkQL%3Alocalhost/messages?limit=50&dir=b&from=s274_942_0_4_26_1_1_165_0_1_2&filter=%7B%22lazy_load_members%22%3Atrue%7D",
+    "payload": null,
+    "response": {
+      "status": 204,
+      "statusText": "No Content",
+      "body": null
+    }
+  },
+  "2026-02-08T05:07:21.100Z": {
+    "method": "GET",
+    "url": "http://localhost:8008/_matrix/client/v3/rooms/!nFepJfmBqXtLCSWkQL%3Alocalhost/messages?limit=50&dir=b&from=t1-246_942_0_4_26_1_1_165_0_1_2&filter=%7B%22lazy_load_members%22%3Atrue%7D",
+    "payload": null,
+    "response": {
+      "status": 200,
+      "statusText": "OK",
+      "body": {
+        "chunk": [],
+        "start": "t1-246_942_0_4_26_1_1_165_0_1_2"
+      }
+    }
+  },
+  "2026-02-08T05:07:21.101Z": {
+    "method": "OPTIONS",
+    "url": "http://localhost:8008/_matrix/client/v3/rooms/!nFepJfmBqXtLCSWkQL%3Alocalhost/messages?limit=50&dir=b&from=t1-246_942_0_4_26_1_1_165_0_1_2&filter=%7B%22lazy_load_members%22%3Atrue%7D",
+    "payload": null,
+    "response": {
+      "status": 204,
+      "statusText": "No Content",
+      "body": null
+    }
+  },
+  "2026-02-08T05:07:21.824Z": {
+    "method": "PUT",
+    "url": "http://localhost:8008/_matrix/client/v3/user/%40user1%3Alocalhost/account_data/im.vector.setting.breadcrumbs",
+    "payload": {
+      "recent_rooms": [
+        "!yKNxqxuTELmXhEDXpX:localhost",
+        "!nFepJfmBqXtLCSWkQL:localhost",
+        "!CzyNYlluTndXlClRZV:localhost",
+        "!mbIkrOTUKlXofFWUER:localhost",
+        "!AOaLmLFXUOIwuCDMJd:localhost",
+        "!YbOnQmnTYQMsablaCP:localhost"
+      ]
+    },
+    "response": {
+      "status": 200,
+      "statusText": "OK",
+      "body": {}
+    }
+  },
+  "2026-02-08T05:07:21.827Z": {
+    "method": "OPTIONS",
+    "url": "http://localhost:8008/_matrix/client/v3/user/%40user1%3Alocalhost/account_data/im.vector.setting.breadcrumbs",
+    "payload": null,
+    "response": {
+      "status": 204,
+      "statusText": "No Content",
+      "body": null
+    }
+  },
+  "2026-02-08T05:07:21.911Z": {
+    "method": "POST",
+    "url": "http://localhost:8008/_matrix/client/v3/rooms/!yKNxqxuTELmXhEDXpX%3Alocalhost/receipt/m.read/%24sd7K3FBsgO3l5jUw8MCiiPHMCSFNAEUgFlE6RBXQ4gs",
+    "payload": {
+      "thread_id": "main"
+    },
+    "response": {
+      "status": 200,
+      "statusText": "OK",
+      "body": {}
+    }
+  },
+  "2026-02-08T05:07:21.912Z": {
+    "method": "OPTIONS",
+    "url": "http://localhost:8008/_matrix/client/v3/rooms/!yKNxqxuTELmXhEDXpX%3Alocalhost/receipt/m.read/%24sd7K3FBsgO3l5jUw8MCiiPHMCSFNAEUgFlE6RBXQ4gs",
+    "payload": null,
+    "response": {
+      "status": 204,
+      "statusText": "No Content",
+      "body": null
+    }
+  },
+  "2026-02-08T05:07:23.312Z": {
+    "method": "PUT",
+    "url": "http://localhost:8008/_matrix/client/v3/rooms/!yKNxqxuTELmXhEDXpX%3Alocalhost/typing/%40user1%3Alocalhost",
+    "payload": {
+      "typing": true,
+      "timeout": 30000
+    },
+    "response": {
+      "status": 200,
+      "statusText": "OK",
+      "body": {}
+    }
+  },
+  "2026-02-08T05:07:23.313Z": {
+    "method": "OPTIONS",
+    "url": "http://localhost:8008/_matrix/client/v3/rooms/!yKNxqxuTELmXhEDXpX%3Alocalhost/typing/%40user1%3Alocalhost",
+    "payload": null,
+    "response": {
+      "status": 204,
+      "statusText": "No Content",
+      "body": null
+    }
+  },
+  "2026-02-08T05:07:25.346Z": {
+    "method": "PUT",
+    "url": "http://localhost:8008/_matrix/client/v3/rooms/!yKNxqxuTELmXhEDXpX%3Alocalhost/typing/%40user1%3Alocalhost",
+    "payload": {
+      "typing": false
+    },
+    "response": {
+      "status": 200,
+      "statusText": "OK",
+      "body": {}
+    }
+  },
+  "2026-02-08T05:07:25.355Z": {
+    "method": "PUT",
+    "url": "http://localhost:8008/_matrix/client/v3/rooms/!yKNxqxuTELmXhEDXpX%3Alocalhost/send/m.room.message/m1770527245323.0",
+    "payload": {
+      "msgtype": "m.text",
+      "body": "Hi admin",
+      "m.mentions": {}
+    },
+    "response": {
+      "status": 200,
+      "statusText": "OK",
+      "body": {
+        "event_id": "$IH68i1dy5RGDs9BbdL51l8t0-i-M1F6dAKfXBNyuiS4"
+      }
+    }
+  },
+  "2026-02-08T05:07:25.356Z": {
+    "method": "OPTIONS",
+    "url": "http://localhost:8008/_matrix/client/v3/rooms/!yKNxqxuTELmXhEDXpX%3Alocalhost/send/m.room.message/m1770527245323.0",
+    "payload": null,
+    "response": {
+      "status": 204,
+      "statusText": "No Content",
+      "body": null
+    }
+  },
+  "2026-02-08T05:07:25.451Z": {
+    "method": "GET",
+    "url": "http://localhost:8008/_matrix/client/v3/profile/%40user1%3Alocalhost",
+    "payload": null,
+    "response": {
+      "status": 200,
+      "statusText": "OK",
+      "body": {
+        "displayname": "user1"
+      }
+    }
+  },
+  "2026-02-08T05:07:25.452Z": {
+    "method": "OPTIONS",
+    "url": "http://localhost:8008/_matrix/client/v3/profile/%40user1%3Alocalhost",
+    "payload": null,
+    "response": {
+      "status": 204,
+      "statusText": "No Content",
+      "body": null
+    }
+  },
+  "2026-02-08T05:07:25.480Z": {
+    "method": "POST",
+    "url": "http://localhost:8008/_matrix/client/v3/keys/query",
+    "payload": {
+      "device_keys": {
+        "@user1:localhost": []
+      }
+    },
+    "response": {
+      "status": 200,
+      "statusText": "OK",
+      "body": {
+        "device_keys": {
+          "@user1:localhost": {
+            "PCWXITNOBM": {
+              "algorithms": [
+                "m.olm.v1.curve25519-aes-sha2",
+                "m.megolm.v1.aes-sha2"
+              ],
+              "device_id": "PCWXITNOBM",
+              "keys": {
+                "curve25519:PCWXITNOBM": "EqCEfM54H/cE6toFPva0Keo+KaUDF0UROqBaaiF6924",
+                "ed25519:PCWXITNOBM": "8QxWtFnCpx3XIW9Pluk3A467Qw2gOqt8oUWEhwUTfz4"
+              },
+              "signatures": {
+                "@user1:localhost": {
+                  "ed25519:PCWXITNOBM": "Z5AIM+KVoLpAi3zj6MJSkdHuaPW9wUsaAmCnj9JArkFhTFgX3npSikzPAAxzG4RBtG1V3TEBD/mgY1aZubZkBw",
+                  "ed25519:fXhsP4fiHnK1NxRFDnI6uTfOFvu8FnY/FvtUx1Xt0j0": "jWLMbN6YZSDN2r/7jIurecXaEBFP1AfrhIn39W2lFTGzj6i2lODS+m2FvKcNuIliBsrWKvwH+pZxcFysDH3iAQ"
+                }
+              },
+              "user_id": "@user1:localhost",
+              "unsigned": {
+                "device_display_name": "app.element.io: Chrome on Linux"
+              }
+            },
+            "MSCCJYANMC": {
+              "algorithms": [
+                "m.olm.v1.curve25519-aes-sha2",
+                "m.megolm.v1.aes-sha2"
+              ],
+              "device_id": "MSCCJYANMC",
+              "keys": {
+                "curve25519:MSCCJYANMC": "9Trdenmk/bZ9TQ9QaNcp7DWs99qibq197k5oAmjFWz4",
+                "ed25519:MSCCJYANMC": "fNQ8X7Di2uYwJO5rcPl6STVP8iZ64I6EiL2x8Nf/abc"
+              },
+              "signatures": {
+                "@user1:localhost": {
+                  "ed25519:MSCCJYANMC": "wUPRTkkqWcyHNIxU0XWwoK4mhIKqv7zeIe4u+6fcEqS7MvpSz608GQ6ZzBj2cKoSj0gTeTX5I+LO7xUC9mriBw",
+                  "ed25519:jNE5fTJnK2dwdU52pMEjHmhxLWyOZwSJhncvGdgqSoI": "urjxv7qHhDGIVYhCda49JUYM1aWRGCXIcmQ9IOXhmT3d5dFwyYtivfu9PhKta3zOP7jNY86CzCRXS0yFjIUZBQ"
+                }
+              },
+              "user_id": "@user1:localhost",
+              "unsigned": {
+                "device_display_name": "Element Desktop: Linux"
+              }
+            },
+            "SDGZPUNPNS": {
+              "algorithms": [
+                "m.olm.v1.curve25519-aes-sha2",
+                "m.megolm.v1.aes-sha2"
+              ],
+              "device_id": "SDGZPUNPNS",
+              "keys": {
+                "curve25519:SDGZPUNPNS": "lOQWXCrOkguvQoJpTgRKDmkhfrpwffX1/50UtYGixWo",
+                "ed25519:SDGZPUNPNS": "3bTfE8wEY9u6GlGiZo5gHVv7BJG6ZpkDKd55C/QMI2Q"
+              },
+              "signatures": {
+                "@user1:localhost": {
+                  "ed25519:SDGZPUNPNS": "E+GqsaEni8gsbCPa12O6EApxQDtSSLDP57vTaUfMlfaxASNlvhIk9FwIVYPW87kUs7FVu58yWz0eZMMeSUPHAQ",
+                  "ed25519:Zy/KX4IxUS9v6aZyJ9x/37kiO1+Iu/LC25VLRc/WfkY": "0mTOModvgJAyyjBmxVAam0Ei9IdIbNxodWFSLkNbrvviQal4nFHZpvdUpBzptGBDEkH6mqKl1s9JkjTwou0OCA"
+                }
+              },
+              "user_id": "@user1:localhost",
+              "unsigned": {
+                "device_display_name": "Element Desktop: Linux"
+              }
+            },
+            "LTRSLIICOE": {
+              "algorithms": [
+                "m.olm.v1.curve25519-aes-sha2",
+                "m.megolm.v1.aes-sha2"
+              ],
+              "device_id": "LTRSLIICOE",
+              "keys": {
+                "curve25519:LTRSLIICOE": "RBEQqdTdnbDFNjvkmLOx7Wfc1b74WishXSYU+YztQSI",
+                "ed25519:LTRSLIICOE": "zdtYYx6+bLQgOpJ3EWlyKfsHzRmaYO+mtH8DYhha+ng"
+              },
+              "signatures": {
+                "@user1:localhost": {
+                  "ed25519:LTRSLIICOE": "t2KHILRG5MytATSvlpxybaMKv0ZvzkEsVRymBdrSejxn7EI5R07CTo46oSWK8jMVSh65GgV4OOe00eNYo6g5CA",
+                  "ed25519:fy8Rf7FdZFm/IoKDCdjx0MX0Oxi40pYXO4Fe8+balkw": "YlkkX6MReUh6PecEL7OmBZKnPtq7F0Mr/QTvuOK4IoaNOrWUiYH1KRMDRuBT2xQfY0l1zJazxXAT7D5wllo/Cg"
+                }
+              },
+              "user_id": "@user1:localhost",
+              "unsigned": {
+                "device_display_name": "Element Desktop: Linux"
+              }
+            },
+            "ATRMBJLMQW": {
+              "algorithms": [
+                "m.olm.v1.curve25519-aes-sha2",
+                "m.megolm.v1.aes-sha2"
+              ],
+              "device_id": "ATRMBJLMQW",
+              "keys": {
+                "curve25519:ATRMBJLMQW": "UfCVP7HJCAh4Gd9Fiz4gv/y1ZaDEGBfm4EHiXLUFlXI",
+                "ed25519:ATRMBJLMQW": "7d1/AVm26ifLoypy9coYVOEDgfpYUP8r1tTP+t+xRGs"
+              },
+              "signatures": {
+                "@user1:localhost": {
+                  "ed25519:ATRMBJLMQW": "crbchKx/OSx6sFfaADeRxqcNT7Bh8VEZ8qYUlB9eVw5Dv5E1T8pSlFX6YDKdBcu++JYV/9qy1BJhkn2K7pweAQ",
+                  "ed25519:Vu0xCmSgdq92CapbMFgRWL1wcTG9z09+oiJoubeTOXI": "W+4oZrtfwOHCCSEIry9Gve6ARQRqcvscqABzmSW4YsHKfuXF5bzRrkYHeroeyEDNyRXnBRR7E3UubGt2SUE/CA"
+                }
+              },
+              "user_id": "@user1:localhost",
+              "unsigned": {
+                "device_display_name": "Element Desktop: Linux"
+              }
+            },
+            "DUVNOMDGSX": {
+              "algorithms": [
+                "m.olm.v1.curve25519-aes-sha2",
+                "m.megolm.v1.aes-sha2"
+              ],
+              "device_id": "DUVNOMDGSX",
+              "keys": {
+                "curve25519:DUVNOMDGSX": "/WdpJ+O0/ewZOqTwk6es1lOQjA8zjDeaL1sFWowdRgM",
+                "ed25519:DUVNOMDGSX": "NzyFdwMn6a4/kOW8fMZFUA/nzItDEyoCV5q1l2vsa/g"
+              },
+              "signatures": {
+                "@user1:localhost": {
+                  "ed25519:DUVNOMDGSX": "8PpLNCOKa9qMH5Eq1ke0g2wEsPQdDPqC7eVheGumb1NMwyhTDtl6il472EhBQ9Lh+svp8ONPzcbv+yxmP1VJAw",
+                  "ed25519:lHrPyjY22UoO3Wd9dcCHHNaJTszbskdDVRnHq01KuGM": "l+iOX0Z9LL1RQHwq2elYHAOvdsF//s3xIm2P4rse4pE41gmdjfPrJiQlKq1frRI6+xrWzr4H1cEVxT6/dHz6Ag"
+                }
+              },
+              "user_id": "@user1:localhost",
+              "unsigned": {
+                "device_display_name": "app.element.io: Chrome on Linux"
+              }
+            },
+            "EHEHBGXTOI": {
+              "algorithms": [
+                "m.olm.v1.curve25519-aes-sha2",
+                "m.megolm.v1.aes-sha2"
+              ],
+              "device_id": "EHEHBGXTOI",
+              "keys": {
+                "curve25519:EHEHBGXTOI": "QfSF0uvx6TNNCbxL3VqPVshOJRtEbwgaIP5IUJ1YDEE",
+                "ed25519:EHEHBGXTOI": "L6Bu+cBfK75uIK0HM6GbXvygaD2kCdP5cqQtOa/HPEE"
+              },
+              "signatures": {
+                "@user1:localhost": {
+                  "ed25519:EHEHBGXTOI": "vhbryQdTzJJoBFMlKFhtA61n9nu3E2WPaQXeU56EYIsUmdvA7HB1kw8/YvdCDl3/DoKyuZf6QTLw4XNy7pxGAQ",
+                  "ed25519:5oZm2RoE5vvDHTvt1su1RUFaGmb8qIUHyFLtbL5dZFo": "WKFwSAOs6jd7u+xX5Yzsph9DhxGswURNCvPcL4JDIIiDdlHnh+N/K+7GNPUf7HKbdFSi95IRZX0Z8Hh45zRfDQ"
+                }
+              },
+              "user_id": "@user1:localhost",
+              "unsigned": {
+                "device_display_name": "Element Desktop: Linux"
+              }
+            }
+          }
+        },
+        "failures": {},
+        "master_keys": {
+          "@user1:localhost": {
+            "keys": {
+              "ed25519:eySsJ0r8cUKiSwK661ZUJGAJhPgFH5y24axaEPdFEFQ": "eySsJ0r8cUKiSwK661ZUJGAJhPgFH5y24axaEPdFEFQ"
+            },
+            "signatures": {
+              "@user1:localhost": {
+                "ed25519:EHEHBGXTOI": "wjbrMXEeC/SPrTVlktnIWFG+cwB9h48w52EDWxVzMVIJtE9M1AvYZ2i8pmnVJF9i8DsNrd2pweMxl4FBRl4qDA",
+                "ed25519:eySsJ0r8cUKiSwK661ZUJGAJhPgFH5y24axaEPdFEFQ": "wQy2ncvfFHwpbrz/h0xzBVWVV9Uoy07kKPpq3O1XrrkHep6BoHg55LTTHo7Ety3orsFMLB7FnQFjH8iktGQYCA"
+              }
+            },
+            "usage": [
+              "master"
+            ],
+            "user_id": "@user1:localhost"
+          }
+        },
+        "self_signing_keys": {
+          "@user1:localhost": {
+            "keys": {
+              "ed25519:5oZm2RoE5vvDHTvt1su1RUFaGmb8qIUHyFLtbL5dZFo": "5oZm2RoE5vvDHTvt1su1RUFaGmb8qIUHyFLtbL5dZFo"
+            },
+            "signatures": {
+              "@user1:localhost": {
+                "ed25519:eySsJ0r8cUKiSwK661ZUJGAJhPgFH5y24axaEPdFEFQ": "A8o8aVhaoy+6Tcljl9CUew4oTmF8ftANVHrdzRebJm42wBTjxA5ZTtt4jsE4KGCUjmt7dxKbJIfrjSQlt4xlBg"
+              }
+            },
+            "usage": [
+              "self_signing"
+            ],
+            "user_id": "@user1:localhost"
+          }
+        },
+        "user_signing_keys": {
+          "@user1:localhost": {
+            "keys": {
+              "ed25519:YANnUHvxr3hKuSc0PXX7O5vxTDA8KttZsIcfdFM3chw": "YANnUHvxr3hKuSc0PXX7O5vxTDA8KttZsIcfdFM3chw"
+            },
+            "signatures": {
+              "@user1:localhost": {
+                "ed25519:eySsJ0r8cUKiSwK661ZUJGAJhPgFH5y24axaEPdFEFQ": "b+26/iNL8p/lsoNC3u3RX7ylJ6PktpXYAXTE3QwZ5YolGv5zw05H6tXYLewrg/ot9fAH5aEA675KQ5szSYphCQ"
+              }
+            },
+            "usage": [
+              "user_signing"
+            ],
+            "user_id": "@user1:localhost"
+          }
+        }
+      }
+    }
+  },
+  "2026-02-08T05:07:25.481Z": {
+    "method": "OPTIONS",
+    "url": "http://localhost:8008/_matrix/client/v3/keys/query",
+    "payload": null,
+    "response": {
+      "status": 204,
+      "statusText": "No Content",
+      "body": null
+    }
+  },
+  "2026-02-08T05:07:25.876Z": {
+    "method": "POST",
+    "url": "http://localhost:8008/_matrix/client/v3/rooms/!yKNxqxuTELmXhEDXpX%3Alocalhost/receipt/m.read/%24IH68i1dy5RGDs9BbdL51l8t0-i-M1F6dAKfXBNyuiS4",
+    "payload": {
+      "thread_id": "main"
+    },
+    "response": {
+      "status": 200,
+      "statusText": "OK",
+      "body": {}
+    }
+  },
+  "2026-02-08T05:07:25.877Z": {
+    "method": "POST",
+    "url": "http://localhost:8008/_matrix/client/v3/rooms/!yKNxqxuTELmXhEDXpX%3Alocalhost/read_markers",
+    "payload": {
+      "m.fully_read": "$IH68i1dy5RGDs9BbdL51l8t0-i-M1F6dAKfXBNyuiS4"
+    },
+    "response": {
+      "status": 200,
+      "statusText": "OK",
+      "body": {}
+    }
+  },
+  "2026-02-08T05:07:25.878Z": {
+    "method": "OPTIONS",
+    "url": "http://localhost:8008/_matrix/client/v3/rooms/!yKNxqxuTELmXhEDXpX%3Alocalhost/read_markers",
+    "payload": null,
+    "response": {
+      "status": 204,
+      "statusText": "No Content",
+      "body": null
+    }
+  },
+  "2026-02-08T05:07:26.663Z": {
+    "method": "PUT",
+    "url": "http://localhost:8008/_matrix/client/v3/user/%40user1%3Alocalhost/account_data/im.vector.setting.breadcrumbs",
+    "payload": {
+      "recent_rooms": [
+        "!nFepJfmBqXtLCSWkQL:localhost",
+        "!yKNxqxuTELmXhEDXpX:localhost",
+        "!CzyNYlluTndXlClRZV:localhost",
+        "!mbIkrOTUKlXofFWUER:localhost",
+        "!AOaLmLFXUOIwuCDMJd:localhost",
+        "!YbOnQmnTYQMsablaCP:localhost"
+      ]
+    },
+    "response": {
+      "status": 200,
+      "statusText": "OK",
+      "body": {}
+    }
+  },
+  "2026-02-08T05:07:26.726Z": {
+    "method": "POST",
+    "url": "http://localhost:8008/_matrix/client/v3/rooms/!nFepJfmBqXtLCSWkQL%3Alocalhost/receipt/m.read/%24wG47a2xsaWKgHVJcPxs92V-zftxPRmjAZF9AUItdxoo",
+    "payload": {
+      "thread_id": "main"
+    },
+    "response": {
+      "status": 200,
+      "statusText": "OK",
+      "body": {}
+    }
+  },
+  "2026-02-08T05:07:26.727Z": {
+    "method": "OPTIONS",
+    "url": "http://localhost:8008/_matrix/client/v3/rooms/!nFepJfmBqXtLCSWkQL%3Alocalhost/receipt/m.read/%24wG47a2xsaWKgHVJcPxs92V-zftxPRmjAZF9AUItdxoo",
+    "payload": null,
+    "response": {
+      "status": 204,
+      "statusText": "No Content",
+      "body": null
+    }
+  },
+  "2026-02-08T05:07:29.106Z": {
+    "method": "DELETE",
+    "url": "http://localhost:8008/_matrix/client/v3/user/%40user1%3Alocalhost/rooms/!nFepJfmBqXtLCSWkQL%3Alocalhost/tags/m.lowpriority",
+    "payload": null,
+    "response": {
+      "status": 200,
+      "statusText": "OK",
+      "body": {}
+    }
+  },
+  "2026-02-08T05:07:29.107Z": {
+    "method": "OPTIONS",
+    "url": "http://localhost:8008/_matrix/client/v3/user/%40user1%3Alocalhost/rooms/!nFepJfmBqXtLCSWkQL%3Alocalhost/tags/m.lowpriority",
+    "payload": null,
+    "response": {
+      "status": 204,
+      "statusText": "No Content",
+      "body": null
+    }
+  },
+  "2026-02-08T05:07:29.108Z": {
+    "method": "OPTIONS",
+    "url": "http://localhost:8008/_matrix/client/v3/user/%40user1%3Alocalhost/rooms/!nFepJfmBqXtLCSWkQL%3Alocalhost/tags/m.favourite",
+    "payload": null,
+    "response": {
+      "status": 204,
+      "statusText": "No Content",
+      "body": null
+    }
+  },
+  "2026-02-08T05:07:34.640Z": {
+    "method": "PUT",
+    "url": "http://localhost:8008/_matrix/client/v3/pushrules/global/override/!nFepJfmBqXtLCSWkQL%3Alocalhost",
+    "payload": {
+      "conditions": [
+        {
+          "kind": "event_match",
+          "key": "room_id",
+          "pattern": "!nFepJfmBqXtLCSWkQL:localhost"
+        }
+      ],
+      "actions": [
+        "dont_notify"
+      ]
+    },
+    "response": {
+      "status": 200,
+      "statusText": "OK",
+      "body": {}
+    }
+  },
+  "2026-02-08T05:07:34.641Z": {
+    "method": "OPTIONS",
+    "url": "http://localhost:8008/_matrix/client/v3/pushrules/global/override/!nFepJfmBqXtLCSWkQL%3Alocalhost",
+    "payload": null,
+    "response": {
+      "status": 204,
+      "statusText": "No Content",
+      "body": null
+    }
+  },
+  "2026-02-08T05:13:20.142Z": {
+    "method": "GET",
+    "url": "https://app.element.io/icons/close.5ef7caf.svg",
+    "payload": null,
+    "response": {
+      "status": 304,
+      "statusText": "",
+      "body": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"currentColor\" viewBox=\"0 0 24 24\"><path d=\"M6.293 6.293a1 1 0 0 1 1.414 0L12 10.586l4.293-4.293a1 1 0 1 1 1.414 1.414L13.414 12l4.293 4.293a1 1 0 0 1-1.414 1.414L12 13.414l-4.293 4.293a1 1 0 0 1-1.414-1.414L10.586 12 6.293 7.707a1 1 0 0 1 0-1.414\"/></svg>"
+    }
+  },
+  "2026-02-08T05:13:21.244Z": {
+    "method": "POST",
+    "url": "http://localhost:8008/_matrix/client/v3/rooms/!IUwfIMrEkhxgBXffSJ%3Alocalhost/leave",
+    "payload": {},
+    "response": {
+      "status": 200,
+      "statusText": "OK",
+      "body": {}
+    }
+  },
+  "2026-02-08T05:13:21.245Z": {
+    "method": "OPTIONS",
+    "url": "http://localhost:8008/_matrix/client/v3/rooms/!IUwfIMrEkhxgBXffSJ%3Alocalhost/leave",
+    "payload": null,
+    "response": {
+      "status": 204,
+      "statusText": "No Content",
+      "body": null
+    }
+  },
+  "2026-02-08T05:13:21.326Z": {
+    "method": "GET",
+    "url": "http://localhost:8008/_matrix/client/v3/profile/%40user1%3Alocalhost",
+    "payload": null,
+    "response": {
+      "status": 200,
+      "statusText": "OK",
+      "body": {
+        "displayname": "user1"
+      }
+    }
+  },
+  "2026-02-08T05:13:21.327Z": {
+    "method": "OPTIONS",
+    "url": "http://localhost:8008/_matrix/client/v3/profile/%40user1%3Alocalhost",
+    "payload": null,
+    "response": {
+      "status": 204,
+      "statusText": "No Content",
+      "body": null
+    }
+  },
+  "2026-02-08T05:13:21.592Z": {
+    "method": "GET",
+    "url": "http://localhost:8008/_matrix/client/v3/profile/%40user1%3Alocalhost",
+    "payload": null,
+    "response": {
+      "status": 200,
+      "statusText": "OK",
+      "body": {
+        "displayname": "user1"
+      }
+    }
+  },
+  "2026-02-08T05:13:24.039Z": {
+    "method": "PUT",
+    "url": "http://localhost:8008/_matrix/client/v3/user/%40user1%3Alocalhost/account_data/im.vector.setting.breadcrumbs",
+    "payload": {
+      "recent_rooms": [
+        "!yKNxqxuTELmXhEDXpX:localhost",
+        "!nFepJfmBqXtLCSWkQL:localhost",
+        "!CzyNYlluTndXlClRZV:localhost",
+        "!mbIkrOTUKlXofFWUER:localhost",
+        "!AOaLmLFXUOIwuCDMJd:localhost",
+        "!YbOnQmnTYQMsablaCP:localhost"
+      ]
+    },
+    "response": {
+      "status": 200,
+      "statusText": "OK",
+      "body": {}
+    }
+  },
+  "2026-02-08T05:13:24.041Z": {
+    "method": "OPTIONS",
+    "url": "http://localhost:8008/_matrix/client/v3/user/%40user1%3Alocalhost/account_data/im.vector.setting.breadcrumbs",
+    "payload": null,
+    "response": {
+      "status": 204,
+      "statusText": "No Content",
+      "body": null
+    }
+  },
+  "2026-02-08T05:13:24.251Z": {
+    "method": "POST",
+    "url": "http://localhost:8008/_matrix/client/v3/rooms/!yKNxqxuTELmXhEDXpX%3Alocalhost/receipt/m.read/%24IH68i1dy5RGDs9BbdL51l8t0-i-M1F6dAKfXBNyuiS4",
+    "payload": {
+      "thread_id": "main"
+    },
+    "response": {
+      "status": 200,
+      "statusText": "OK",
+      "body": {}
+    }
+  },
+  "2026-02-08T05:13:24.253Z": {
+    "method": "OPTIONS",
+    "url": "http://localhost:8008/_matrix/client/v3/rooms/!yKNxqxuTELmXhEDXpX%3Alocalhost/receipt/m.read/%24IH68i1dy5RGDs9BbdL51l8t0-i-M1F6dAKfXBNyuiS4",
+    "payload": null,
+    "response": {
+      "status": 204,
+      "statusText": "No Content",
+      "body": null
+    }
+  },
+  "2026-02-08T05:17:12.995Z": {
+    "method": "GET",
+    "url": "https://app.element.io/version",
+    "payload": null,
+    "response": {
+      "status": 304,
+      "statusText": "",
+      "body": "v1.12.9"
+    }
+  },
+  "2026-02-08T05:17:15.272Z": {
+    "method": "GET",
+    "url": "http://localhost:8008/_matrix/client/v3/voip/turnServer",
+    "payload": null,
+    "response": {
+      "status": 200,
+      "statusText": "OK",
+      "body": {}
+    }
+  },
+  "2026-02-08T05:17:15.274Z": {
+    "method": "OPTIONS",
+    "url": "http://localhost:8008/_matrix/client/v3/voip/turnServer",
+    "payload": null,
+    "response": {
+      "status": 204,
+      "statusText": "No Content",
+      "body": null
+    }
+  },
+  "2026-02-08T05:27:12.995Z": {
+    "method": "GET",
+    "url": "https://app.element.io/version",
+    "payload": null,
+    "response": {
+      "status": 304,
+      "statusText": "",
+      "body": "v1.12.9"
+    }
+  },
+  "2026-02-08T05:27:15.271Z": {
+    "method": "GET",
+    "url": "http://localhost:8008/_matrix/client/v3/voip/turnServer",
+    "payload": null,
+    "response": {
+      "status": 200,
+      "statusText": "OK",
+      "body": {}
+    }
+  },
+  "2026-02-08T05:27:15.274Z": {
+    "method": "OPTIONS",
+    "url": "http://localhost:8008/_matrix/client/v3/voip/turnServer",
+    "payload": null,
+    "response": {
+      "status": 204,
+      "statusText": "No Content",
+      "body": null
+    }
+  },
+  "2026-02-08T05:28:28.199Z": {
+    "method": "PUT",
+    "url": "http://localhost:8008/_matrix/client/v3/user/%40user1%3Alocalhost/account_data/im.vector.setting.breadcrumbs",
+    "payload": {
+      "recent_rooms": [
+        "!CzyNYlluTndXlClRZV:localhost",
+        "!yKNxqxuTELmXhEDXpX:localhost",
+        "!nFepJfmBqXtLCSWkQL:localhost",
+        "!mbIkrOTUKlXofFWUER:localhost",
+        "!AOaLmLFXUOIwuCDMJd:localhost",
+        "!YbOnQmnTYQMsablaCP:localhost"
+      ]
+    },
+    "response": {
+      "status": 200,
+      "statusText": "OK",
+      "body": {}
+    }
+  },
+  "2026-02-08T05:28:28.201Z": {
+    "method": "OPTIONS",
+    "url": "http://localhost:8008/_matrix/client/v3/user/%40user1%3Alocalhost/account_data/im.vector.setting.breadcrumbs",
+    "payload": null,
+    "response": {
+      "status": 204,
+      "statusText": "No Content",
+      "body": null
+    }
+  },
+  "2026-02-08T05:28:28.247Z": {
+    "method": "GET",
+    "url": "http://localhost:8008/_matrix/client/v3/rooms/!CzyNYlluTndXlClRZV%3Alocalhost/members?not_membership=leave&at=s310_1324_2_68_129_2_1_214_0_1_2",
+    "payload": null,
+    "response": {
+      "status": 200,
+      "statusText": "OK",
+      "body": {
+        "chunk": [
+          {
+            "type": "m.room.member",
+            "sender": "@user1:localhost",
+            "content": {
+              "displayname": "user1",
+              "membership": "join"
+            },
+            "room_id": "!CzyNYlluTndXlClRZV:localhost",
+            "state_key": "@user1:localhost",
+            "origin_server_ts": 1769293762655,
+            "unsigned": {
+              "age": 1234745606
+            },
+            "event_id": "$9GNiFlFlxL1-ZGSoeQTrnVmH82Jad_mgC1il11sOOw4",
+            "user_id": "@user1:localhost",
+            "age": 1234745606
+          }
+        ]
+      }
+    }
+  },
+  "2026-02-08T05:28:28.248Z": {
+    "method": "OPTIONS",
+    "url": "http://localhost:8008/_matrix/client/v3/rooms/!CzyNYlluTndXlClRZV%3Alocalhost/members?not_membership=leave&at=s310_1324_2_68_129_2_1_214_0_1_2",
+    "payload": null,
+    "response": {
+      "status": 204,
+      "statusText": "No Content",
+      "body": null
+    }
+  },
+  "2026-02-08T05:28:28.292Z": {
+    "method": "POST",
+    "url": "http://localhost:8008/_matrix/client/v3/rooms/!CzyNYlluTndXlClRZV%3Alocalhost/receipt/m.read/%24cmPo2V4mgukZdaUgh0hlVWzvM5j2OCME1vrWD-uad4w",
+    "payload": {
+      "thread_id": "main"
+    },
+    "response": {
+      "status": 200,
+      "statusText": "OK",
+      "body": {}
+    }
+  },
+  "2026-02-08T05:28:28.293Z": {
+    "method": "OPTIONS",
+    "url": "http://localhost:8008/_matrix/client/v3/rooms/!CzyNYlluTndXlClRZV%3Alocalhost/receipt/m.read/%24cmPo2V4mgukZdaUgh0hlVWzvM5j2OCME1vrWD-uad4w",
+    "payload": null,
+    "response": {
+      "status": 204,
+      "statusText": "No Content",
+      "body": null
+    }
+  },
+  "2026-02-08T05:28:28.316Z": {
+    "method": "GET",
+    "url": "http://localhost:8008/_matrix/client/v3/rooms/!CzyNYlluTndXlClRZV%3Alocalhost/messages?limit=50&dir=b&from=s289_1018_58_58_120_1_1_214_0_1_2&filter=%7B%22lazy_load_members%22%3Atrue%7D",
+    "payload": null,
+    "response": {
+      "status": 200,
+      "statusText": "OK",
+      "body": {
+        "chunk": [
+          {
+            "type": "m.room.message",
+            "sender": "@user1:localhost",
+            "content": {
+              "msgtype": "m.text",
+              "body": "ss",
+              "m.mentions": {}
+            },
+            "room_id": "!CzyNYlluTndXlClRZV:localhost",
+            "origin_server_ts": 1770504604849,
+            "unsigned": {
+              "membership": "join",
+              "age": 23903494
+            },
+            "event_id": "$INTPeRIk6oYuXDWmBPI0DYdfbL51U675IUM-_SfN4r4",
+            "user_id": "@user1:localhost",
+            "age": 23903494
+          },
+          {
+            "type": "m.room.message",
+            "sender": "@user1:localhost",
+            "content": {
+              "msgtype": "m.text",
+              "body": "123",
+              "m.mentions": {}
+            },
+            "room_id": "!CzyNYlluTndXlClRZV:localhost",
+            "origin_server_ts": 1770504579736,
+            "unsigned": {
+              "membership": "join",
+              "age": 23928607
+            },
+            "event_id": "$xBIQQCY6Di2bZJWufzBnLKyjCNW80IFm2vjvCxR9HBc",
+            "user_id": "@user1:localhost",
+            "age": 23928607
+          },
+          {
+            "type": "m.room.message",
+            "sender": "@user1:localhost",
+            "content": {
+              "msgtype": "m.text",
+              "body": "ho",
+              "m.mentions": {}
+            },
+            "room_id": "!CzyNYlluTndXlClRZV:localhost",
+            "origin_server_ts": 1770501464900,
+            "unsigned": {
+              "membership": "join",
+              "age": 27043443
+            },
+            "event_id": "$RG9aUxnToQmf_-A18qpb2o1Lb2q8N426kTskrdvI-1I",
+            "user_id": "@user1:localhost",
+            "age": 27043443
+          },
+          {
+            "type": "m.room.topic",
+            "sender": "@user1:localhost",
+            "content": {
+              "topic": "i27RjJ8ea8P",
+              "m.topic": {
+                "m.text": [
+                  {
+                    "body": "i27RjJ8ea8P"
+                  }
+                ]
+              }
+            },
+            "room_id": "!CzyNYlluTndXlClRZV:localhost",
+            "state_key": "",
+            "origin_server_ts": 1769293762687,
+            "unsigned": {
+              "membership": "join",
+              "age": 1234745656
+            },
+            "event_id": "$cpxiQLDS2fFaixdGlHT_XDEMQVqT0DIxYX2fLc0_-0A",
+            "user_id": "@user1:localhost",
+            "age": 1234745656
+          },
+          {
+            "type": "m.room.guest_access",
+            "sender": "@user1:localhost",
+            "content": {
+              "guest_access": "can_join"
+            },
+            "room_id": "!CzyNYlluTndXlClRZV:localhost",
+            "state_key": "",
+            "origin_server_ts": 1769293762687,
+            "unsigned": {
+              "membership": "join",
+              "age": 1234745656
+            },
+            "event_id": "$l1jQVB1AB6nT87QDRa9EagD61xzA84pepQME_sVA7Gk",
+            "user_id": "@user1:localhost",
+            "age": 1234745656
+          },
+          {
+            "type": "m.room.history_visibility",
+            "sender": "@user1:localhost",
+            "content": {
+              "history_visibility": "shared"
+            },
+            "room_id": "!CzyNYlluTndXlClRZV:localhost",
+            "state_key": "",
+            "origin_server_ts": 1769293762686,
+            "unsigned": {
+              "membership": "join",
+              "age": 1234745657
+            },
+            "event_id": "$-OHv2yDW_2vVAn2nHJk1hbVndmCiQSrZqS9D_3jBxR8",
+            "user_id": "@user1:localhost",
+            "age": 1234745657
+          },
+          {
+            "type": "m.room.join_rules",
+            "sender": "@user1:localhost",
+            "content": {
+              "join_rule": "invite"
+            },
+            "room_id": "!CzyNYlluTndXlClRZV:localhost",
+            "state_key": "",
+            "origin_server_ts": 1769293762686,
+            "unsigned": {
+              "membership": "join",
+              "age": 1234745657
+            },
+            "event_id": "$AajyjscrMVVwUC9LDV9DCjME0FjB3xPGpwgqzQSTkLE",
+            "user_id": "@user1:localhost",
+            "age": 1234745657
+          },
+          {
+            "type": "m.room.power_levels",
+            "sender": "@user1:localhost",
+            "content": {
+              "users": {
+                "@user1:localhost": 100
+              },
+              "users_default": 0,
+              "events": {
+                "m.room.name": 50,
+                "m.room.power_levels": 100,
+                "m.room.history_visibility": 100,
+                "m.room.canonical_alias": 50,
+                "m.room.avatar": 50,
+                "m.room.tombstone": 100,
+                "m.room.server_acl": 100,
+                "m.room.encryption": 100
+              },
+              "events_default": 0,
+              "state_default": 50,
+              "ban": 50,
+              "kick": 50,
+              "redact": 50,
+              "invite": 0,
+              "historical": 100
+            },
+            "room_id": "!CzyNYlluTndXlClRZV:localhost",
+            "state_key": "",
+            "origin_server_ts": 1769293762679,
+            "unsigned": {
+              "membership": "join",
+              "age": 1234745664
+            },
+            "event_id": "$y1__FDbVWpm6V4cDB8DqMR9as4H2KKlEaLssK_hjk5A",
+            "user_id": "@user1:localhost",
+            "age": 1234745664
+          },
+          {
+            "type": "m.room.member",
+            "sender": "@user1:localhost",
+            "content": {
+              "displayname": "user1",
+              "membership": "join"
+            },
+            "room_id": "!CzyNYlluTndXlClRZV:localhost",
+            "state_key": "@user1:localhost",
+            "origin_server_ts": 1769293762655,
+            "unsigned": {
+              "membership": "join",
+              "age": 1234745688
+            },
+            "event_id": "$9GNiFlFlxL1-ZGSoeQTrnVmH82Jad_mgC1il11sOOw4",
+            "user_id": "@user1:localhost",
+            "age": 1234745688
+          },
+          {
+            "type": "m.room.create",
+            "sender": "@user1:localhost",
+            "content": {
+              "room_version": "10",
+              "creator": "@user1:localhost"
+            },
+            "room_id": "!CzyNYlluTndXlClRZV:localhost",
+            "state_key": "",
+            "origin_server_ts": 1769293762624,
+            "unsigned": {
+              "membership": "leave",
+              "age": 1234745719
+            },
+            "event_id": "$0AgQxnzAXdr5qXneNmxA1uLyy7Pwgkb8UvR17dJJ98s",
+            "user_id": "@user1:localhost",
+            "age": 1234745719
+          }
+        ],
+        "start": "s289_1018_58_58_120_1_1_214_0_1_2",
+        "end": "t1-267_1018_58_58_120_1_1_214_0_1_2",
+        "state": [
+          {
+            "type": "m.room.member",
+            "sender": "@user1:localhost",
+            "content": {
+              "displayname": "user1",
+              "membership": "join"
+            },
+            "room_id": "!CzyNYlluTndXlClRZV:localhost",
+            "state_key": "@user1:localhost",
+            "origin_server_ts": 1769293762655,
+            "unsigned": {
+              "age": 1234745688
+            },
+            "event_id": "$9GNiFlFlxL1-ZGSoeQTrnVmH82Jad_mgC1il11sOOw4",
+            "user_id": "@user1:localhost",
+            "age": 1234745688
+          }
+        ]
+      }
+    }
+  },
+  "2026-02-08T05:28:28.317Z": {
+    "method": "OPTIONS",
+    "url": "http://localhost:8008/_matrix/client/v3/rooms/!CzyNYlluTndXlClRZV%3Alocalhost/messages?limit=50&dir=b&from=s289_1018_58_58_120_1_1_214_0_1_2&filter=%7B%22lazy_load_members%22%3Atrue%7D",
+    "payload": null,
+    "response": {
+      "status": 204,
+      "statusText": "No Content",
+      "body": null
+    }
+  },
+  "2026-02-08T05:28:32.138Z": {
+    "method": "PUT",
+    "url": "http://localhost:8008/_matrix/client/v3/rooms/!CzyNYlluTndXlClRZV%3Alocalhost/typing/%40user1%3Alocalhost",
+    "payload": {
+      "typing": true,
+      "timeout": 30000
+    },
+    "response": {
+      "status": 200,
+      "statusText": "OK",
+      "body": {}
+    }
+  },
+  "2026-02-08T05:28:32.140Z": {
+    "method": "OPTIONS",
+    "url": "http://localhost:8008/_matrix/client/v3/rooms/!CzyNYlluTndXlClRZV%3Alocalhost/typing/%40user1%3Alocalhost",
+    "payload": null,
+    "response": {
+      "status": 204,
+      "statusText": "No Content",
+      "body": null
+    }
+  },
+  "2026-02-08T05:28:32.730Z": {
+    "method": "PUT",
+    "url": "http://localhost:8008/_matrix/client/v3/rooms/!CzyNYlluTndXlClRZV%3Alocalhost/typing/%40user1%3Alocalhost",
+    "payload": {
+      "typing": false
+    },
+    "response": {
+      "status": 200,
+      "statusText": "OK",
+      "body": {}
+    }
+  },
+  "2026-02-08T05:28:32.735Z": {
+    "method": "PUT",
+    "url": "http://localhost:8008/_matrix/client/v3/rooms/!CzyNYlluTndXlClRZV%3Alocalhost/send/m.room.message/m1770528512712.1",
+    "payload": {
+      "msgtype": "m.text",
+      "body": "WHAT",
+      "m.mentions": {}
+    },
+    "response": {
+      "status": 200,
+      "statusText": "OK",
+      "body": {
+        "event_id": "$vEaqtbayXxc0unBoLuIlW_fWUcc4Z_GBeTIATfDAE0Q"
+      }
+    }
+  },
+  "2026-02-08T05:28:32.737Z": {
+    "method": "OPTIONS",
+    "url": "http://localhost:8008/_matrix/client/v3/rooms/!CzyNYlluTndXlClRZV%3Alocalhost/send/m.room.message/m1770528512712.1",
+    "payload": null,
+    "response": {
+      "status": 204,
+      "statusText": "No Content",
+      "body": null
+    }
+  },
+  "2026-02-08T05:28:32.801Z": {
+    "method": "GET",
+    "url": "http://localhost:8008/_matrix/client/v3/profile/%40user1%3Alocalhost",
+    "payload": null,
+    "response": {
+      "status": 200,
+      "statusText": "OK",
+      "body": {
+        "displayname": "user1"
+      }
+    }
+  },
+  "2026-02-08T05:28:32.802Z": {
+    "method": "OPTIONS",
+    "url": "http://localhost:8008/_matrix/client/v3/profile/%40user1%3Alocalhost",
+    "payload": null,
+    "response": {
+      "status": 204,
+      "statusText": "No Content",
+      "body": null
+    }
+  },
+  "2026-02-08T05:28:32.847Z": {
+    "method": "POST",
+    "url": "http://localhost:8008/_matrix/client/v3/keys/query",
+    "payload": {
+      "device_keys": {
+        "@user1:localhost": []
+      }
+    },
+    "response": {
+      "status": 200,
+      "statusText": "OK",
+      "body": {
+        "device_keys": {
+          "@user1:localhost": {
+            "PCWXITNOBM": {
+              "algorithms": [
+                "m.olm.v1.curve25519-aes-sha2",
+                "m.megolm.v1.aes-sha2"
+              ],
+              "device_id": "PCWXITNOBM",
+              "keys": {
+                "curve25519:PCWXITNOBM": "EqCEfM54H/cE6toFPva0Keo+KaUDF0UROqBaaiF6924",
+                "ed25519:PCWXITNOBM": "8QxWtFnCpx3XIW9Pluk3A467Qw2gOqt8oUWEhwUTfz4"
+              },
+              "signatures": {
+                "@user1:localhost": {
+                  "ed25519:PCWXITNOBM": "Z5AIM+KVoLpAi3zj6MJSkdHuaPW9wUsaAmCnj9JArkFhTFgX3npSikzPAAxzG4RBtG1V3TEBD/mgY1aZubZkBw",
+                  "ed25519:fXhsP4fiHnK1NxRFDnI6uTfOFvu8FnY/FvtUx1Xt0j0": "jWLMbN6YZSDN2r/7jIurecXaEBFP1AfrhIn39W2lFTGzj6i2lODS+m2FvKcNuIliBsrWKvwH+pZxcFysDH3iAQ"
+                }
+              },
+              "user_id": "@user1:localhost",
+              "unsigned": {
+                "device_display_name": "app.element.io: Chrome on Linux"
+              }
+            },
+            "MSCCJYANMC": {
+              "algorithms": [
+                "m.olm.v1.curve25519-aes-sha2",
+                "m.megolm.v1.aes-sha2"
+              ],
+              "device_id": "MSCCJYANMC",
+              "keys": {
+                "curve25519:MSCCJYANMC": "9Trdenmk/bZ9TQ9QaNcp7DWs99qibq197k5oAmjFWz4",
+                "ed25519:MSCCJYANMC": "fNQ8X7Di2uYwJO5rcPl6STVP8iZ64I6EiL2x8Nf/abc"
+              },
+              "signatures": {
+                "@user1:localhost": {
+                  "ed25519:MSCCJYANMC": "wUPRTkkqWcyHNIxU0XWwoK4mhIKqv7zeIe4u+6fcEqS7MvpSz608GQ6ZzBj2cKoSj0gTeTX5I+LO7xUC9mriBw",
+                  "ed25519:jNE5fTJnK2dwdU52pMEjHmhxLWyOZwSJhncvGdgqSoI": "urjxv7qHhDGIVYhCda49JUYM1aWRGCXIcmQ9IOXhmT3d5dFwyYtivfu9PhKta3zOP7jNY86CzCRXS0yFjIUZBQ"
+                }
+              },
+              "user_id": "@user1:localhost",
+              "unsigned": {
+                "device_display_name": "Element Desktop: Linux"
+              }
+            },
+            "SDGZPUNPNS": {
+              "algorithms": [
+                "m.olm.v1.curve25519-aes-sha2",
+                "m.megolm.v1.aes-sha2"
+              ],
+              "device_id": "SDGZPUNPNS",
+              "keys": {
+                "curve25519:SDGZPUNPNS": "lOQWXCrOkguvQoJpTgRKDmkhfrpwffX1/50UtYGixWo",
+                "ed25519:SDGZPUNPNS": "3bTfE8wEY9u6GlGiZo5gHVv7BJG6ZpkDKd55C/QMI2Q"
+              },
+              "signatures": {
+                "@user1:localhost": {
+                  "ed25519:SDGZPUNPNS": "E+GqsaEni8gsbCPa12O6EApxQDtSSLDP57vTaUfMlfaxASNlvhIk9FwIVYPW87kUs7FVu58yWz0eZMMeSUPHAQ",
+                  "ed25519:Zy/KX4IxUS9v6aZyJ9x/37kiO1+Iu/LC25VLRc/WfkY": "0mTOModvgJAyyjBmxVAam0Ei9IdIbNxodWFSLkNbrvviQal4nFHZpvdUpBzptGBDEkH6mqKl1s9JkjTwou0OCA"
+                }
+              },
+              "user_id": "@user1:localhost",
+              "unsigned": {
+                "device_display_name": "Element Desktop: Linux"
+              }
+            },
+            "LTRSLIICOE": {
+              "algorithms": [
+                "m.olm.v1.curve25519-aes-sha2",
+                "m.megolm.v1.aes-sha2"
+              ],
+              "device_id": "LTRSLIICOE",
+              "keys": {
+                "curve25519:LTRSLIICOE": "RBEQqdTdnbDFNjvkmLOx7Wfc1b74WishXSYU+YztQSI",
+                "ed25519:LTRSLIICOE": "zdtYYx6+bLQgOpJ3EWlyKfsHzRmaYO+mtH8DYhha+ng"
+              },
+              "signatures": {
+                "@user1:localhost": {
+                  "ed25519:LTRSLIICOE": "t2KHILRG5MytATSvlpxybaMKv0ZvzkEsVRymBdrSejxn7EI5R07CTo46oSWK8jMVSh65GgV4OOe00eNYo6g5CA",
+                  "ed25519:fy8Rf7FdZFm/IoKDCdjx0MX0Oxi40pYXO4Fe8+balkw": "YlkkX6MReUh6PecEL7OmBZKnPtq7F0Mr/QTvuOK4IoaNOrWUiYH1KRMDRuBT2xQfY0l1zJazxXAT7D5wllo/Cg"
+                }
+              },
+              "user_id": "@user1:localhost",
+              "unsigned": {
+                "device_display_name": "Element Desktop: Linux"
+              }
+            },
+            "DUVNOMDGSX": {
+              "algorithms": [
+                "m.olm.v1.curve25519-aes-sha2",
+                "m.megolm.v1.aes-sha2"
+              ],
+              "device_id": "DUVNOMDGSX",
+              "keys": {
+                "curve25519:DUVNOMDGSX": "/WdpJ+O0/ewZOqTwk6es1lOQjA8zjDeaL1sFWowdRgM",
+                "ed25519:DUVNOMDGSX": "NzyFdwMn6a4/kOW8fMZFUA/nzItDEyoCV5q1l2vsa/g"
+              },
+              "signatures": {
+                "@user1:localhost": {
+                  "ed25519:DUVNOMDGSX": "8PpLNCOKa9qMH5Eq1ke0g2wEsPQdDPqC7eVheGumb1NMwyhTDtl6il472EhBQ9Lh+svp8ONPzcbv+yxmP1VJAw",
+                  "ed25519:lHrPyjY22UoO3Wd9dcCHHNaJTszbskdDVRnHq01KuGM": "l+iOX0Z9LL1RQHwq2elYHAOvdsF//s3xIm2P4rse4pE41gmdjfPrJiQlKq1frRI6+xrWzr4H1cEVxT6/dHz6Ag"
+                }
+              },
+              "user_id": "@user1:localhost",
+              "unsigned": {
+                "device_display_name": "app.element.io: Chrome on Linux"
+              }
+            },
+            "ATRMBJLMQW": {
+              "algorithms": [
+                "m.olm.v1.curve25519-aes-sha2",
+                "m.megolm.v1.aes-sha2"
+              ],
+              "device_id": "ATRMBJLMQW",
+              "keys": {
+                "curve25519:ATRMBJLMQW": "UfCVP7HJCAh4Gd9Fiz4gv/y1ZaDEGBfm4EHiXLUFlXI",
+                "ed25519:ATRMBJLMQW": "7d1/AVm26ifLoypy9coYVOEDgfpYUP8r1tTP+t+xRGs"
+              },
+              "signatures": {
+                "@user1:localhost": {
+                  "ed25519:ATRMBJLMQW": "crbchKx/OSx6sFfaADeRxqcNT7Bh8VEZ8qYUlB9eVw5Dv5E1T8pSlFX6YDKdBcu++JYV/9qy1BJhkn2K7pweAQ",
+                  "ed25519:Vu0xCmSgdq92CapbMFgRWL1wcTG9z09+oiJoubeTOXI": "W+4oZrtfwOHCCSEIry9Gve6ARQRqcvscqABzmSW4YsHKfuXF5bzRrkYHeroeyEDNyRXnBRR7E3UubGt2SUE/CA"
+                }
+              },
+              "user_id": "@user1:localhost",
+              "unsigned": {
+                "device_display_name": "Element Desktop: Linux"
+              }
+            },
+            "EHEHBGXTOI": {
+              "algorithms": [
+                "m.olm.v1.curve25519-aes-sha2",
+                "m.megolm.v1.aes-sha2"
+              ],
+              "device_id": "EHEHBGXTOI",
+              "keys": {
+                "curve25519:EHEHBGXTOI": "QfSF0uvx6TNNCbxL3VqPVshOJRtEbwgaIP5IUJ1YDEE",
+                "ed25519:EHEHBGXTOI": "L6Bu+cBfK75uIK0HM6GbXvygaD2kCdP5cqQtOa/HPEE"
+              },
+              "signatures": {
+                "@user1:localhost": {
+                  "ed25519:EHEHBGXTOI": "vhbryQdTzJJoBFMlKFhtA61n9nu3E2WPaQXeU56EYIsUmdvA7HB1kw8/YvdCDl3/DoKyuZf6QTLw4XNy7pxGAQ",
+                  "ed25519:5oZm2RoE5vvDHTvt1su1RUFaGmb8qIUHyFLtbL5dZFo": "WKFwSAOs6jd7u+xX5Yzsph9DhxGswURNCvPcL4JDIIiDdlHnh+N/K+7GNPUf7HKbdFSi95IRZX0Z8Hh45zRfDQ"
+                }
+              },
+              "user_id": "@user1:localhost",
+              "unsigned": {
+                "device_display_name": "Element Desktop: Linux"
+              }
+            }
+          }
+        },
+        "failures": {},
+        "master_keys": {
+          "@user1:localhost": {
+            "keys": {
+              "ed25519:eySsJ0r8cUKiSwK661ZUJGAJhPgFH5y24axaEPdFEFQ": "eySsJ0r8cUKiSwK661ZUJGAJhPgFH5y24axaEPdFEFQ"
+            },
+            "signatures": {
+              "@user1:localhost": {
+                "ed25519:EHEHBGXTOI": "wjbrMXEeC/SPrTVlktnIWFG+cwB9h48w52EDWxVzMVIJtE9M1AvYZ2i8pmnVJF9i8DsNrd2pweMxl4FBRl4qDA",
+                "ed25519:eySsJ0r8cUKiSwK661ZUJGAJhPgFH5y24axaEPdFEFQ": "wQy2ncvfFHwpbrz/h0xzBVWVV9Uoy07kKPpq3O1XrrkHep6BoHg55LTTHo7Ety3orsFMLB7FnQFjH8iktGQYCA"
+              }
+            },
+            "usage": [
+              "master"
+            ],
+            "user_id": "@user1:localhost"
+          }
+        },
+        "self_signing_keys": {
+          "@user1:localhost": {
+            "keys": {
+              "ed25519:5oZm2RoE5vvDHTvt1su1RUFaGmb8qIUHyFLtbL5dZFo": "5oZm2RoE5vvDHTvt1su1RUFaGmb8qIUHyFLtbL5dZFo"
+            },
+            "signatures": {
+              "@user1:localhost": {
+                "ed25519:eySsJ0r8cUKiSwK661ZUJGAJhPgFH5y24axaEPdFEFQ": "A8o8aVhaoy+6Tcljl9CUew4oTmF8ftANVHrdzRebJm42wBTjxA5ZTtt4jsE4KGCUjmt7dxKbJIfrjSQlt4xlBg"
+              }
+            },
+            "usage": [
+              "self_signing"
+            ],
+            "user_id": "@user1:localhost"
+          }
+        },
+        "user_signing_keys": {
+          "@user1:localhost": {
+            "keys": {
+              "ed25519:YANnUHvxr3hKuSc0PXX7O5vxTDA8KttZsIcfdFM3chw": "YANnUHvxr3hKuSc0PXX7O5vxTDA8KttZsIcfdFM3chw"
+            },
+            "signatures": {
+              "@user1:localhost": {
+                "ed25519:eySsJ0r8cUKiSwK661ZUJGAJhPgFH5y24axaEPdFEFQ": "b+26/iNL8p/lsoNC3u3RX7ylJ6PktpXYAXTE3QwZ5YolGv5zw05H6tXYLewrg/ot9fAH5aEA675KQ5szSYphCQ"
+              }
+            },
+            "usage": [
+              "user_signing"
+            ],
+            "user_id": "@user1:localhost"
+          }
+        }
+      }
+    }
+  },
+  "2026-02-08T05:28:32.848Z": {
+    "method": "OPTIONS",
+    "url": "http://localhost:8008/_matrix/client/v3/keys/query",
+    "payload": null,
+    "response": {
+      "status": 204,
+      "statusText": "No Content",
+      "body": null
+    }
+  },
+  "2026-02-08T05:28:32.959Z": {
+    "method": "POST",
+    "url": "http://localhost:8008/_matrix/client/v3/rooms/!CzyNYlluTndXlClRZV%3Alocalhost/read_markers",
+    "payload": {
+      "m.fully_read": "$vEaqtbayXxc0unBoLuIlW_fWUcc4Z_GBeTIATfDAE0Q"
+    },
+    "response": {
+      "status": 200,
+      "statusText": "OK",
+      "body": {}
+    }
+  },
+  "2026-02-08T05:28:32.960Z": {
+    "method": "OPTIONS",
+    "url": "http://localhost:8008/_matrix/client/v3/rooms/!CzyNYlluTndXlClRZV%3Alocalhost/read_markers",
+    "payload": null,
+    "response": {
+      "status": 204,
+      "statusText": "No Content",
+      "body": null
+    }
+  },
+  "2026-02-08T05:28:35.779Z": {
+    "method": "PUT",
+    "url": "http://localhost:8008/_matrix/client/v3/user/%40user1%3Alocalhost/account_data/im.vector.setting.breadcrumbs",
+    "payload": {
+      "recent_rooms": [
+        "!mbIkrOTUKlXofFWUER:localhost",
+        "!CzyNYlluTndXlClRZV:localhost",
+        "!yKNxqxuTELmXhEDXpX:localhost",
+        "!nFepJfmBqXtLCSWkQL:localhost",
+        "!AOaLmLFXUOIwuCDMJd:localhost",
+        "!YbOnQmnTYQMsablaCP:localhost"
+      ]
+    },
+    "response": {
+      "status": 200,
+      "statusText": "OK",
+      "body": {}
+    }
+  },
+  "2026-02-08T05:28:35.780Z": {
+    "method": "OPTIONS",
+    "url": "http://localhost:8008/_matrix/client/v3/user/%40user1%3Alocalhost/account_data/im.vector.setting.breadcrumbs",
+    "payload": null,
+    "response": {
+      "status": 204,
+      "statusText": "No Content",
+      "body": null
+    }
+  },
+  "2026-02-08T05:28:35.842Z": {
+    "method": "POST",
+    "url": "http://localhost:8008/_matrix/client/v3/rooms/!mbIkrOTUKlXofFWUER%3Alocalhost/receipt/m.read/%248NfXviG84g9_nHqRZ9cJdFOxWakpvJgXBjsbbTqrkUo",
+    "payload": {
+      "thread_id": "main"
+    },
+    "response": {
+      "status": 200,
+      "statusText": "OK",
+      "body": {}
+    }
+  },
+  "2026-02-08T05:28:35.843Z": {
+    "method": "OPTIONS",
+    "url": "http://localhost:8008/_matrix/client/v3/rooms/!mbIkrOTUKlXofFWUER%3Alocalhost/receipt/m.read/%248NfXviG84g9_nHqRZ9cJdFOxWakpvJgXBjsbbTqrkUo",
+    "payload": null,
+    "response": {
+      "status": 204,
+      "statusText": "No Content",
+      "body": null
+    }
+  },
+  "2026-02-08T05:28:35.859Z": {
+    "method": "OPTIONS",
+    "url": "http://localhost:8008/_matrix/client/v3/rooms/!mbIkrOTUKlXofFWUER%3Alocalhost/messages?limit=50&dir=b&from=s274_942_0_4_26_1_1_165_0_1_2&filter=%7B%22lazy_load_members%22%3Atrue%7D",
+    "payload": null,
+    "response": {
+      "status": 204,
+      "statusText": "No Content",
+      "body": null
+    }
+  },
+  "2026-02-08T05:28:35.891Z": {
+    "method": "OPTIONS",
+    "url": "http://localhost:8008/_matrix/client/v3/rooms/!mbIkrOTUKlXofFWUER%3Alocalhost/messages?limit=50&dir=b&from=t1-27_942_0_4_26_1_1_165_0_1_2&filter=%7B%22lazy_load_members%22%3Atrue%7D",
+    "payload": null,
+    "response": {
+      "status": 204,
+      "statusText": "No Content",
+      "body": null
+    }
+  },
+  "2026-02-08T05:28:36.958Z": {
+    "method": "PUT",
+    "url": "http://localhost:8008/_matrix/client/v3/rooms/!mbIkrOTUKlXofFWUER%3Alocalhost/typing/%40user1%3Alocalhost",
+    "payload": {
+      "typing": true,
+      "timeout": 30000
+    },
+    "response": {
+      "status": 200,
+      "statusText": "OK",
+      "body": {}
+    }
+  },
+  "2026-02-08T05:28:36.959Z": {
+    "method": "OPTIONS",
+    "url": "http://localhost:8008/_matrix/client/v3/rooms/!mbIkrOTUKlXofFWUER%3Alocalhost/typing/%40user1%3Alocalhost",
+    "payload": null,
+    "response": {
+      "status": 204,
+      "statusText": "No Content",
+      "body": null
+    }
+  },
+  "2026-02-08T05:28:39.752Z": {
+    "method": "PUT",
+    "url": "http://localhost:8008/_matrix/client/v3/rooms/!mbIkrOTUKlXofFWUER%3Alocalhost/typing/%40user1%3Alocalhost",
+    "payload": {
+      "typing": false
+    },
+    "response": {
+      "status": 200,
+      "statusText": "OK",
+      "body": {}
+    }
+  },
+  "2026-02-08T05:28:39.756Z": {
+    "method": "PUT",
+    "url": "http://localhost:8008/_matrix/client/v3/rooms/!mbIkrOTUKlXofFWUER%3Alocalhost/send/m.room.message/m1770528519737.2",
+    "payload": {
+      "msgtype": "m.text",
+      "body": "grand duke my ass",
+      "m.mentions": {}
+    },
+    "response": {
+      "status": 200,
+      "statusText": "OK",
+      "body": {
+        "event_id": "$JPFjalbAONjhdmGIzhMlVlCBCtAj5XwdeqmpxeMXj3s"
+      }
+    }
+  },
+  "2026-02-08T05:28:39.757Z": {
+    "method": "OPTIONS",
+    "url": "http://localhost:8008/_matrix/client/v3/rooms/!mbIkrOTUKlXofFWUER%3Alocalhost/send/m.room.message/m1770528519737.2",
+    "payload": null,
+    "response": {
+      "status": 204,
+      "statusText": "No Content",
+      "body": null
+    }
+  },
+  "2026-02-08T05:28:39.820Z": {
+    "method": "GET",
+    "url": "http://localhost:8008/_matrix/client/v3/profile/%40user1%3Alocalhost",
+    "payload": null,
+    "response": {
+      "status": 200,
+      "statusText": "OK",
+      "body": {
+        "displayname": "user1"
+      }
+    }
+  },
+  "2026-02-08T05:28:39.821Z": {
+    "method": "OPTIONS",
+    "url": "http://localhost:8008/_matrix/client/v3/profile/%40user1%3Alocalhost",
+    "payload": null,
+    "response": {
+      "status": 204,
+      "statusText": "No Content",
+      "body": null
+    }
+  },
+  "2026-02-08T05:28:39.841Z": {
+    "method": "POST",
+    "url": "http://localhost:8008/_matrix/client/v3/rooms/!mbIkrOTUKlXofFWUER%3Alocalhost/read_markers",
+    "payload": {
+      "m.fully_read": "$JPFjalbAONjhdmGIzhMlVlCBCtAj5XwdeqmpxeMXj3s"
+    },
+    "response": {
+      "status": 200,
+      "statusText": "OK",
+      "body": {}
+    }
+  },
+  "2026-02-08T05:28:39.842Z": {
+    "method": "OPTIONS",
+    "url": "http://localhost:8008/_matrix/client/v3/rooms/!mbIkrOTUKlXofFWUER%3Alocalhost/read_markers",
+    "payload": null,
+    "response": {
+      "status": 204,
+      "statusText": "No Content",
+      "body": null
+    }
+  },
+  "2026-02-08T05:28:39.861Z": {
+    "method": "POST",
+    "url": "http://localhost:8008/_matrix/client/v3/keys/query",
+    "payload": {
+      "device_keys": {
+        "@user1:localhost": []
+      }
+    },
+    "response": {
+      "status": 200,
+      "statusText": "OK",
+      "body": {
+        "device_keys": {
+          "@user1:localhost": {
+            "PCWXITNOBM": {
+              "algorithms": [
+                "m.olm.v1.curve25519-aes-sha2",
+                "m.megolm.v1.aes-sha2"
+              ],
+              "device_id": "PCWXITNOBM",
+              "keys": {
+                "curve25519:PCWXITNOBM": "EqCEfM54H/cE6toFPva0Keo+KaUDF0UROqBaaiF6924",
+                "ed25519:PCWXITNOBM": "8QxWtFnCpx3XIW9Pluk3A467Qw2gOqt8oUWEhwUTfz4"
+              },
+              "signatures": {
+                "@user1:localhost": {
+                  "ed25519:PCWXITNOBM": "Z5AIM+KVoLpAi3zj6MJSkdHuaPW9wUsaAmCnj9JArkFhTFgX3npSikzPAAxzG4RBtG1V3TEBD/mgY1aZubZkBw",
+                  "ed25519:fXhsP4fiHnK1NxRFDnI6uTfOFvu8FnY/FvtUx1Xt0j0": "jWLMbN6YZSDN2r/7jIurecXaEBFP1AfrhIn39W2lFTGzj6i2lODS+m2FvKcNuIliBsrWKvwH+pZxcFysDH3iAQ"
+                }
+              },
+              "user_id": "@user1:localhost",
+              "unsigned": {
+                "device_display_name": "app.element.io: Chrome on Linux"
+              }
+            },
+            "MSCCJYANMC": {
+              "algorithms": [
+                "m.olm.v1.curve25519-aes-sha2",
+                "m.megolm.v1.aes-sha2"
+              ],
+              "device_id": "MSCCJYANMC",
+              "keys": {
+                "curve25519:MSCCJYANMC": "9Trdenmk/bZ9TQ9QaNcp7DWs99qibq197k5oAmjFWz4",
+                "ed25519:MSCCJYANMC": "fNQ8X7Di2uYwJO5rcPl6STVP8iZ64I6EiL2x8Nf/abc"
+              },
+              "signatures": {
+                "@user1:localhost": {
+                  "ed25519:MSCCJYANMC": "wUPRTkkqWcyHNIxU0XWwoK4mhIKqv7zeIe4u+6fcEqS7MvpSz608GQ6ZzBj2cKoSj0gTeTX5I+LO7xUC9mriBw",
+                  "ed25519:jNE5fTJnK2dwdU52pMEjHmhxLWyOZwSJhncvGdgqSoI": "urjxv7qHhDGIVYhCda49JUYM1aWRGCXIcmQ9IOXhmT3d5dFwyYtivfu9PhKta3zOP7jNY86CzCRXS0yFjIUZBQ"
+                }
+              },
+              "user_id": "@user1:localhost",
+              "unsigned": {
+                "device_display_name": "Element Desktop: Linux"
+              }
+            },
+            "SDGZPUNPNS": {
+              "algorithms": [
+                "m.olm.v1.curve25519-aes-sha2",
+                "m.megolm.v1.aes-sha2"
+              ],
+              "device_id": "SDGZPUNPNS",
+              "keys": {
+                "curve25519:SDGZPUNPNS": "lOQWXCrOkguvQoJpTgRKDmkhfrpwffX1/50UtYGixWo",
+                "ed25519:SDGZPUNPNS": "3bTfE8wEY9u6GlGiZo5gHVv7BJG6ZpkDKd55C/QMI2Q"
+              },
+              "signatures": {
+                "@user1:localhost": {
+                  "ed25519:SDGZPUNPNS": "E+GqsaEni8gsbCPa12O6EApxQDtSSLDP57vTaUfMlfaxASNlvhIk9FwIVYPW87kUs7FVu58yWz0eZMMeSUPHAQ",
+                  "ed25519:Zy/KX4IxUS9v6aZyJ9x/37kiO1+Iu/LC25VLRc/WfkY": "0mTOModvgJAyyjBmxVAam0Ei9IdIbNxodWFSLkNbrvviQal4nFHZpvdUpBzptGBDEkH6mqKl1s9JkjTwou0OCA"
+                }
+              },
+              "user_id": "@user1:localhost",
+              "unsigned": {
+                "device_display_name": "Element Desktop: Linux"
+              }
+            },
+            "LTRSLIICOE": {
+              "algorithms": [
+                "m.olm.v1.curve25519-aes-sha2",
+                "m.megolm.v1.aes-sha2"
+              ],
+              "device_id": "LTRSLIICOE",
+              "keys": {
+                "curve25519:LTRSLIICOE": "RBEQqdTdnbDFNjvkmLOx7Wfc1b74WishXSYU+YztQSI",
+                "ed25519:LTRSLIICOE": "zdtYYx6+bLQgOpJ3EWlyKfsHzRmaYO+mtH8DYhha+ng"
+              },
+              "signatures": {
+                "@user1:localhost": {
+                  "ed25519:LTRSLIICOE": "t2KHILRG5MytATSvlpxybaMKv0ZvzkEsVRymBdrSejxn7EI5R07CTo46oSWK8jMVSh65GgV4OOe00eNYo6g5CA",
+                  "ed25519:fy8Rf7FdZFm/IoKDCdjx0MX0Oxi40pYXO4Fe8+balkw": "YlkkX6MReUh6PecEL7OmBZKnPtq7F0Mr/QTvuOK4IoaNOrWUiYH1KRMDRuBT2xQfY0l1zJazxXAT7D5wllo/Cg"
+                }
+              },
+              "user_id": "@user1:localhost",
+              "unsigned": {
+                "device_display_name": "Element Desktop: Linux"
+              }
+            },
+            "DUVNOMDGSX": {
+              "algorithms": [
+                "m.olm.v1.curve25519-aes-sha2",
+                "m.megolm.v1.aes-sha2"
+              ],
+              "device_id": "DUVNOMDGSX",
+              "keys": {
+                "curve25519:DUVNOMDGSX": "/WdpJ+O0/ewZOqTwk6es1lOQjA8zjDeaL1sFWowdRgM",
+                "ed25519:DUVNOMDGSX": "NzyFdwMn6a4/kOW8fMZFUA/nzItDEyoCV5q1l2vsa/g"
+              },
+              "signatures": {
+                "@user1:localhost": {
+                  "ed25519:DUVNOMDGSX": "8PpLNCOKa9qMH5Eq1ke0g2wEsPQdDPqC7eVheGumb1NMwyhTDtl6il472EhBQ9Lh+svp8ONPzcbv+yxmP1VJAw",
+                  "ed25519:lHrPyjY22UoO3Wd9dcCHHNaJTszbskdDVRnHq01KuGM": "l+iOX0Z9LL1RQHwq2elYHAOvdsF//s3xIm2P4rse4pE41gmdjfPrJiQlKq1frRI6+xrWzr4H1cEVxT6/dHz6Ag"
+                }
+              },
+              "user_id": "@user1:localhost",
+              "unsigned": {
+                "device_display_name": "app.element.io: Chrome on Linux"
+              }
+            },
+            "ATRMBJLMQW": {
+              "algorithms": [
+                "m.olm.v1.curve25519-aes-sha2",
+                "m.megolm.v1.aes-sha2"
+              ],
+              "device_id": "ATRMBJLMQW",
+              "keys": {
+                "curve25519:ATRMBJLMQW": "UfCVP7HJCAh4Gd9Fiz4gv/y1ZaDEGBfm4EHiXLUFlXI",
+                "ed25519:ATRMBJLMQW": "7d1/AVm26ifLoypy9coYVOEDgfpYUP8r1tTP+t+xRGs"
+              },
+              "signatures": {
+                "@user1:localhost": {
+                  "ed25519:ATRMBJLMQW": "crbchKx/OSx6sFfaADeRxqcNT7Bh8VEZ8qYUlB9eVw5Dv5E1T8pSlFX6YDKdBcu++JYV/9qy1BJhkn2K7pweAQ",
+                  "ed25519:Vu0xCmSgdq92CapbMFgRWL1wcTG9z09+oiJoubeTOXI": "W+4oZrtfwOHCCSEIry9Gve6ARQRqcvscqABzmSW4YsHKfuXF5bzRrkYHeroeyEDNyRXnBRR7E3UubGt2SUE/CA"
+                }
+              },
+              "user_id": "@user1:localhost",
+              "unsigned": {
+                "device_display_name": "Element Desktop: Linux"
+              }
+            },
+            "EHEHBGXTOI": {
+              "algorithms": [
+                "m.olm.v1.curve25519-aes-sha2",
+                "m.megolm.v1.aes-sha2"
+              ],
+              "device_id": "EHEHBGXTOI",
+              "keys": {
+                "curve25519:EHEHBGXTOI": "QfSF0uvx6TNNCbxL3VqPVshOJRtEbwgaIP5IUJ1YDEE",
+                "ed25519:EHEHBGXTOI": "L6Bu+cBfK75uIK0HM6GbXvygaD2kCdP5cqQtOa/HPEE"
+              },
+              "signatures": {
+                "@user1:localhost": {
+                  "ed25519:EHEHBGXTOI": "vhbryQdTzJJoBFMlKFhtA61n9nu3E2WPaQXeU56EYIsUmdvA7HB1kw8/YvdCDl3/DoKyuZf6QTLw4XNy7pxGAQ",
+                  "ed25519:5oZm2RoE5vvDHTvt1su1RUFaGmb8qIUHyFLtbL5dZFo": "WKFwSAOs6jd7u+xX5Yzsph9DhxGswURNCvPcL4JDIIiDdlHnh+N/K+7GNPUf7HKbdFSi95IRZX0Z8Hh45zRfDQ"
+                }
+              },
+              "user_id": "@user1:localhost",
+              "unsigned": {
+                "device_display_name": "Element Desktop: Linux"
+              }
+            }
+          }
+        },
+        "failures": {},
+        "master_keys": {
+          "@user1:localhost": {
+            "keys": {
+              "ed25519:eySsJ0r8cUKiSwK661ZUJGAJhPgFH5y24axaEPdFEFQ": "eySsJ0r8cUKiSwK661ZUJGAJhPgFH5y24axaEPdFEFQ"
+            },
+            "signatures": {
+              "@user1:localhost": {
+                "ed25519:EHEHBGXTOI": "wjbrMXEeC/SPrTVlktnIWFG+cwB9h48w52EDWxVzMVIJtE9M1AvYZ2i8pmnVJF9i8DsNrd2pweMxl4FBRl4qDA",
+                "ed25519:eySsJ0r8cUKiSwK661ZUJGAJhPgFH5y24axaEPdFEFQ": "wQy2ncvfFHwpbrz/h0xzBVWVV9Uoy07kKPpq3O1XrrkHep6BoHg55LTTHo7Ety3orsFMLB7FnQFjH8iktGQYCA"
+              }
+            },
+            "usage": [
+              "master"
+            ],
+            "user_id": "@user1:localhost"
+          }
+        },
+        "self_signing_keys": {
+          "@user1:localhost": {
+            "keys": {
+              "ed25519:5oZm2RoE5vvDHTvt1su1RUFaGmb8qIUHyFLtbL5dZFo": "5oZm2RoE5vvDHTvt1su1RUFaGmb8qIUHyFLtbL5dZFo"
+            },
+            "signatures": {
+              "@user1:localhost": {
+                "ed25519:eySsJ0r8cUKiSwK661ZUJGAJhPgFH5y24axaEPdFEFQ": "A8o8aVhaoy+6Tcljl9CUew4oTmF8ftANVHrdzRebJm42wBTjxA5ZTtt4jsE4KGCUjmt7dxKbJIfrjSQlt4xlBg"
+              }
+            },
+            "usage": [
+              "self_signing"
+            ],
+            "user_id": "@user1:localhost"
+          }
+        },
+        "user_signing_keys": {
+          "@user1:localhost": {
+            "keys": {
+              "ed25519:YANnUHvxr3hKuSc0PXX7O5vxTDA8KttZsIcfdFM3chw": "YANnUHvxr3hKuSc0PXX7O5vxTDA8KttZsIcfdFM3chw"
+            },
+            "signatures": {
+              "@user1:localhost": {
+                "ed25519:eySsJ0r8cUKiSwK661ZUJGAJhPgFH5y24axaEPdFEFQ": "b+26/iNL8p/lsoNC3u3RX7ylJ6PktpXYAXTE3QwZ5YolGv5zw05H6tXYLewrg/ot9fAH5aEA675KQ5szSYphCQ"
+              }
+            },
+            "usage": [
+              "user_signing"
+            ],
+            "user_id": "@user1:localhost"
+          }
+        }
+      }
+    }
+  },
+  "2026-02-08T05:28:39.862Z": {
+    "method": "OPTIONS",
+    "url": "http://localhost:8008/_matrix/client/v3/keys/query",
+    "payload": null,
+    "response": {
+      "status": 204,
+      "statusText": "No Content",
+      "body": null
+    }
+  },
+  "2026-02-08T05:28:44.201Z": {
+    "method": "POST",
+    "url": "http://localhost:8008/_matrix/client/v3/rooms/!mbIkrOTUKlXofFWUER%3Alocalhost/leave",
+    "payload": {},
+    "response": {
+      "status": 200,
+      "statusText": "OK",
+      "body": {}
+    }
+  },
+  "2026-02-08T05:28:44.202Z": {
+    "method": "OPTIONS",
+    "url": "http://localhost:8008/_matrix/client/v3/rooms/!mbIkrOTUKlXofFWUER%3Alocalhost/leave",
+    "payload": null,
+    "response": {
+      "status": 204,
+      "statusText": "No Content",
+      "body": null
+    }
+  },
+  "2026-02-08T05:28:44.406Z": {
+    "method": "GET",
+    "url": "http://localhost:8008/_matrix/client/v3/profile/%40user1%3Alocalhost",
+    "payload": null,
+    "response": {
+      "status": 200,
+      "statusText": "OK",
+      "body": {
+        "displayname": "user1"
+      }
+    }
+  },
+  "2026-02-08T05:28:44.605Z": {
+    "method": "GET",
+    "url": "http://localhost:8008/_matrix/client/v3/profile/%40user1%3Alocalhost",
+    "payload": null,
+    "response": {
+      "status": 200,
+      "statusText": "OK",
+      "body": {
+        "displayname": "user1"
+      }
+    }
+  }
+}

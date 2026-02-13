@@ -1,0 +1,334 @@
+{
+    "components": {
+        "securitySchemes": {
+            "accessTokenBearer": {
+                "description": "The `access_token` obtained during [account registration](https://spec.matrix.org/v1.17/client-server-api/#account-registration)\nor [login](https://spec.matrix.org/v1.17/client-server-api/#login), using the `Authorization: Bearer` header.\n\nIt can also be the `as_token` of an application service.\n\nThis is the preferred method.",
+                "scheme": "bearer",
+                "type": "http"
+            },
+            "accessTokenQuery": {
+                "description": "**Deprecated.** The `access_token` obtained during [account registration](https://spec.matrix.org/v1.17/client-server-api/#account-registration)\nor [login](https://spec.matrix.org/v1.17/client-server-api/#login), as a query parameter.\n\nIt can also be the `as_token` of an application service.",
+                "in": "query",
+                "name": "access_token",
+                "type": "apiKey"
+            },
+            "appserviceAccessTokenBearer": {
+                "description": "The `as_token` of an application service, using the `Authorization: Bearer`\nheader.\n\nThis is the preferred method.",
+                "scheme": "bearer",
+                "type": "http"
+            },
+            "appserviceAccessTokenQuery": {
+                "description": "**Deprecated.** The `as_token` of an application service, as a query\nparameter.",
+                "in": "query",
+                "name": "access_token",
+                "type": "apiKey"
+            }
+        }
+    },
+    "info": {
+        "title": "Matrix Client-Server API",
+        "version": "v1.17"
+    },
+    "openapi": "3.1.0",
+    "paths": {
+        "/_matrix/client/v3/rooms/!AOaLmLFXUOIwuCDMJd%3Alocalhost/send/m.room.message/{txnId}": {
+            "put": {
+                "description": "This endpoint is used to send a message event to a room. Message events\nallow access to historical events and pagination, making them suited\nfor \"once-off\" activity in a room.\n\nThe body of the request should be the content object of the event; the\nfields in this object will vary depending on the type of event. See\n[Room Events](https://spec.matrix.org/v1.17/client-server-api/#room-events) for the m. event specification.",
+                "operationId": "sendMessage",
+                "parameters": [
+                    {
+                        "description": "The [transaction ID](https://spec.matrix.org/v1.17/client-server-api/#transaction-identifiers) for this event. Clients should generate an\nID unique across requests with the same access token; it will be\nused by the server to ensure idempotency of requests.",
+                        "example": "35",
+                        "in": "path",
+                        "name": "txnId",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "example": {
+                                    "body": "hello",
+                                    "msgtype": "m.text"
+                                },
+                                "type": "object"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "examples": {
+                                    "response": {
+                                        "value": {
+                                            "event_id": "$YUwRidLecu:example.com"
+                                        }
+                                    }
+                                },
+                                "schema": {
+                                    "properties": {
+                                        "event_id": {
+                                            "description": "A unique identifier for the event.",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "event_id"
+                                    ],
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "description": "An ID for the sent event."
+                    },
+                    "400": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "A Matrix-level Error",
+                                    "properties": {
+                                        "errcode": {
+                                            "description": "An error code.",
+                                            "example": "M_UNKNOWN",
+                                            "type": "string"
+                                        },
+                                        "error": {
+                                            "description": "A human-readable error message.",
+                                            "example": "An unknown error occurred",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "errcode"
+                                    ],
+                                    "title": "Error",
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "description": "The request is invalid. A [standard error response](https://spec.matrix.org/v1.17/client-server-api/#standard-error-response)\nwill be returned. As well as the normal common error codes, other reasons for rejection include:\n\n- `M_DUPLICATE_ANNOTATION`: The request is an attempt to send a [duplicate annotation](https://spec.matrix.org/v1.17/client-server-api/#avoiding-duplicate-annotations)."
+                    }
+                },
+                "security": [
+                    {
+                        "accessTokenQuery": []
+                    },
+                    {
+                        "accessTokenBearer": []
+                    }
+                ],
+                "summary": "Send a message event to the given room.",
+                "tags": [
+                    "Room participation"
+                ]
+            }
+        },
+        "/_matrix/client/v3/rooms/!AOaLmLFXUOIwuCDMJd%3Alocalhost/send/m.reaction/{txnId}": {
+            "put": {
+                "description": "This endpoint is used to send a message event to a room. Message events\nallow access to historical events and pagination, making them suited\nfor \"once-off\" activity in a room.\n\nThe body of the request should be the content object of the event; the\nfields in this object will vary depending on the type of event. See\n[Room Events](https://spec.matrix.org/v1.17/client-server-api/#room-events) for the m. event specification.",
+                "operationId": "sendMessage",
+                "parameters": [
+                    {
+                        "description": "The [transaction ID](https://spec.matrix.org/v1.17/client-server-api/#transaction-identifiers) for this event. Clients should generate an\nID unique across requests with the same access token; it will be\nused by the server to ensure idempotency of requests.",
+                        "example": "35",
+                        "in": "path",
+                        "name": "txnId",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "example": {
+                                    "m.relates_to": {
+                                        "rel_type": "m.annotation",
+                                        "event_id": "$jze-n6g469reZzarAuLF-kQPfgNSMynuDX9otPLe6KI",
+                                        "key": "😁"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "examples": {
+                                    "response": {
+                                        "value": {
+                                            "event_id": "$YUwRidLecu:example.com"
+                                        }
+                                    }
+                                },
+                                "schema": {
+                                    "properties": {
+                                        "event_id": {
+                                            "description": "A unique identifier for the event.",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "event_id"
+                                    ],
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "description": "An ID for the sent event."
+                    },
+                    "400": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "A Matrix-level Error",
+                                    "properties": {
+                                        "errcode": {
+                                            "description": "An error code.",
+                                            "example": "M_UNKNOWN",
+                                            "type": "string"
+                                        },
+                                        "error": {
+                                            "description": "A human-readable error message.",
+                                            "example": "An unknown error occurred",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "errcode"
+                                    ],
+                                    "title": "Error",
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "description": "The request is invalid. A [standard error response](https://spec.matrix.org/v1.17/client-server-api/#standard-error-response)\nwill be returned. As well as the normal common error codes, other reasons for rejection include:\n\n- `M_DUPLICATE_ANNOTATION`: The request is an attempt to send a [duplicate annotation](https://spec.matrix.org/v1.17/client-server-api/#avoiding-duplicate-annotations)."
+                    }
+                },
+                "security": [
+                    {
+                        "accessTokenQuery": []
+                    },
+                    {
+                        "accessTokenBearer": []
+                    }
+                ],
+                "summary": "Send a message event to the given room.",
+                "tags": [
+                    "Room participation"
+                ]
+            }
+        },
+        "/_matrix/client/v3/rooms/!AOaLmLFXUOIwuCDMJd%3Alocalhost/redact/{eventId}/{txnId}": {
+            "put": {
+                "description": "Strips all information out of an event which isn't critical to the\nintegrity of the server-side representation of the room.\n\nThis cannot be undone.\n\nAny user with a power level greater than or equal to the `m.room.redaction`\nevent power level may send redactions for their own events in the room. If\nthe user's power level is also greater than or equal to the `redact` power\nlevel of the room, the user may redact events sent by other users.\n\nServer administrators may redact events sent by users on their server.",
+                "operationId": "redactEvent",
+                "parameters": [
+                    {
+                        "description": "The ID of the event to redact",
+                        "example": "bai2b1i9:matrix.org",
+                        "in": "path",
+                        "name": "eventId",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "The [transaction ID](https://spec.matrix.org/v1.17/client-server-api/#transaction-identifiers) for this event. Clients should generate a\nunique ID; it will be used by the server to ensure idempotency of requests.",
+                        "example": "37",
+                        "in": "path",
+                        "name": "txnId",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "example": {
+                                    "reason": "Indecent material"
+                                },
+                                "properties": {
+                                    "reason": {
+                                        "description": "The reason for the event being redacted.",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "examples": {
+                                    "response": {
+                                        "value": {
+                                            "event_id": "$YUwQidLecu:example.com"
+                                        }
+                                    }
+                                },
+                                "schema": {
+                                    "properties": {
+                                        "event_id": {
+                                            "description": "A unique identifier for the event.",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "description": "An ID for the redaction event."
+                    }
+                },
+                "security": [
+                    {
+                        "accessTokenQuery": []
+                    },
+                    {
+                        "accessTokenBearer": []
+                    }
+                ],
+                "summary": "Strips all non-integrity-critical information out of an event.",
+                "tags": [
+                    "Room participation"
+                ]
+            }
+        }
+    },
+    "servers": [
+        {
+            "url": "https://matrix.org"
+        },
+        {
+            "url": "https://{homeserver_address}",
+            "variables": {
+                "homeserver_address": {
+                    "default": "matrix-client.matrix.org",
+                    "description": "The base URL for your homeserver"
+                }
+            }
+        }
+    ]
+}
